@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
+import { Link } from "react-router-dom";
+import booksHero from "@/assets/books-hero.jpg";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-16">
+    <section className="relative min-h-[85vh] flex items-center pt-16 overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <img src={booksHero} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-hero-overlay" />
       </div>
 
@@ -26,8 +27,8 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6"
           >
-            Craft Your Life,{" "}
-            <span className="text-gold-gradient">Your Way</span>
+            Book Website Design{" "}
+            <span className="text-gold-gradient">for Your Formal Design</span>
           </motion.h1>
 
           <motion.p
@@ -47,18 +48,18 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.45 }}
             className="flex flex-wrap gap-4"
           >
-            <a
-              href="#ebooks"
-              className="inline-flex items-center px-8 py-3 rounded-md bg-secondary text-secondary-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity"
+            <Link
+              to="/ebooks"
+              className="inline-flex items-center px-8 py-3 rounded-full bg-secondary text-secondary-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg"
             >
               Browse eBooks
-            </a>
-            <a
-              href="#audio"
-              className="inline-flex items-center px-8 py-3 rounded-md border border-primary-foreground/30 text-primary-foreground font-body font-semibold text-sm hover:bg-primary-foreground/10 transition-colors"
+            </Link>
+            <Link
+              to="/audio"
+              className="inline-flex items-center px-8 py-3 rounded-full border-2 border-primary-foreground/30 text-primary-foreground font-body font-semibold text-sm hover:bg-primary-foreground/10 transition-colors"
             >
               Listen to Audio
-            </a>
+            </Link>
           </motion.div>
 
           {/* Stats */}

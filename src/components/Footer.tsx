@@ -1,5 +1,15 @@
+import { Link } from "react-router-dom";
 import logo from "@/assets/zuula-logo.png";
 import { Youtube, MessageCircle } from "lucide-react";
+
+const footerLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "eBooks", href: "/ebooks" },
+  { label: "Audio", href: "/audio" },
+  { label: "Articles", href: "/articles" },
+  { label: "Contact", href: "/contact" },
+];
 
 const Footer = () => {
   return (
@@ -16,14 +26,14 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg font-semibold text-background mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {["Home", "About", "eBooks", "Audio", "Articles", "Contact"].map((l) => (
-                <li key={l}>
-                  <a
-                    href={`#${l.toLowerCase()}`}
+              {footerLinks.map((l) => (
+                <li key={l.label}>
+                  <Link
+                    to={l.href}
                     className="font-body text-sm text-background/60 hover:text-secondary transition-colors"
                   >
-                    {l}
-                  </a>
+                    {l.label}
+                  </Link>
                 </li>
               ))}
             </ul>
