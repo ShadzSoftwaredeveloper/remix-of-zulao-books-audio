@@ -14,7 +14,7 @@ const EbooksPage = () => {
           </p>
         </div>
       </div>
-      <EbooksSection />
+      <EbooksSection showAll />
       <Footer />
     </div>
   );
