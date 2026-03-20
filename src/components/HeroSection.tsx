@@ -16,8 +16,8 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="font-body text-sm uppercase tracking-[0.2em] text-secondary mb-4"
-          >
+            className="font-body text-sm uppercase tracking-[0.2em] text-secondary mb-4">
+            
             Zuula Obusobozibwo
           </motion.p>
 
@@ -25,8 +25,8 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6"
-          >
+            className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
+            
             Book Website Design{" "}
             <span className="text-gold-gradient">for Your Formal Design</span>
           </motion.h1>
@@ -35,8 +35,8 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="font-body text-lg text-primary-foreground/80 mb-8 max-w-lg"
-          >
+            className="font-body text-lg text-primary-foreground/80 mb-8 max-w-lg">
+            
             Transform your mindset, harness your unique talents, and embark on a
             journey to create a life full of purpose, endless possibilities, and
             lasting fulfillment.
@@ -46,46 +46,46 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.45 }}
-            className="flex flex-wrap gap-4"
-          >
+            className="flex flex-wrap gap-4">
+            
             <Link
               to="/ebooks"
-              className="inline-flex items-center px-8 py-3 rounded-full bg-secondary text-secondary-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg"
-            >
+              className="inline-flex items-center px-8 py-3 rounded-full text-secondary-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg bg-fuchsia-800">
+              
               Browse eBooks
             </Link>
             <Link
               to="/audio"
-              className="inline-flex items-center px-8 py-3 rounded-full border-2 border-primary-foreground/30 text-primary-foreground font-body font-semibold text-sm hover:bg-primary-foreground/10 transition-colors"
-            >
+              className="inline-flex items-center px-8 py-3 rounded-full border-2 border-primary-foreground/30 text-primary-foreground font-body font-semibold text-sm hover:bg-primary-foreground/10 transition-colors">
+              
               Listen to Audio
             </Link>
           </motion.div>
 
           {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex gap-10 mt-14"
-          >
-            {[
-              { num: "172+", label: "Sessions" },
-              { num: "114+", label: "Clients" },
-              { num: "2+", label: "Years Experience" },
-            ].map((s) => (
-              <div key={s.label}>
-                <p className="font-display text-2xl font-bold text-secondary">{s.num}</p>
-                <p className="font-body text-xs uppercase tracking-wider text-primary-foreground/60">
-                  {s.label}
-                </p>
-              </div>
-            ))}
-          </motion.div>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default HeroSection;
