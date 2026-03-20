@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { BookOpen, Search, Download } from "lucide-react";
+import BookDetailDialog, { BookItem } from "./BookDetailDialog";
 
-const ebooks = [
+const ebooks: BookItem[] = [
   { title: "The Inner Chamber", author: "Andrew Murray", cover: "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/inner-chamner.jpg", free: true },
   { title: "The Master's Indwelling", author: "Andrew Murray", cover: "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/THE-MASTERS-INDWELLING.jpg", free: true },
   { title: "He Holds My Tomorrows", author: "Gareth Evans", cover: "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/He-Holds-My-Tomorrows.jpg", free: true },
@@ -15,6 +16,7 @@ const ebooks = [
 
 const EbooksSection = () => {
   const [search, setSearch] = useState("");
+  const [selectedBook, setSelectedBook] = useState<BookItem | null>(null);
 
   const filtered = ebooks.filter(
     (b) =>
@@ -24,7 +26,7 @@ const EbooksSection = () => {
 
   return (
     <section id="ebooks" className="py-24 bg-muted/50">
-      <div className="container mx-auto px-4">
+      <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +65,8 @@ const EbooksSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="card-hover group"
+              className="card-hover group cursor-pointer"
+              onClick={() => setSelectedBook(book)}
             >
               <div className="relative rounded-lg overflow-hidden bg-background shadow-md">
                 <div className="aspect-[3/4] overflow-hidden">
@@ -80,12 +83,12 @@ const EbooksSection = () => {
                   </span>
                 )}
                 <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-                  <button className="p-2 rounded-full bg-primary-foreground/90 text-primary">
+                  <span className="p-2 rounded-full bg-primary-foreground/90 text-primary">
                     <BookOpen size={18} />
-                  </button>
-                  <button className="p-2 rounded-full bg-primary-foreground/90 text-primary">
+                  </span>
+                  <span className="p-2 rounded-full bg-primary-foreground/90 text-primary">
                     <Download size={18} />
-                  </button>
+                  </span>
                 </div>
               </div>
               <div className="mt-3 px-1">
@@ -98,6 +101,12 @@ const EbooksSection = () => {
           ))}
         </div>
       </div>
+
+      <BookDetailDialog
+        book={selectedBook}
+        open={!!selectedBook}
+        onOpenChange={(open) => !open && setSelectedBook(null)}
+      />
     </section>
   );
 };

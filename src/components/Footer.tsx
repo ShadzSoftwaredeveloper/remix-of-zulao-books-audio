@@ -76,7 +76,7 @@ const Footer = () => {
 
       {/* Bottom bar */}
       <div className="border-t border-background/10">
-        <div className="container mx-auto px-4 py-5 flex items-center justify-between">
+        <div className="site-container py-5 flex items-center justify-between">
           <p className="font-body text-xs text-background/40">
             © {new Date().getFullYear()} Zuula Obusobozibwo. All rights reserved.
           </p>

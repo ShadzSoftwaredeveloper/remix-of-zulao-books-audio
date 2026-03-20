@@ -91,6 +91,10 @@
 }
 
 @layer components {
+  .site-container {
+    @apply container mx-auto px-4 md:px-[70px];
+  }
+
   .text-gold-gradient {
     background: linear-gradient(135deg, hsl(24 95% 58%), hsl(35 95% 65%));
     -webkit-background-clip: text;
