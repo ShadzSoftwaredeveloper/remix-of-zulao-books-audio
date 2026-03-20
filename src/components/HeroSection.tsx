@@ -56,7 +56,7 @@ const HeroSection = () => {
             </Link>
             <Link
               to="/audio"
-              className="inline-flex items-center px-8 py-3 rounded-full border-2 border-primary-foreground/30 text-primary-foreground font-body font-semibold text-sm hover:bg-primary-foreground/10 transition-colors">
+              className="inline-flex items-center px-8 py-3 rounded-full border-2 text-primary-foreground font-body font-semibold text-sm hover:bg-primary-foreground/10 transition-colors border-fuchsia-800">
               
               Listen to Audio
             </Link>
