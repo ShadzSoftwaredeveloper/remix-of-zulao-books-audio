@@ -10,14 +10,14 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+            transition={{ duration: 0.6 }}>
+            
             <div className="relative">
               <img
-                src={authorImg}
+
                 alt="Joseph Prosper - Founder"
-                className="rounded-lg w-full max-w-md mx-auto shadow-xl"
-              />
+                className="rounded-lg w-full max-w-md mx-auto shadow-xl" src="/lovable-uploads/927c6d88-9f65-4954-82af-f1e83c834b55.jpg" />
+              
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-lg -z-10" />
             </div>
           </motion.div>
@@ -26,8 +26,8 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+            transition={{ duration: 0.6 }}>
+            
             <p className="font-body text-sm uppercase tracking-[0.2em] text-secondary mb-3">
               About the Founder
             </p>
@@ -51,8 +51,8 @@ const AboutSection = () => {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default AboutSection;
