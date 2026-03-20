@@ -14,7 +14,7 @@ const ebooks: BookItem[] = [
   { title: "Baptism with the Holy Spirit", author: "R. A. Torrey", cover: "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/BAPTISM-WITH-THE-HOLY-SPIRIT.jpg", free: true },
 ];
 
-const EbooksSection = () => {
+const EbooksSection = ({ showAll = false }: { showAll?: boolean }) => {
   const [search, setSearch] = useState("");
   const [selectedBook, setSelectedBook] = useState<BookItem | null>(null);
 
@@ -23,6 +23,8 @@ const EbooksSection = () => {
       b.title.toLowerCase().includes(search.toLowerCase()) ||
       b.author.toLowerCase().includes(search.toLowerCase())
   );
+
+  const displayed = showAll ? filtered : filtered.slice(0, 4);
 
   return (
     <section id="ebooks" className="py-24 bg-muted/50">
@@ -44,21 +46,23 @@ const EbooksSection = () => {
           </p>
         </motion.div>
 
-        {/* Search */}
-        <div className="max-w-md mx-auto mb-10 relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
-          <input
-            type="text"
-            placeholder="Search by title or author..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
-          />
-        </div>
+        {/* Search — only on full page */}
+        {showAll && (
+          <div className="max-w-md mx-auto mb-10 relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
+            <input
+              type="text"
+              placeholder="Search by title or author..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
+            />
+          </div>
+        )}
 
         {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filtered.map((book, i) => (
+          {displayed.map((book, i) => (
             <motion.div
               key={book.title}
               initial={{ opacity: 0, y: 20 }}
@@ -100,6 +104,24 @@ const EbooksSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* More Books button — only on home */}
+        {!showAll && (
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-10"
+          >
+            <a
+              href="/ebooks"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-body text-sm font-semibold hover:opacity-90 transition-opacity active:scale-[0.98]"
+            >
+              <BookOpen size={16} />
+              More Books
+            </a>
+          </motion.div>
+        )}
       </div>
 
       <BookDetailDialog

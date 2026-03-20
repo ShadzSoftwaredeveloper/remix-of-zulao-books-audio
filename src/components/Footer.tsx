@@ -25,9 +25,25 @@ const Footer = () => {
           <div>
             <h3 className="font-display text-2xl font-bold text-background mb-1">Zuula Obusobozibwo</h3>
             <div className="w-10 h-0.5 bg-secondary mb-4" />
-            <p className="font-body text-sm text-background/60 leading-relaxed">
+            <p className="font-body text-sm text-background/60 leading-relaxed mb-5">
               Empowering You To Impact Generations. Unlock your gifts, influence, and destiny for God's Kingdom through transformative books and audio teachings.
             </p>
+            <div className="flex gap-2">
+              {[
+                "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/inner-chamner.jpg",
+                "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/THE-MASTERS-INDWELLING.jpg",
+                "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/He-Holds-My-Tomorrows.jpg",
+                "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/the-Body-of-Christ.jpg",
+              ].map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt="Book cover"
+                  className="w-14 h-20 rounded object-cover opacity-70 hover:opacity-100 transition-opacity"
+                  loading="lazy"
+                />
+              ))}
+            </div>
           </div>
 
           {/* Explore */}
