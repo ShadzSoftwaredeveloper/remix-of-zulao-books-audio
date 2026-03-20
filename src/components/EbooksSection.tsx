@@ -81,9 +81,13 @@ const EbooksSection = ({ showAll = false }: { showAll?: boolean }) => {
                     loading="lazy"
                   />
                 </div>
-                {book.free && (
+                {book.free ? (
                   <span className="absolute top-2 right-2 px-2 py-1 rounded text-xs font-body font-semibold bg-primary text-primary-foreground">
                     Free
+                  </span>
+                ) : book.price && (
+                  <span className="absolute top-2 right-2 px-2 py-1 rounded text-xs font-body font-semibold bg-secondary text-secondary-foreground">
+                    {book.price}
                   </span>
                 )}
                 <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
