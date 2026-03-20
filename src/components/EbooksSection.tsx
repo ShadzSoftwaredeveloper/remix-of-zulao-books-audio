@@ -39,7 +39,7 @@ const EbooksSection = ({ showAll = false }: { showAll?: boolean }) => {
             Library
           </p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Free eBook Resources
+            eBook Resources
           </h2>
           <p className="font-body text-foreground/60 max-w-lg mx-auto">
             Curated collection of transformative books to deepen your faith and unlock your potential.
