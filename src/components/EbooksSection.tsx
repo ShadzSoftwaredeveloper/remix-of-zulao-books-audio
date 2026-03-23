@@ -2,16 +2,16 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { BookOpen, Search, Download } from "lucide-react";
 import BookDetailDialog, { BookItem } from "./BookDetailDialog";
+import alterFrontCover from "@/assets/books/alter_front_cover.jpg";
+import alter100 from "@/assets/books/alter100.jpg";
+import omuwendo from "@/assets/books/omuwendo.jpg";
+import alterBack from "@/assets/books/alter_back.jpg";
 
 const ebooks: BookItem[] = [
-  { title: "The Inner Chamber", author: "Andrew Murray", cover: "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/inner-chamner.jpg", free: false, price: "UShs 15,000" },
-  { title: "The Master's Indwelling", author: "Andrew Murray", cover: "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/THE-MASTERS-INDWELLING.jpg", free: false, price: "UShs 15,000" },
-  { title: "He Holds My Tomorrows", author: "Gareth Evans", cover: "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/He-Holds-My-Tomorrows.jpg", free: false, price: "UShs 20,000" },
-  { title: "Lord, Teach Us To Pray", author: "Andrew Murray", cover: "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/LORD-TEACH-US-TO-PRAY.jpg", free: false, price: "UShs 15,000" },
-  { title: "The Body of Christ: A Reality", author: "Watchman Nee", cover: "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/the-Body-of-Christ.jpg", free: false, price: "UShs 18,000" },
-  { title: "Jesus Himself", author: "Andrew Murray", cover: "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/JESUS-HIMSELF.jpg", free: false, price: "UShs 15,000" },
-  { title: "The Key In My Hand", author: "Gareth Evans", cover: "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/THE-KEY-IN-MY-HAND.jpg", free: false, price: "UShs 20,000" },
-  { title: "Baptism with the Holy Spirit", author: "R. A. Torrey", cover: "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/BAPTISM-WITH-THE-HOLY-SPIRIT.jpg", free: false, price: "UShs 15,000" },
+  { title: "The Generational Family Prayer Altar", author: "Tumusiime Joseph Prosper", cover: alterFrontCover, free: false, price: "UShs 25,000" },
+  { title: "The Generational Family Prayer Altar (Edition 2)", author: "Tumusiime Joseph Prosper", cover: alter100, free: false, price: "UShs 25,000" },
+  { title: "Omuwendo Gw'Obulamu", author: "Tumusiime Joseph Prosper", cover: omuwendo, free: false, price: "UShs 20,000" },
+  { title: "Ebwogeere Ku Kitabo", author: "Tumusiime Joseph Prosper", cover: alterBack, free: false, price: "UShs 20,000" },
 ];
 
 const EbooksSection = ({ showAll = false }: { showAll?: boolean }) => {
