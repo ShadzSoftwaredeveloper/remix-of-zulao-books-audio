@@ -1,5 +1,5 @@
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { BookOpen, ShoppingCart, Star, Eye } from "lucide-react";
+import { ShoppingCart, Star, Eye } from "lucide-react";
 
 export interface BookItem {
   title: string;
@@ -21,65 +21,81 @@ const BookDetailDialog = ({ book, open, onOpenChange }: BookDetailDialogProps) =
   if (!book) return null;
 
   const handlePreview = () => {
-    const pdfUrl = book.pdfUrl || "#";
-    window.open(pdfUrl, "_blank", "noopener,noreferrer");
+    window.open(book.pdfUrl || "#", "_blank", "noopener,noreferrer");
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-sm p-0 overflow-hidden rounded-xl border-border bg-background">
+      <DialogContent className="sm:max-w-2xl p-0 overflow-hidden rounded-xl border-border bg-background">
         <DialogTitle className="sr-only">{book.title}</DialogTitle>
 
-        {/* Cover — full width, natural aspect ratio */}
-        <div className="relative w-full">
-          <img
-            src={book.cover}
-            alt={book.title}
-            className="w-full h-auto object-contain"
-          />
-          {book.price && (
-            <span className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-body font-bold bg-secondary text-secondary-foreground shadow-md">
-              {book.price}
-            </span>
-          )}
-        </div>
-
-        {/* Details */}
-        <div className="px-5 pb-5 pt-2 flex flex-col gap-3">
-          <div>
-            <h2 className="font-display text-lg font-bold text-foreground leading-tight">
-              {book.title}
-            </h2>
-            <p className="font-body text-xs text-muted-foreground mt-0.5">
-              by {book.author}
-            </p>
+        <div className="grid sm:grid-cols-[220px_1fr]">
+          {/* Cover — left */}
+          <div className="relative bg-muted flex items-center justify-center p-4 sm:p-0">
+            <img
+              src={book.cover}
+              alt={book.title}
+              className="w-full h-auto object-contain sm:h-full sm:object-cover"
+            />
+            {book.price && (
+              <span className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-body font-bold bg-secondary text-secondary-foreground shadow-md">
+                {book.price}
+              </span>
+            )}
           </div>
 
-          {/* Rating */}
-          <div className="flex items-center gap-1">
-            {[1, 2, 3, 4, 5].map((s) => (
-              <Star
-                key={s}
-                size={13}
-                className={s <= 4 ? "fill-secondary text-secondary" : "text-border"}
-              />
-            ))}
-            <span className="font-body text-xs text-muted-foreground ml-1">4.0</span>
-          </div>
+          {/* Details — right */}
+          <div className="p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <p className="font-body text-xs uppercase tracking-[0.15em] text-secondary font-semibold mb-2">
+                Premium eBook
+              </p>
+              <h2 className="font-display text-2xl font-bold text-foreground leading-tight mb-1">
+                {book.title}
+              </h2>
+              <p className="font-body text-sm text-muted-foreground mb-4">
+                by {book.author}
+              </p>
 
-          {/* Actions */}
-          <div className="flex flex-col gap-2 mt-1">
-            <button className="flex items-center justify-center gap-2 w-full px-5 py-2.5 rounded-lg bg-secondary text-secondary-foreground font-body text-sm font-semibold hover:opacity-90 transition-opacity active:scale-[0.98]">
-              <ShoppingCart size={15} />
-              Buy Now — {book.price || "UShs 20,000"}
-            </button>
-            <button
-              onClick={handlePreview}
-              className="flex items-center justify-center gap-2 w-full px-5 py-2.5 rounded-lg border border-border text-foreground font-body text-sm font-medium hover:bg-muted transition-colors active:scale-[0.98]"
-            >
-              <Eye size={15} />
-              Preview PDF
-            </button>
+              {/* Rating */}
+              <div className="flex items-center gap-1 mb-4">
+                {[1, 2, 3, 4, 5].map((s) => (
+                  <Star
+                    key={s}
+                    size={14}
+                    className={s <= 4 ? "fill-secondary text-secondary" : "text-border"}
+                  />
+                ))}
+                <span className="font-body text-xs text-muted-foreground ml-1">4.0</span>
+              </div>
+
+              <p className="font-body text-sm text-foreground/70 leading-relaxed mb-6">
+                {book.description ||
+                  "A powerful and transformative resource to deepen your faith, unlock your potential, and step into your Kingdom purpose."}
+              </p>
+
+              {/* Price */}
+              <div className="mb-6">
+                <span className="font-display text-3xl font-bold text-foreground">
+                  {book.price || "UShs 20,000"}
+                </span>
+              </div>
+            </div>
+
+            {/* Actions */}
+            <div className="flex flex-col gap-3">
+              <button className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg bg-secondary text-secondary-foreground font-body text-sm font-semibold hover:opacity-90 transition-opacity active:scale-[0.98]">
+                <ShoppingCart size={16} />
+                Buy Now
+              </button>
+              <button
+                onClick={handlePreview}
+                className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg border border-border text-foreground font-body text-sm font-medium hover:bg-muted transition-colors active:scale-[0.98]"
+              >
+                <Eye size={16} />
+                Preview PDF
+              </button>
+            </div>
           </div>
         </div>
       </DialogContent>
