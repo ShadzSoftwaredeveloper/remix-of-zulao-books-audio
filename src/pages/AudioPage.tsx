@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 const AudioPage = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-24">
       <Navbar />
       <div className="page-header">
         <div className="relative z-10 site-container text-center">
