@@ -4,15 +4,24 @@ import { Play, Pause, SkipBack, SkipForward, Volume2, Heart } from "lucide-react
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import kingship1 from "@/assets/audio/kingship-1.jpg";
+import kingship2 from "@/assets/audio/kingship-2.jpg";
+import kingship3 from "@/assets/audio/kingship-3.jpg";
+import kingship4 from "@/assets/audio/kingship-4.jpg";
+import kingship5 from "@/assets/audio/kingship-5.jpg";
+import kingship10 from "@/assets/audio/kingship-10.jpg";
+import kingship11 from "@/assets/audio/kingship-11.jpg";
+import kingship12 from "@/assets/audio/kingship-12.jpg";
+
 const audioSeries = [
-  { title: "Kingship Part 1", album: "Kingship Series", duration: "12:45", plays: "8,230", price: "UShs 1,000", image: "https://zulaobusobozibwo.com/wp-content/uploads/woocommerce_uploads/2025/08/KINGSHIP-PART-1-he8y5o-mp3-image-bz5rsx-400x400.jpg" },
-  { title: "Kingship Part 2", album: "Kingship Series", duration: "15:20", plays: "6,540", price: "Free", image: "https://zulaobusobozibwo.com/wp-content/uploads/woocommerce_uploads/2025/08/KINGSHIP-PART-2-2hxzod-mp3-image-neon8g-400x400.jpg" },
-  { title: "Kingship Part 3", album: "Kingship Series", duration: "11:08", plays: "5,120", price: "Free", image: "https://zulaobusobozibwo.com/wp-content/uploads/woocommerce_uploads/2025/08/KINGSHIP-PART-3-ccjm5j-mp3-image-lbi44z-400x400.jpg" },
-  { title: "Kingship Part 4", album: "Kingship Series", duration: "14:55", plays: "4,890", price: "Free", image: "https://zulaobusobozibwo.com/wp-content/uploads/woocommerce_uploads/2025/08/KINGSHIP-PART-4-rvr0gt-mp3-image-zlavzj-400x400.jpg" },
-  { title: "Kingship Part 5", album: "Kingship Series", duration: "13:30", plays: "3,750", price: "Free", image: "https://zulaobusobozibwo.com/wp-content/uploads/woocommerce_uploads/2025/08/KINGSHIP-PART-5-bdgyu7-mp3-image-c4k38b-400x400.jpg" },
-  { title: "Kingship Part 10", album: "Kingship Series", duration: "16:12", plays: "2,910", price: "Free", image: "https://zulaobusobozibwo.com/wp-content/uploads/woocommerce_uploads/2025/08/KINHSHIP-PART-10-7nmpic-mp3-image-brmhlf-400x400.jpg" },
-  { title: "Kingship Part 11", album: "Kingship Series", duration: "10:45", plays: "2,340", price: "Free", image: "https://zulaobusobozibwo.com/wp-content/uploads/woocommerce_uploads/2025/08/KINHSHIP-PART-11-8t33gv-mp3-image-azvdzb-400x400.jpg" },
-  { title: "Kingship Part 12", album: "Kingship Series", duration: "18:00", plays: "1,890", price: "Free", image: "https://zulaobusobozibwo.com/wp-content/uploads/woocommerce_uploads/2025/08/KINHSHIP-PART-12-n8znp2-mp3-image-ok7r9n-400x400.jpg" },
+  { title: "Kingship Part 1", album: "Kingship Series", duration: "12:45", plays: "8,230", price: "UShs 1,000", image: kingship1 },
+  { title: "Kingship Part 2", album: "Kingship Series", duration: "15:20", plays: "6,540", price: "Free", image: kingship2 },
+  { title: "Kingship Part 3", album: "Kingship Series", duration: "11:08", plays: "5,120", price: "Free", image: kingship3 },
+  { title: "Kingship Part 4", album: "Kingship Series", duration: "14:55", plays: "4,890", price: "Free", image: kingship4 },
+  { title: "Kingship Part 5", album: "Kingship Series", duration: "13:30", plays: "3,750", price: "Free", image: kingship5 },
+  { title: "Kingship Part 10", album: "Kingship Series", duration: "16:12", plays: "2,910", price: "Free", image: kingship10 },
+  { title: "Kingship Part 11", album: "Kingship Series", duration: "10:45", plays: "2,340", price: "Free", image: kingship11 },
+  { title: "Kingship Part 12", album: "Kingship Series", duration: "18:00", plays: "1,890", price: "Free", image: kingship12 },
 ];
 
 const AudioSection = () => {
