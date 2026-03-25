@@ -205,7 +205,9 @@ const AudioSection = () => {
             </div>
 
             {/* Track Rows */}
-            {audioSeries.map((audio, i) => (
+            {audioSeries.filter(a => categoryFilter === "all" || a.category === categoryFilter).map((audio, i) => {
+              const originalIndex = audioSeries.indexOf(audio);
+              return (
               <button
                 key={i}
                 onClick={() => playTrack(i)}
