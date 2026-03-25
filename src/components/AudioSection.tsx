@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX, Heart, ArrowLeft } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useNavigate } from "react-router-dom";
 
 import kingship1 from "@/assets/audio/kingship-1.jpg";
@@ -15,14 +15,14 @@ import kingship11 from "@/assets/audio/kingship-11.jpg";
 import kingship12 from "@/assets/audio/kingship-12.jpg";
 
 const audioSeries = [
-  { title: "Endless Love of Jesus", album: "Gospel Reggae", duration: "4:16", plays: "8,230", price: "UShs 1,000", image: kingship1, src: "/audio/endless-love.mp3" },
-  { title: "Kingship Part 2", album: "Kingship Series", duration: "15:20", plays: "6,540", price: "Free", image: kingship2, src: "" },
-  { title: "Kingship Part 3", album: "Kingship Series", duration: "11:08", plays: "5,120", price: "Free", image: kingship3, src: "" },
-  { title: "Kingship Part 4", album: "Kingship Series", duration: "14:55", plays: "4,890", price: "Free", image: kingship4, src: "" },
-  { title: "Kingship Part 5", album: "Kingship Series", duration: "13:30", plays: "3,750", price: "Free", image: kingship5, src: "" },
-  { title: "Kingship Part 10", album: "Kingship Series", duration: "16:12", plays: "2,910", price: "Free", image: kingship10, src: "" },
-  { title: "Kingship Part 11", album: "Kingship Series", duration: "10:45", plays: "2,340", price: "Free", image: kingship11, src: "" },
-  { title: "Kingship Part 12", album: "Kingship Series", duration: "18:00", plays: "1,890", price: "Free", image: kingship12, src: "" },
+  { title: "Endless Love of Jesus", album: "Gospel Reggae", category: "spiritual", duration: "4:16", plays: "8,230", price: "UShs 1,000", image: kingship1, src: "/audio/endless-love.mp3" },
+  { title: "Kingship Part 2", album: "Kingship Series", category: "spiritual", duration: "15:20", plays: "6,540", price: "Free", image: kingship2, src: "" },
+  { title: "Kingship Part 3", album: "Kingship Series", category: "financial", duration: "11:08", plays: "5,120", price: "Free", image: kingship3, src: "" },
+  { title: "Kingship Part 4", album: "Kingship Series", category: "personal-discovery", duration: "14:55", plays: "4,890", price: "Free", image: kingship4, src: "" },
+  { title: "Kingship Part 5", album: "Kingship Series", category: "personal", duration: "13:30", plays: "3,750", price: "Free", image: kingship5, src: "" },
+  { title: "Kingship Part 10", album: "Kingship Series", category: "financial", duration: "16:12", plays: "2,910", price: "Free", image: kingship10, src: "" },
+  { title: "Kingship Part 11", album: "Kingship Series", category: "spiritual", duration: "10:45", plays: "2,340", price: "Free", image: kingship11, src: "" },
+  { title: "Kingship Part 12", album: "Kingship Series", category: "personal", duration: "18:00", plays: "1,890", price: "Free", image: kingship12, src: "" },
 ];
 
 const formatTime = (seconds: number) => {
@@ -41,6 +41,7 @@ const AudioSection = () => {
   const [volume, setVolume] = useState(75);
   const [muted, setMuted] = useState(false);
   const [liked, setLiked] = useState<Set<number>>(new Set());
+  const [categoryFilter, setCategoryFilter] = useState("all");
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const current = audioSeries[currentTrack];
@@ -178,13 +179,18 @@ const AudioSection = () => {
         >
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-display text-xl sm:text-2xl font-bold text-foreground">All Teachings</h2>
-            <Tabs defaultValue="all">
-              <TabsList>
-                <TabsTrigger value="all">All</TabsTrigger>
-                <TabsTrigger value="free">Free</TabsTrigger>
-                <TabsTrigger value="paid">Paid</TabsTrigger>
-              </TabsList>
-            </Tabs>
+            <Select value={categoryFilter} onValueChange={setCategoryFilter}>
+              <SelectTrigger className="w-[180px] font-body text-sm">
+                <SelectValue placeholder="Category" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Categories</SelectItem>
+                <SelectItem value="spiritual">Spiritual</SelectItem>
+                <SelectItem value="financial">Financial</SelectItem>
+                <SelectItem value="personal-discovery">Personal Discovery</SelectItem>
+                <SelectItem value="personal">Personal</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           <div className="bg-card rounded-xl border border-border overflow-hidden">
@@ -199,22 +205,24 @@ const AudioSection = () => {
             </div>
 
             {/* Track Rows */}
-            {audioSeries.map((audio, i) => (
+            {audioSeries.filter(a => categoryFilter === "all" || a.category === categoryFilter).map((audio, i) => {
+              const originalIndex = audioSeries.indexOf(audio);
+              return (
               <button
-                key={i}
-                onClick={() => playTrack(i)}
-                className={`w-full flex sm:grid sm:grid-cols-[40px_1fr_1fr_80px_80px_40px] gap-3 sm:gap-4 px-4 sm:px-5 py-3 items-center text-left transition-colors hover:bg-accent/50 ${currentTrack === i ? "bg-accent/30" : ""}`}
+                key={originalIndex}
+                onClick={() => playTrack(originalIndex)}
+                className={`w-full flex sm:grid sm:grid-cols-[40px_1fr_1fr_80px_80px_40px] gap-3 sm:gap-4 px-4 sm:px-5 py-3 items-center text-left transition-colors hover:bg-accent/50 ${currentTrack === originalIndex ? "bg-accent/30" : ""}`}
               >
                 {/* Number - hidden on mobile */}
-                <span className={`hidden sm:block font-body text-sm ${currentTrack === i ? "text-primary font-bold" : "text-muted-foreground"}`}>
-                  {currentTrack === i && isPlaying ? (
+                <span className={`hidden sm:block font-body text-sm ${currentTrack === originalIndex ? "text-primary font-bold" : "text-muted-foreground"}`}>
+                  {currentTrack === originalIndex && isPlaying ? (
                     <span className="flex items-center gap-[2px]">
                       <span className="w-[3px] h-3 bg-primary rounded-full animate-pulse" />
                       <span className="w-[3px] h-4 bg-primary rounded-full animate-pulse [animation-delay:150ms]" />
                       <span className="w-[3px] h-2 bg-primary rounded-full animate-pulse [animation-delay:300ms]" />
                     </span>
                   ) : (
-                    String(i + 1).padStart(2, "0")
+                    String(originalIndex + 1).padStart(2, "0")
                   )}
                 </span>
 
@@ -222,7 +230,7 @@ const AudioSection = () => {
                 <div className="flex items-center gap-3 min-w-0 flex-1">
                   <img src={audio.image} alt={audio.title} className="w-10 h-10 rounded-lg object-cover flex-shrink-0" />
                   <div className="min-w-0">
-                    <p className={`font-display text-sm font-semibold truncate ${currentTrack === i ? "text-primary" : "text-foreground"}`}>{audio.title}</p>
+                    <p className={`font-display text-sm font-semibold truncate ${currentTrack === originalIndex ? "text-primary" : "text-foreground"}`}>{audio.title}</p>
                     <p className="font-body text-xs text-muted-foreground">Zula Obusobozi Bwo</p>
                     <p className="font-body text-xs text-muted-foreground sm:hidden">{audio.duration}</p>
                   </div>
@@ -234,13 +242,14 @@ const AudioSection = () => {
                 <span className="hidden sm:block font-body text-sm text-muted-foreground">{audio.plays}</span>
 
                 <span
-                  onClick={(e) => { e.stopPropagation(); toggleLike(i); }}
+                  onClick={(e) => { e.stopPropagation(); toggleLike(originalIndex); }}
                   className="flex items-center justify-center flex-shrink-0"
                 >
-                  <Heart size={16} className={liked.has(i) ? "fill-destructive text-destructive" : "text-muted-foreground hover:text-foreground"} />
+                  <Heart size={16} className={liked.has(originalIndex) ? "fill-destructive text-destructive" : "text-muted-foreground hover:text-foreground"} />
                 </span>
               </button>
-            ))}
+              );
+            })}
           </div>
         </motion.div>
       </div>
