@@ -222,7 +222,7 @@ const AudioSection = () => {
                       <span className="w-[3px] h-2 bg-primary rounded-full animate-pulse [animation-delay:300ms]" />
                     </span>
                   ) : (
-                    String(i + 1).padStart(2, "0")
+                    String(originalIndex + 1).padStart(2, "0")
                   )}
                 </span>
 
@@ -230,7 +230,7 @@ const AudioSection = () => {
                 <div className="flex items-center gap-3 min-w-0 flex-1">
                   <img src={audio.image} alt={audio.title} className="w-10 h-10 rounded-lg object-cover flex-shrink-0" />
                   <div className="min-w-0">
-                    <p className={`font-display text-sm font-semibold truncate ${currentTrack === i ? "text-primary" : "text-foreground"}`}>{audio.title}</p>
+                    <p className={`font-display text-sm font-semibold truncate ${currentTrack === originalIndex ? "text-primary" : "text-foreground"}`}>{audio.title}</p>
                     <p className="font-body text-xs text-muted-foreground">Zula Obusobozi Bwo</p>
                     <p className="font-body text-xs text-muted-foreground sm:hidden">{audio.duration}</p>
                   </div>
