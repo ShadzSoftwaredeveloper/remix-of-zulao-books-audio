@@ -179,13 +179,18 @@ const AudioSection = () => {
         >
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-display text-xl sm:text-2xl font-bold text-foreground">All Teachings</h2>
-            <Tabs defaultValue="all">
-              <TabsList>
-                <TabsTrigger value="all">All</TabsTrigger>
-                <TabsTrigger value="free">Free</TabsTrigger>
-                <TabsTrigger value="paid">Paid</TabsTrigger>
-              </TabsList>
-            </Tabs>
+            <Select value={categoryFilter} onValueChange={setCategoryFilter}>
+              <SelectTrigger className="w-[180px] font-body text-sm">
+                <SelectValue placeholder="Category" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Categories</SelectItem>
+                <SelectItem value="spiritual">Spiritual</SelectItem>
+                <SelectItem value="financial">Financial</SelectItem>
+                <SelectItem value="personal-discovery">Personal Discovery</SelectItem>
+                <SelectItem value="personal">Personal</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           <div className="bg-card rounded-xl border border-border overflow-hidden">
