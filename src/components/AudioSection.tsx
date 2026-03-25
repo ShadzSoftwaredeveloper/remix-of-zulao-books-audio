@@ -242,13 +242,14 @@ const AudioSection = () => {
                 <span className="hidden sm:block font-body text-sm text-muted-foreground">{audio.plays}</span>
 
                 <span
-                  onClick={(e) => { e.stopPropagation(); toggleLike(i); }}
+                  onClick={(e) => { e.stopPropagation(); toggleLike(originalIndex); }}
                   className="flex items-center justify-center flex-shrink-0"
                 >
-                  <Heart size={16} className={liked.has(i) ? "fill-destructive text-destructive" : "text-muted-foreground hover:text-foreground"} />
+                  <Heart size={16} className={liked.has(originalIndex) ? "fill-destructive text-destructive" : "text-muted-foreground hover:text-foreground"} />
                 </span>
               </button>
-            ))}
+              );
+            })}
           </div>
         </motion.div>
       </div>
