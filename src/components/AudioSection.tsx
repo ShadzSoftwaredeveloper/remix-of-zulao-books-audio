@@ -209,13 +209,13 @@ const AudioSection = () => {
               const originalIndex = audioSeries.indexOf(audio);
               return (
               <button
-                key={i}
-                onClick={() => playTrack(i)}
-                className={`w-full flex sm:grid sm:grid-cols-[40px_1fr_1fr_80px_80px_40px] gap-3 sm:gap-4 px-4 sm:px-5 py-3 items-center text-left transition-colors hover:bg-accent/50 ${currentTrack === i ? "bg-accent/30" : ""}`}
+                key={originalIndex}
+                onClick={() => playTrack(originalIndex)}
+                className={`w-full flex sm:grid sm:grid-cols-[40px_1fr_1fr_80px_80px_40px] gap-3 sm:gap-4 px-4 sm:px-5 py-3 items-center text-left transition-colors hover:bg-accent/50 ${currentTrack === originalIndex ? "bg-accent/30" : ""}`}
               >
                 {/* Number - hidden on mobile */}
-                <span className={`hidden sm:block font-body text-sm ${currentTrack === i ? "text-primary font-bold" : "text-muted-foreground"}`}>
-                  {currentTrack === i && isPlaying ? (
+                <span className={`hidden sm:block font-body text-sm ${currentTrack === originalIndex ? "text-primary font-bold" : "text-muted-foreground"}`}>
+                  {currentTrack === originalIndex && isPlaying ? (
                     <span className="flex items-center gap-[2px]">
                       <span className="w-[3px] h-3 bg-primary rounded-full animate-pulse" />
                       <span className="w-[3px] h-4 bg-primary rounded-full animate-pulse [animation-delay:150ms]" />
