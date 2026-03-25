@@ -15,14 +15,14 @@ import kingship11 from "@/assets/audio/kingship-11.jpg";
 import kingship12 from "@/assets/audio/kingship-12.jpg";
 
 const audioSeries = [
-  { title: "Endless Love of Jesus", album: "Gospel Reggae", duration: "4:16", plays: "8,230", price: "UShs 1,000", image: kingship1, src: "/audio/endless-love.mp3" },
-  { title: "Kingship Part 2", album: "Kingship Series", duration: "15:20", plays: "6,540", price: "Free", image: kingship2, src: "" },
-  { title: "Kingship Part 3", album: "Kingship Series", duration: "11:08", plays: "5,120", price: "Free", image: kingship3, src: "" },
-  { title: "Kingship Part 4", album: "Kingship Series", duration: "14:55", plays: "4,890", price: "Free", image: kingship4, src: "" },
-  { title: "Kingship Part 5", album: "Kingship Series", duration: "13:30", plays: "3,750", price: "Free", image: kingship5, src: "" },
-  { title: "Kingship Part 10", album: "Kingship Series", duration: "16:12", plays: "2,910", price: "Free", image: kingship10, src: "" },
-  { title: "Kingship Part 11", album: "Kingship Series", duration: "10:45", plays: "2,340", price: "Free", image: kingship11, src: "" },
-  { title: "Kingship Part 12", album: "Kingship Series", duration: "18:00", plays: "1,890", price: "Free", image: kingship12, src: "" },
+  { title: "Endless Love of Jesus", album: "Gospel Reggae", category: "spiritual", duration: "4:16", plays: "8,230", price: "UShs 1,000", image: kingship1, src: "/audio/endless-love.mp3" },
+  { title: "Kingship Part 2", album: "Kingship Series", category: "spiritual", duration: "15:20", plays: "6,540", price: "Free", image: kingship2, src: "" },
+  { title: "Kingship Part 3", album: "Kingship Series", category: "financial", duration: "11:08", plays: "5,120", price: "Free", image: kingship3, src: "" },
+  { title: "Kingship Part 4", album: "Kingship Series", category: "personal-discovery", duration: "14:55", plays: "4,890", price: "Free", image: kingship4, src: "" },
+  { title: "Kingship Part 5", album: "Kingship Series", category: "personal", duration: "13:30", plays: "3,750", price: "Free", image: kingship5, src: "" },
+  { title: "Kingship Part 10", album: "Kingship Series", category: "financial", duration: "16:12", plays: "2,910", price: "Free", image: kingship10, src: "" },
+  { title: "Kingship Part 11", album: "Kingship Series", category: "spiritual", duration: "10:45", plays: "2,340", price: "Free", image: kingship11, src: "" },
+  { title: "Kingship Part 12", album: "Kingship Series", category: "personal", duration: "18:00", plays: "1,890", price: "Free", image: kingship12, src: "" },
 ];
 
 const formatTime = (seconds: number) => {
