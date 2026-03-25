@@ -315,8 +315,6 @@ const AudioSection = () => {
         </div>
       </div>
 
-      {/* Hidden audio element */}
-      <audio ref={audioRef} preload="metadata" />
     </section>
   );
 };
