@@ -41,6 +41,7 @@ const AudioSection = () => {
   const [volume, setVolume] = useState(75);
   const [muted, setMuted] = useState(false);
   const [liked, setLiked] = useState<Set<number>>(new Set());
+  const [categoryFilter, setCategoryFilter] = useState("all");
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const current = audioSeries[currentTrack];
