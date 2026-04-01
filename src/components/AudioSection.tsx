@@ -202,6 +202,7 @@ const AudioSection = () => {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Categories</SelectItem>
+                <SelectItem value="kingship">Kingship</SelectItem>
                 <SelectItem value="spiritual">Spiritual</SelectItem>
                 <SelectItem value="financial">Financial</SelectItem>
                 <SelectItem value="personal-discovery">Personal Discovery</SelectItem>
