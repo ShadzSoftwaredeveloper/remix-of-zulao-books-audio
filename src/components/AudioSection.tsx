@@ -4,43 +4,7 @@ import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX, Heart, ArrowLeft 
 import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useNavigate } from "react-router-dom";
-
-import kingship1 from "@/assets/audio/kingship-1.jpg";
-import kingship2 from "@/assets/audio/kingship-2.jpg";
-import kingship3 from "@/assets/audio/kingship-3.jpg";
-import kingship4 from "@/assets/audio/kingship-4.jpg";
-import kingship5 from "@/assets/audio/kingship-5.jpg";
-import kingship10 from "@/assets/audio/kingship-10.jpg";
-import kingship11 from "@/assets/audio/kingship-11.jpg";
-import kingship12 from "@/assets/audio/kingship-12.jpg";
-
-import kingshipAudio1 from "@/assets/audio/KINGSHIP/KINGSHIP PART 1.mp3";
-import kingshipAudio2 from "@/assets/audio/KINGSHIP/KINGSHIP PART 2  .mp3";
-import kingshipAudio3 from "@/assets/audio/KINGSHIP/KINGSHIP PART 3 .mp3";
-import kingshipAudio4 from "@/assets/audio/KINGSHIP/KINGSHIP PART 4 .mp3";
-import kingshipAudio5 from "@/assets/audio/KINGSHIP/KINGSHIP PART 5 .mp3";
-import kingshipAudio6 from "@/assets/audio/KINGSHIP/KINGSHIP PART 6   .mp3";
-import kingshipAudio7 from "@/assets/audio/KINGSHIP/KINGSHIP PART 7  .mp3";
-import kingshipAudio8 from "@/assets/audio/KINGSHIP/KINGSHIP PART 8  .mp3";
-import kingshipAudio9 from "@/assets/audio/KINGSHIP/KINGSHIP PART 9  .mp3";
-import kingshipAudio10 from "@/assets/audio/KINGSHIP/KINHSHIP  PART 10 .mp3";
-import kingshipAudio11 from "@/assets/audio/KINGSHIP/KINHSHIP  PART 11 .mp3";
-import kingshipAudio12 from "@/assets/audio/KINGSHIP/KINHSHIP  PART 12 .mp3";
-
-const audioSeries = [
-  { title: "Kingship Part 1", album: "Kingship Series", category: "kingship", duration: "4:16", plays: "8,230", price: "Free", image: kingship1, src: kingshipAudio1 },
-  { title: "Kingship Part 2", album: "Kingship Series", category: "kingship", duration: "15:20", plays: "6,540", price: "Free", image: kingship2, src: kingshipAudio2 },
-  { title: "Kingship Part 3", album: "Kingship Series", category: "kingship", duration: "11:08", plays: "5,120", price: "Free", image: kingship3, src: kingshipAudio3 },
-  { title: "Kingship Part 4", album: "Kingship Series", category: "kingship", duration: "14:55", plays: "4,890", price: "Free", image: kingship4, src: kingshipAudio4 },
-  { title: "Kingship Part 5", album: "Kingship Series", category: "kingship", duration: "13:30", plays: "3,750", price: "Free", image: kingship5, src: kingshipAudio5 },
-  { title: "Kingship Part 6", album: "Kingship Series", category: "kingship", duration: "12:00", plays: "3,200", price: "Free", image: kingship1, src: kingshipAudio6 },
-  { title: "Kingship Part 7", album: "Kingship Series", category: "kingship", duration: "14:10", plays: "2,980", price: "Free", image: kingship1, src: kingshipAudio7 },
-  { title: "Kingship Part 8", album: "Kingship Series", category: "kingship", duration: "11:45", plays: "2,750", price: "Free", image: kingship1, src: kingshipAudio8 },
-  { title: "Kingship Part 9", album: "Kingship Series", category: "kingship", duration: "13:20", plays: "2,600", price: "Free", image: kingship1, src: kingshipAudio9 },
-  { title: "Kingship Part 10", album: "Kingship Series", category: "kingship", duration: "16:12", plays: "2,910", price: "Free", image: kingship10, src: kingshipAudio10 },
-  { title: "Kingship Part 11", album: "Kingship Series", category: "kingship", duration: "10:45", plays: "2,340", price: "Free", image: kingship11, src: kingshipAudio11 },
-  { title: "Kingship Part 12", album: "Kingship Series", category: "kingship", duration: "18:00", plays: "1,890", price: "Free", image: kingship12, src: kingshipAudio12 },
-];
+import { audioSeries, categories } from "@/data/audioData";
 
 const formatTime = (seconds: number) => {
   if (isNaN(seconds)) return "0:00";
@@ -201,12 +165,9 @@ const AudioSection = () => {
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Categories</SelectItem>
-                <SelectItem value="kingship">Kingship</SelectItem>
-                <SelectItem value="spiritual">Spiritual</SelectItem>
-                <SelectItem value="financial">Financial</SelectItem>
-                <SelectItem value="personal-discovery">Personal Discovery</SelectItem>
-                <SelectItem value="personal">Personal</SelectItem>
+                {categories.map((cat) => (
+                  <SelectItem key={cat.value} value={cat.value}>{cat.label}</SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>
@@ -223,7 +184,7 @@ const AudioSection = () => {
             </div>
 
             {/* Track Rows */}
-            {audioSeries.filter(a => categoryFilter === "all" || a.category === categoryFilter).map((audio, i) => {
+            {audioSeries.filter(a => categoryFilter === "all" || a.category === categoryFilter).map((audio) => {
               const originalIndex = audioSeries.indexOf(audio);
               return (
               <button
