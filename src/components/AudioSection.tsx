@@ -125,7 +125,7 @@ const AudioSection = () => {
           <span className="font-body text-sm">Back to Home</span>
         </button>
 
-        {/* Recommended Albums */}
+        {/* Recommended Teachings - Category Cards */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -135,19 +135,24 @@ const AudioSection = () => {
             Recommended Teachings
           </h2>
           <div className="flex gap-4 sm:gap-5 overflow-x-auto pb-4 scrollbar-hide">
-            {audioSeries.slice(0, 6).map((audio, i) => (
-              <button
-                key={i}
-                onClick={() => playTrack(i)}
-                className={`flex-shrink-0 text-left group transition-all ${currentTrack === i ? "scale-105" : ""}`}
-              >
-                <div className={`w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden shadow-md ring-2 transition-all ${currentTrack === i ? "ring-primary" : "ring-transparent"}`}>
-                  <img src={audio.image} alt={audio.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-                </div>
-                <p className="font-display text-xs sm:text-sm font-semibold text-foreground mt-2 truncate w-28 sm:w-36">{audio.title}</p>
-                <p className="font-body text-xs text-muted-foreground">{audio.plays} plays</p>
-              </button>
-            ))}
+            {categories.filter(cat => cat.value !== "all").map((cat) => {
+              const catTracks = audioSeries.filter(a => a.category === cat.value);
+              const firstTrack = catTracks[0];
+              const firstTrackIndex = audioSeries.indexOf(firstTrack);
+              return (
+                <button
+                  key={cat.value}
+                  onClick={() => { setCategoryFilter(cat.value); playTrack(firstTrackIndex); }}
+                  className={`flex-shrink-0 text-left group transition-all ${categoryFilter === cat.value ? "scale-105" : ""}`}
+                >
+                  <div className={`w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden shadow-md ring-2 transition-all ${categoryFilter === cat.value ? "ring-primary" : "ring-transparent"}`}>
+                    <img src={firstTrack?.image} alt={cat.label} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                  </div>
+                  <p className="font-display text-xs sm:text-sm font-semibold text-foreground mt-2 truncate w-28 sm:w-36">{cat.label}</p>
+                  <p className="font-body text-xs text-muted-foreground">{catTracks.length} tracks</p>
+                </button>
+              );
+            })}
           </div>
         </motion.div>
 
