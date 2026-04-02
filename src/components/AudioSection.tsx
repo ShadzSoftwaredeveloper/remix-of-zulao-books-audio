@@ -292,7 +292,7 @@ const AudioSection = () => {
                 className="flex-1"
               />
               <span className="font-body text-[10px] sm:text-xs text-muted-foreground w-8 sm:w-10">
-                {duration > 0 ? formatTime(duration) : current.duration}
+                {duration > 0 ? formatTime(duration) : (trackDurations[currentTrack] || current.duration)}
               </span>
             </div>
           </div>
