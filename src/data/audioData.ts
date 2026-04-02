@@ -7,6 +7,9 @@ import kingship5 from "@/assets/audio/kingship-5.jpg";
 import kingship10 from "@/assets/audio/kingship-10.jpg";
 import kingship11 from "@/assets/audio/kingship-11.jpg";
 import kingship12 from "@/assets/audio/kingship-12.jpg";
+import spiritualCover from "@/assets/images/spiritual-cover.jpg";
+import financialCover from "@/assets/images/financial-cover.jpg";
+import personalDiscoveryCover from "@/assets/images/personal-discovery-cover.jpg";
 
 // ── KINGSHIP Series ──
 import kingshipAudio1 from "@/assets/audio/KINGSHIP/KINGSHIP PART 1.mp3";
@@ -84,8 +87,6 @@ export interface AudioTrack {
   src: string;
 }
 
-// Default placeholder image for non-kingship tracks
-const defaultImage = kingship1;
 
 export const audioSeries: AudioTrack[] = [
   // ── KINGSHIP (12 tracks) ──
@@ -103,55 +104,55 @@ export const audioSeries: AudioTrack[] = [
   { title: "Kingship Part 12", album: "Kingship Series", category: "kingship", duration: "18:00", plays: "1,890", price: "Free", image: kingship12, src: kingshipAudio12 },
 
   // ── SPIRITUAL MESSAGES (20 tracks) ──
-  { title: "Time and Season Intro", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "1,200", price: "Free", image: defaultImage, src: spiritual1 },
-  { title: "Ensi Etubanja Obusobozi Bwaffe", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "1,100", price: "Free", image: defaultImage, src: spiritual2 },
-  { title: "Ebyobugagga Bina Yesu Byeyatuwa", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "1,050", price: "Free", image: defaultImage, src: spiritual3 },
-  { title: "Emeeme Y'Omuntu", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "980", price: "Free", image: defaultImage, src: spiritual4 },
-  { title: "Obulamu Bwekyoto Program", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "950", price: "Free", image: defaultImage, src: spiritual5 },
-  { title: "Obuvunanyizibwa Bw'Omuntu Eri Katonda", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "920", price: "Free", image: defaultImage, src: spiritual6 },
-  { title: "Obwakabaka Bwa Katonda", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "900", price: "Free", image: defaultImage, src: spiritual7 },
-  { title: "Amaanyi Ga Katonda", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "880", price: "Free", image: defaultImage, src: spiritual8 },
-  { title: "Being the Right Candidate for God's Miracles", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "860", price: "Free", image: defaultImage, src: spiritual9 },
-  { title: "Ekifo Kyo Mubuwereza", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "840", price: "Free", image: defaultImage, src: spiritual10 },
-  { title: "Ekyaama Ekitukumira Ku Kyoto", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "820", price: "Free", image: defaultImage, src: spiritual11 },
-  { title: "Ensi Y'Omwoyo", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "800", price: "Free", image: defaultImage, src: spiritual12 },
-  { title: "Ensi Yomwoyo Ogimanyi", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "780", price: "Free", image: defaultImage, src: spiritual13 },
-  { title: "Kyooli Mu Mwoyo", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "760", price: "Free", image: defaultImage, src: spiritual14 },
-  { title: "Obulamu Bwekyoto", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "740", price: "Free", image: defaultImage, src: spiritual15 },
-  { title: "Obulamu Obujjudde Intro", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "720", price: "Free", image: defaultImage, src: spiritual16 },
-  { title: "Obulamu Obujjudde Intro 2", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "700", price: "Free", image: defaultImage, src: spiritual17 },
-  { title: "Obulamu Obujudde Buvunanyizibwa", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "680", price: "Free", image: defaultImage, src: spiritual18 },
-  { title: "Obuziba Bwesaala", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "660", price: "Free", image: defaultImage, src: spiritual19 },
-  { title: "Okubatizibwa", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "640", price: "Free", image: defaultImage, src: spiritual20 },
+  { title: "Time and Season Intro", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "1,200", price: "Free", image: spiritualCover, src: spiritual1 },
+  { title: "Ensi Etubanja Obusobozi Bwaffe", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "1,100", price: "Free", image: spiritualCover, src: spiritual2 },
+  { title: "Ebyobugagga Bina Yesu Byeyatuwa", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "1,050", price: "Free", image: spiritualCover, src: spiritual3 },
+  { title: "Emeeme Y'Omuntu", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "980", price: "Free", image: spiritualCover, src: spiritual4 },
+  { title: "Obulamu Bwekyoto Program", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "950", price: "Free", image: spiritualCover, src: spiritual5 },
+  { title: "Obuvunanyizibwa Bw'Omuntu Eri Katonda", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "920", price: "Free", image: spiritualCover, src: spiritual6 },
+  { title: "Obwakabaka Bwa Katonda", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "900", price: "Free", image: spiritualCover, src: spiritual7 },
+  { title: "Amaanyi Ga Katonda", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "880", price: "Free", image: spiritualCover, src: spiritual8 },
+  { title: "Being the Right Candidate for God's Miracles", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "860", price: "Free", image: spiritualCover, src: spiritual9 },
+  { title: "Ekifo Kyo Mubuwereza", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "840", price: "Free", image: spiritualCover, src: spiritual10 },
+  { title: "Ekyaama Ekitukumira Ku Kyoto", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "820", price: "Free", image: spiritualCover, src: spiritual11 },
+  { title: "Ensi Y'Omwoyo", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "800", price: "Free", image: spiritualCover, src: spiritual12 },
+  { title: "Ensi Yomwoyo Ogimanyi", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "780", price: "Free", image: spiritualCover, src: spiritual13 },
+  { title: "Kyooli Mu Mwoyo", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "760", price: "Free", image: spiritualCover, src: spiritual14 },
+  { title: "Obulamu Bwekyoto", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "740", price: "Free", image: spiritualCover, src: spiritual15 },
+  { title: "Obulamu Obujjudde Intro", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "720", price: "Free", image: spiritualCover, src: spiritual16 },
+  { title: "Obulamu Obujjudde Intro 2", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "700", price: "Free", image: spiritualCover, src: spiritual17 },
+  { title: "Obulamu Obujudde Buvunanyizibwa", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "680", price: "Free", image: spiritualCover, src: spiritual18 },
+  { title: "Obuziba Bwesaala", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "660", price: "Free", image: spiritualCover, src: spiritual19 },
+  { title: "Okubatizibwa", album: "Spiritual Messages", category: "spiritual", duration: "--:--", plays: "640", price: "Free", image: spiritualCover, src: spiritual20 },
 
   // ── FINANCIAL & BUSINESS INSIGHTS (7 tracks) ──
-  { title: "Planning Part 2", album: "Financial & Business Insights", category: "financial", duration: "--:--", plays: "1,500", price: "Free", image: defaultImage, src: financial1 },
-  { title: "Obulungi Obuli Mu Kukola", album: "Financial & Business Insights", category: "financial", duration: "--:--", plays: "1,400", price: "Free", image: defaultImage, src: financial2 },
-  { title: "Omutawaana Gw'Obutaba Na'Sente", album: "Financial & Business Insights", category: "financial", duration: "--:--", plays: "1,350", price: "Free", image: defaultImage, src: financial3 },
-  { title: "Partnership", album: "Financial & Business Insights", category: "financial", duration: "--:--", plays: "1,300", price: "Free", image: defaultImage, src: financial4 },
-  { title: "Planning", album: "Financial & Business Insights", category: "financial", duration: "--:--", plays: "1,250", price: "Free", image: defaultImage, src: financial5 },
-  { title: "The Generation of the Geniuses", album: "Financial & Business Insights", category: "financial", duration: "--:--", plays: "1,200", price: "Free", image: defaultImage, src: financial6 },
-  { title: "Work Before Full Time Ministry", album: "Financial & Business Insights", category: "financial", duration: "--:--", plays: "1,150", price: "Free", image: defaultImage, src: financial7 },
+  { title: "Planning Part 2", album: "Financial & Business Insights", category: "financial", duration: "--:--", plays: "1,500", price: "Free", image: financialCover, src: financial1 },
+  { title: "Obulungi Obuli Mu Kukola", album: "Financial & Business Insights", category: "financial", duration: "--:--", plays: "1,400", price: "Free", image: financialCover, src: financial2 },
+  { title: "Omutawaana Gw'Obutaba Na'Sente", album: "Financial & Business Insights", category: "financial", duration: "--:--", plays: "1,350", price: "Free", image: financialCover, src: financial3 },
+  { title: "Partnership", album: "Financial & Business Insights", category: "financial", duration: "--:--", plays: "1,300", price: "Free", image: financialCover, src: financial4 },
+  { title: "Planning", album: "Financial & Business Insights", category: "financial", duration: "--:--", plays: "1,250", price: "Free", image: financialCover, src: financial5 },
+  { title: "The Generation of the Geniuses", album: "Financial & Business Insights", category: "financial", duration: "--:--", plays: "1,200", price: "Free", image: financialCover, src: financial6 },
+  { title: "Work Before Full Time Ministry", album: "Financial & Business Insights", category: "financial", duration: "--:--", plays: "1,150", price: "Free", image: financialCover, src: financial7 },
 
   // ── PERSONAL DISCOVERY & DEVELOPMENT (18 tracks) ──
-  { title: "Ensobi Z'wakola Oluvanyuma Lwa Lock Down", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "1,000", price: "Free", image: defaultImage, src: personal1 },
-  { title: "Anaremererwa (YouTube)", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "980", price: "Free", image: defaultImage, src: personal2 },
-  { title: "Benefits of Serving God 2", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "960", price: "Free", image: defaultImage, src: personal3 },
-  { title: "Emikutu Mwoyisiza Obusobozi", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "940", price: "Free", image: defaultImage, src: personal4 },
-  { title: "Engeri Gyozuulamu Obusobozi Bwo 3", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "920", price: "Free", image: defaultImage, src: personal5 },
-  { title: "Enkolaganayo Nabantu", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "900", price: "Free", image: defaultImage, src: personal6 },
-  { title: "Obuwereza Bwebweeru 2", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "880", price: "Free", image: defaultImage, src: personal7 },
-  { title: "Oprah Winfrey", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "860", price: "Free", image: defaultImage, src: personal8 },
-  { title: "Obuwereeza Bwewabwelu", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "840", price: "Free", image: defaultImage, src: personal9 },
-  { title: "Okwogera Kugaggawaza (Public Speaking)", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "820", price: "Free", image: defaultImage, src: personal10 },
-  { title: "Avoid Perfectionism (Extended)", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "800", price: "Free", image: defaultImage, src: personal11 },
-  { title: "Avoid Perfectionism", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "780", price: "Free", image: defaultImage, src: personal12 },
-  { title: "Ekirabo N'Omulimu Gwo Obwawula", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "760", price: "Free", image: defaultImage, src: personal13 },
-  { title: "Motivational Speakers", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "740", price: "Free", image: defaultImage, src: personal14 },
-  { title: "Okwogera Nakwo Kitone", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "720", price: "Free", image: defaultImage, src: personal15 },
-  { title: "Omulimu Gwabogerezi", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "700", price: "Free", image: defaultImage, src: personal16 },
-  { title: "Omulimu Ogwange Gwenayitibwa Okukola", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "680", price: "Free", image: defaultImage, src: personal17 },
-  { title: "Omuwendo Gw'Obulamu 1", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "660", price: "Free", image: defaultImage, src: personal18 },
+  { title: "Ensobi Z'wakola Oluvanyuma Lwa Lock Down", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "1,000", price: "Free", image: personalDiscoveryCover, src: personal1 },
+  { title: "Anaremererwa (YouTube)", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "980", price: "Free", image: personalDiscoveryCover, src: personal2 },
+  { title: "Benefits of Serving God 2", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "960", price: "Free", image: personalDiscoveryCover, src: personal3 },
+  { title: "Emikutu Mwoyisiza Obusobozi", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "940", price: "Free", image: personalDiscoveryCover, src: personal4 },
+  { title: "Engeri Gyozuulamu Obusobozi Bwo 3", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "920", price: "Free", image: personalDiscoveryCover, src: personal5 },
+  { title: "Enkolaganayo Nabantu", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "900", price: "Free", image: personalDiscoveryCover, src: personal6 },
+  { title: "Obuwereza Bwebweeru 2", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "880", price: "Free", image: personalDiscoveryCover, src: personal7 },
+  { title: "Oprah Winfrey", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "860", price: "Free", image: personalDiscoveryCover, src: personal8 },
+  { title: "Obuwereeza Bwewabwelu", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "840", price: "Free", image: personalDiscoveryCover, src: personal9 },
+  { title: "Okwogera Kugaggawaza (Public Speaking)", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "820", price: "Free", image: personalDiscoveryCover, src: personal10 },
+  { title: "Avoid Perfectionism (Extended)", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "800", price: "Free", image: personalDiscoveryCover, src: personal11 },
+  { title: "Avoid Perfectionism", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "780", price: "Free", image: personalDiscoveryCover, src: personal12 },
+  { title: "Ekirabo N'Omulimu Gwo Obwawula", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "760", price: "Free", image: personalDiscoveryCover, src: personal13 },
+  { title: "Motivational Speakers", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "740", price: "Free", image: personalDiscoveryCover, src: personal14 },
+  { title: "Okwogera Nakwo Kitone", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "720", price: "Free", image: personalDiscoveryCover, src: personal15 },
+  { title: "Omulimu Gwabogerezi", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "700", price: "Free", image: personalDiscoveryCover, src: personal16 },
+  { title: "Omulimu Ogwange Gwenayitibwa Okukola", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "680", price: "Free", image: personalDiscoveryCover, src: personal17 },
+  { title: "Omuwendo Gw'Obulamu 1", album: "Personal Discovery", category: "personal-discovery", duration: "--:--", plays: "660", price: "Free", image: personalDiscoveryCover, src: personal18 },
 ];
 
 export const categories = [
