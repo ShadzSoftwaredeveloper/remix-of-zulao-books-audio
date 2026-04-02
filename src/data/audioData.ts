@@ -87,8 +87,12 @@ export interface AudioTrack {
   src: string;
 }
 
-// Default placeholder image for non-kingship tracks
-const defaultImage = kingship1;
+// Category cover images
+const categoryImages: Record<string, string> = {
+  spiritual: spiritualCover,
+  financial: financialCover,
+  "personal-discovery": personalDiscoveryCover,
+};
 
 export const audioSeries: AudioTrack[] = [
   // ── KINGSHIP (12 tracks) ──
