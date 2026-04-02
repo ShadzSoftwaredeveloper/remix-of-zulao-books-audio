@@ -23,9 +23,23 @@ const AudioSection = () => {
   const [muted, setMuted] = useState(false);
   const [liked, setLiked] = useState<Set<number>>(new Set());
   const [categoryFilter, setCategoryFilter] = useState("all");
+  const [trackDurations, setTrackDurations] = useState<Record<number, string>>({});
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const current = audioSeries[currentTrack];
+
+  // Load real durations from audio metadata
+  useEffect(() => {
+    audioSeries.forEach((track, index) => {
+      if (!track.src) return;
+      const tempAudio = new Audio();
+      tempAudio.preload = "metadata";
+      tempAudio.src = track.src;
+      tempAudio.addEventListener("loadedmetadata", () => {
+        setTrackDurations(prev => ({ ...prev, [index]: formatTime(tempAudio.duration) }));
+      });
+    });
+  }, []);
 
   // Initialize audio element
   useEffect(() => {
