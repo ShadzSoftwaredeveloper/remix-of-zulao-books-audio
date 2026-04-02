@@ -1,33 +1,24 @@
 
 
-## Plan: Wire KINGSHIP audio files to the player
+## Plan: Make Recommended Teachings show category cards
 
-### What we have
-The `src/assets/audio/KINGSHIP/` folder contains 12 MP3 files (Parts 1-12). Currently the `audioSeries` array in `AudioSection.tsx` references 8 tracks with placeholder data and empty `src` values (except track 1 which points to a non-existent `/audio/endless-love.mp3`).
+Currently the "Recommended Teachings" section shows the first 6 individual tracks. We'll replace it with 4 category cards that, when clicked, set the category filter and scroll to the track list.
 
-### What we will do
+### Changes
 
-**File: `src/components/AudioSection.tsx`**
+**File: `src/components/AudioSection.tsx` (lines 128–152)**
 
-1. **Import all 12 KINGSHIP MP3s** using Vite asset imports (same pattern as the existing image imports):
-   ```
-   import kingshipAudio1 from "@/assets/audio/KINGSHIP/KINGSHIP PART 1.mp3";
-   import kingshipAudio2 from "@/assets/audio/KINGSHIP/KINGSHIP PART 2  .mp3";
-   ...through Part 12 (note the typo "KINHSHIP" for parts 10-12 and trailing spaces)
-   ```
+Replace the current recommended section with 4 category cards derived from the `categories` array (excluding "all"). Each card will:
+- Show the category name (e.g. "Kingship", "Spiritual Messages", etc.)
+- Display the track count for that category
+- Use the first track's cover image from that category as the card image
+- On click: set `categoryFilter` to that category value and play the first track in that category
 
-2. **Expand `audioSeries` to all 12 Kingship parts**, assigning:
-   - `src` to the imported MP3 module for each part
-   - Existing cover images (kingship1-5, kingship10-12) reused; for parts 6-9 we will reuse kingship1 as a placeholder cover
-   - `category: "kingship"` for all 12 tracks
-   - `album: "Kingship Series"` for all
+The layout stays the same horizontal scroll of cards, but now represents categories instead of individual tracks.
 
-3. **Add "Kingship" to the category filter dropdown** so users can filter to just this series.
+### Technical detail
 
-4. **Update the "Recommended Teachings" carousel** to show up to 6 Kingship tracks (no logic change needed since it already uses `slice(0, 6)`).
-
-### Technical notes
-- Vite handles MP3 imports as static assets, returning a URL string -- same mechanism as the JPG imports already in use.
-- File names have trailing spaces and a typo ("KINHSHIP") which must be matched exactly in the import paths.
-- No new dependencies required.
+- Derive category cards by filtering `audioSeries` to get the first track per category (for cover image) and counting tracks per category
+- Skip "all" from the categories list
+- On click, call `setCategoryFilter(cat.value)` and `playTrack(firstTrackIndex)`
 
