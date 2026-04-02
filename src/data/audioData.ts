@@ -7,6 +7,9 @@ import kingship5 from "@/assets/audio/kingship-5.jpg";
 import kingship10 from "@/assets/audio/kingship-10.jpg";
 import kingship11 from "@/assets/audio/kingship-11.jpg";
 import kingship12 from "@/assets/audio/kingship-12.jpg";
+import spiritualCover from "@/assets/images/spiritual-cover.jpg";
+import financialCover from "@/assets/images/financial-cover.jpg";
+import personalDiscoveryCover from "@/assets/images/personal-discovery-cover.jpg";
 
 // ── KINGSHIP Series ──
 import kingshipAudio1 from "@/assets/audio/KINGSHIP/KINGSHIP PART 1.mp3";
