@@ -230,7 +230,7 @@ const AudioSection = () => {
                   <div className="min-w-0">
                     <p className={`font-display text-sm font-semibold truncate ${currentTrack === originalIndex ? "text-primary" : "text-foreground"}`}>{audio.title}</p>
                     <p className="font-body text-xs text-muted-foreground">Zula Obusobozi Bwo</p>
-                    <p className="font-body text-xs text-muted-foreground sm:hidden">{audio.duration}</p>
+                    <p className="font-body text-xs text-muted-foreground sm:hidden">{trackDurations[originalIndex] || audio.duration}</p>
                   </div>
                 </div>
 
