@@ -23,9 +23,23 @@ const AudioSection = () => {
   const [muted, setMuted] = useState(false);
   const [liked, setLiked] = useState<Set<number>>(new Set());
   const [categoryFilter, setCategoryFilter] = useState("all");
+  const [trackDurations, setTrackDurations] = useState<Record<number, string>>({});
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const current = audioSeries[currentTrack];
+
+  // Load real durations from audio metadata
+  useEffect(() => {
+    audioSeries.forEach((track, index) => {
+      if (!track.src) return;
+      const tempAudio = new Audio();
+      tempAudio.preload = "metadata";
+      tempAudio.src = track.src;
+      tempAudio.addEventListener("loadedmetadata", () => {
+        setTrackDurations(prev => ({ ...prev, [index]: formatTime(tempAudio.duration) }));
+      });
+    });
+  }, []);
 
   // Initialize audio element
   useEffect(() => {
@@ -216,13 +230,13 @@ const AudioSection = () => {
                   <div className="min-w-0">
                     <p className={`font-display text-sm font-semibold truncate ${currentTrack === originalIndex ? "text-primary" : "text-foreground"}`}>{audio.title}</p>
                     <p className="font-body text-xs text-muted-foreground">Zula Obusobozi Bwo</p>
-                    <p className="font-body text-xs text-muted-foreground sm:hidden">{audio.duration}</p>
+                    <p className="font-body text-xs text-muted-foreground sm:hidden">{trackDurations[originalIndex] || audio.duration}</p>
                   </div>
                 </div>
 
                 {/* Desktop-only columns */}
                 <span className="hidden sm:block font-body text-sm text-muted-foreground truncate">{audio.album}</span>
-                <span className="hidden sm:block font-body text-sm text-muted-foreground">{audio.duration}</span>
+                <span className="hidden sm:block font-body text-sm text-muted-foreground">{trackDurations[originalIndex] || audio.duration}</span>
                 <span className="hidden sm:block font-body text-sm text-muted-foreground">{audio.plays}</span>
 
                 <span
@@ -278,7 +292,7 @@ const AudioSection = () => {
                 className="flex-1"
               />
               <span className="font-body text-[10px] sm:text-xs text-muted-foreground w-8 sm:w-10">
-                {duration > 0 ? formatTime(duration) : current.duration}
+                {duration > 0 ? formatTime(duration) : (trackDurations[currentTrack] || current.duration)}
               </span>
             </div>
           </div>
