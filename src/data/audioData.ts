@@ -87,12 +87,6 @@ export interface AudioTrack {
   src: string;
 }
 
-// Category cover images
-const categoryImages: Record<string, string> = {
-  spiritual: spiritualCover,
-  financial: financialCover,
-  "personal-discovery": personalDiscoveryCover,
-};
 
 export const audioSeries: AudioTrack[] = [
   // ── KINGSHIP (12 tracks) ──
