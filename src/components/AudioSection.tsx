@@ -236,7 +236,7 @@ const AudioSection = () => {
 
                 {/* Desktop-only columns */}
                 <span className="hidden sm:block font-body text-sm text-muted-foreground truncate">{audio.album}</span>
-                <span className="hidden sm:block font-body text-sm text-muted-foreground">{audio.duration}</span>
+                <span className="hidden sm:block font-body text-sm text-muted-foreground">{trackDurations[originalIndex] || audio.duration}</span>
                 <span className="hidden sm:block font-body text-sm text-muted-foreground">{audio.plays}</span>
 
                 <span
