@@ -8,6 +8,7 @@ import MissionVisionSection from "@/components/about/MissionVisionSection";
 import CoreValuesSection from "@/components/about/CoreValuesSection";
 import JourneySection from "@/components/about/JourneySection";
 import AboutCtaSection from "@/components/about/AboutCtaSection";
+import TestimonialsSection from "@/components/about/TestimonialsSection";
 
 const AboutPage = () => {
   return (
@@ -18,6 +19,7 @@ const AboutPage = () => {
       <MissionVisionSection />
       <CoreValuesSection />
       <JourneySection />
+      <TestimonialsSection />
       <AboutCtaSection />
       <Footer />
     </div>
