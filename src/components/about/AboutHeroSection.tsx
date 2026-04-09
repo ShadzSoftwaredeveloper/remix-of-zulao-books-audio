@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Eye, Target, BookOpen, Heart, Users } from "lucide-react";
 
 const DotPattern = ({ className }: { className?: string }) => (
   <div className={`grid grid-cols-7 gap-1.5 ${className}`}>
