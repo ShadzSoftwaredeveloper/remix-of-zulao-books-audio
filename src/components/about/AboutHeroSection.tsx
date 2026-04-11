@@ -37,7 +37,7 @@ const AboutHeroSection = () => {
             <svg width="100" height="18" viewBox="0 0 100 18" className="mb-6">
               <path
                 d="M2 16C25 -4 50 20 98 2"
-                stroke="hsl(var(--secondary))"
+                stroke="hsl(var(--primary))"
                 strokeWidth="3"
                 fill="none"
                 strokeLinecap="round"
