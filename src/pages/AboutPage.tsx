@@ -12,6 +12,10 @@ import AboutCtaSection from "@/components/about/AboutCtaSection";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
 
 const AboutPage = () => {
+  useEffect(() => {
+    document.title = "About Us | Zuula Obusobozibwo";
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
