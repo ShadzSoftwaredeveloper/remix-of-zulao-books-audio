@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Heart, BookOpen, Users, Target, Eye, Sparkles } from "lucide-react";
 import Navbar from "@/components/Navbar";
