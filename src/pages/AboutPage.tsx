@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Heart, BookOpen, Users, Target, Eye, Sparkles } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -11,6 +12,10 @@ import AboutCtaSection from "@/components/about/AboutCtaSection";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
 
 const AboutPage = () => {
+  useEffect(() => {
+    document.title = "About Us | Zuula Obusobozibwo";
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
