@@ -16,7 +16,7 @@ const AboutPage = () => {
       <Navbar />
       <AboutHeroSection />
       <AboutSection />
-      <MissionVisionSection />
+      
       <CoreValuesSection />
       <JourneySection />
       <TestimonialsSection />
