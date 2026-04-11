@@ -50,13 +50,13 @@ const HeroSection = () => {
             
             <Link
               to="/ebooks"
-              className="inline-flex items-center px-8 py-3 rounded-full text-secondary-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg bg-fuchsia-800">
+              className="inline-flex items-center px-8 py-3 rounded-full text-secondary-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg bg-accent">
               
               Browse eBooks
             </Link>
             <Link
               to="/audio"
-              className="inline-flex items-center px-8 py-3 rounded-full border-2 text-primary-foreground font-body font-semibold text-sm hover:bg-primary-foreground/10 transition-colors border-fuchsia-800">
+              className="inline-flex items-center px-8 py-3 rounded-full border-2 text-primary-foreground font-body font-semibold text-sm hover:bg-primary-foreground/10 transition-colors border-accent">
               
               Listen to Audio
             </Link>
