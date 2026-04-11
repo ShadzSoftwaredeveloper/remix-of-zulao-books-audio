@@ -124,16 +124,14 @@ const TestimonialsSection = () => {
             transition={{ duration: 0.5, delay: 0.15 }}
           >
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
-              <div className="relative h-[280px] bg-muted flex items-center justify-center overflow-hidden">
-                <img
-                  src="/lovable-uploads/927c6d88-9f65-4954-82af-f1e83c834b55.jpg"
-                  alt="Community gathering"
-                  className="w-full h-full object-cover"
+              <div className="relative w-full aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Ministry Video Tour"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
                 />
-                <div className="absolute inset-0 bg-foreground/20" />
-                <button className="absolute w-16 h-16 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center shadow-xl hover:scale-105 transition-transform">
-                  <Play size={28} fill="currentColor" />
-                </button>
               </div>
               <div className="p-6">
                 <h3 className="font-display text-xl font-bold text-foreground leading-snug">
