@@ -123,10 +123,6 @@ const AboutHeroSection = () => {
               {/* Dot pattern right - teal colored */}
               <DotPattern className="absolute top-[440px] right-0 z-10 opacity-50" color="bg-primary/50" cols={7} count={49} />
 
-              {/* Bottom left image */}
-              <div className="absolute bottom-0 left-[5%] w-[48%] h-[160px] rounded-xl overflow-hidden shadow-lg z-[3]">
-                <img src={heroBottom} alt="Creative work" className="w-full h-full object-cover" loading="lazy" width={640} height={512} />
-              </div>
 
               {/* Decorative circle outline bottom right */}
               <div className="absolute -bottom-8 right-8 w-[120px] h-[120px] rounded-full border-2 border-muted-foreground/10 z-0" />
