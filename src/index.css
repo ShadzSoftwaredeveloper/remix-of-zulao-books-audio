@@ -53,25 +53,25 @@
   }
 
   .dark {
-    --background: 210 20% 8%;
+    --background: 280 30% 8%;
     --foreground: 0 0% 95%;
-    --card: 210 20% 12%;
+    --card: 280 25% 12%;
     --card-foreground: 0 0% 95%;
-    --popover: 210 20% 12%;
+    --popover: 280 25% 12%;
     --popover-foreground: 0 0% 95%;
-    --primary: 174 72% 50%;
+    --primary: 320 85% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 24 95% 58%;
+    --secondary: 38 90% 55%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 210 20% 15%;
-    --muted-foreground: 210 10% 60%;
-    --accent: 174 72% 20%;
+    --muted: 280 20% 15%;
+    --muted-foreground: 280 10% 60%;
+    --accent: 280 45% 20%;
     --accent-foreground: 0 0% 95%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 210 20% 20%;
-    --input: 210 20% 20%;
-    --ring: 174 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 280 20% 20%;
+    --input: 280 20% 20%;
+    --ring: 320 85% 50%;
   }
 }
 
@@ -96,14 +96,14 @@
   }
 
   .text-gold-gradient {
-    background: linear-gradient(135deg, hsl(24 95% 58%), hsl(35 95% 65%));
+    background: linear-gradient(135deg, hsl(38 90% 55%), hsl(45 90% 65%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-hero-overlay {
-    background: linear-gradient(135deg, hsl(174 72% 32% / 0.85), hsl(174 72% 46% / 0.7));
+    background: linear-gradient(135deg, hsl(280 45% 18% / 0.9), hsl(320 60% 30% / 0.75));
   }
 
   .card-hover {
@@ -112,16 +112,16 @@
 
   .card-hover:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px -12px hsl(174 72% 46% / 0.2);
+    box-shadow: 0 12px 40px -12px hsl(320 85% 45% / 0.2);
   }
 
   .page-header {
-    @apply relative py-20 bg-primary overflow-hidden;
+    @apply relative py-20 bg-accent overflow-hidden;
   }
 
   .page-header::before {
     content: '';
     @apply absolute inset-0;
-    background: linear-gradient(135deg, hsl(174 72% 32%), hsl(174 72% 50%));
+    background: linear-gradient(135deg, hsl(280 45% 18%), hsl(320 60% 35%));
   }
 }
