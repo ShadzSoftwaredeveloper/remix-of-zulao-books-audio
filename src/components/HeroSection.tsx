@@ -1,12 +1,35 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import booksHero from "@/assets/books-hero.jpg";
+import zuula1 from "@/assets/zuula-1.webp.asset.json";
+import zuulaHome from "@/assets/zuula-homep.webp.asset.json";
+
+const slides = [booksHero, zuula1.url, zuulaHome.url];
 
 const HeroSection = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setIndex((i) => (i + 1) % slides.length), 6000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative min-h-[85vh] flex items-center pt-16 overflow-hidden">
       <div className="absolute inset-0">
-        <img src={booksHero} alt="" className="w-full h-full object-cover" />
+        <AnimatePresence mode="sync">
+          <motion.img
+            key={index}
+            src={slides[index]}
+            alt=""
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
         <div className="absolute inset-0 bg-hero-overlay" />
       </div>
 
@@ -61,6 +84,20 @@ const HeroSection = () => {
               Listen to Audio
             </Link>
           </motion.div>
+
+          {/* Slider dots */}
+          <div className="flex gap-2 mt-10">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setIndex(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`h-2 rounded-full transition-all ${
+                  i === index ? "w-8 bg-accent" : "w-2 bg-primary-foreground/40"
+                }`}
+              />
+            ))}
+          </div>
 
           {/* Stats */}
           
