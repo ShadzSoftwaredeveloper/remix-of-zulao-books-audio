@@ -5,10 +5,33 @@ import booksHero from "@/assets/books-hero.jpg";
 import zuula1 from "@/assets/zuula-1.webp.asset.json";
 import zuulaHome from "@/assets/zuula-homep.webp.asset.json";
 
-const slides = [booksHero, zuula1.url, zuulaHome.url];
+const slides = [
+  {
+    image: booksHero,
+    title: "Book Website Design",
+    highlight: "for Your Formal Design",
+    description:
+      "Transform your mindset, harness your unique talents, and embark on a journey to create a life full of purpose, endless possibilities, and lasting fulfillment.",
+  },
+  {
+    image: zuula1.url,
+    title: "Transform Your Mind,",
+    highlight: "Heal Your Soul",
+    description:
+      "Let go of what no longer serves you. In stillness, you'll find clarity, strength, and a deeper connection to life.",
+  },
+  {
+    image: zuulaHome.url,
+    title: "Your Soul Already",
+    highlight: "Knows the Way",
+    description:
+      "Slow down. Breathe. Everything you seek is already within you—waiting to be remembered.",
+  },
+];
 
 const HeroSection = () => {
   const [index, setIndex] = useState(0);
+  const slide = slides[index];
 
   useEffect(() => {
     const id = setInterval(() => setIndex((i) => (i + 1) % slides.length), 6000);
@@ -21,7 +44,7 @@ const HeroSection = () => {
         <AnimatePresence mode="sync">
           <motion.img
             key={index}
-            src={slides[index]}
+            src={slide.image}
             alt=""
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -45,24 +68,24 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.h1
+            key={`title-${index}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
             className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
             
-            Book Website Design{" "}
-            <span className="text-gold-gradient">for Your Formal Design</span>
+            {slide.title}{" "}
+            <span className="text-gold-gradient">{slide.highlight}</span>
           </motion.h1>
 
           <motion.p
+            key={`desc-${index}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="font-body text-lg text-primary-foreground/80 mb-8 max-w-lg">
             
-            Transform your mindset, harness your unique talents, and embark on a
-            journey to create a life full of purpose, endless possibilities, and
-            lasting fulfillment.
+            {slide.description}
           </motion.p>
 
           <motion.div
