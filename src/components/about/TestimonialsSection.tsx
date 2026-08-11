@@ -126,7 +126,7 @@ const TestimonialsSection = () => {
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
               <div className="relative w-full aspect-video">
                 <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  src="https://www.youtube.com/embed/2sysociF3e8"
                   title="Ministry Video Tour"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
