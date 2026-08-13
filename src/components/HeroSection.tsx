@@ -12,6 +12,8 @@ const slides = [
     highlight: "Within Every Page",
     description:
       "Open a book and open your mind. Through words, stories, and teachings, uncover the strength, purpose, and endless possibilities already living inside you.",
+    primaryCta: { label: "Shop Books", to: "/ebooks" },
+    secondaryCta: { label: "Learn More", to: "/about" },
   },
   {
     image: zuula1.url,
@@ -19,6 +21,8 @@ const slides = [
     highlight: "Empower Your Life",
     description:
       "From the stage to the page, every message is an invitation to grow — to think clearer, dream bigger, and step boldly into the life you were created for.",
+    primaryCta: { label: "Learn More", to: "/about" },
+    secondaryCta: { label: "Shop Books", to: "/ebooks" },
   },
   {
     image: zuulaHome.url,
@@ -26,6 +30,8 @@ const slides = [
     highlight: "Knows the Way",
     description:
       "Slow down. Breathe. The wisdom you seek is already within you — waiting to be remembered, honored, and finally lived.",
+    primaryCta: { label: "Listen to Audios", to: "/audio" },
+    secondaryCta: { label: "Learn More", to: "/about" },
   },
 ];
 
