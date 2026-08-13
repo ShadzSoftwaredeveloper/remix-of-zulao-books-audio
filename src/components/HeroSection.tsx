@@ -8,24 +8,24 @@ import zuulaHome from "@/assets/zuula-homep.webp.asset.json";
 const slides = [
   {
     image: booksHero,
-    title: "Book Website Design",
-    highlight: "for Your Formal Design",
+    title: "Discover the Possibility",
+    highlight: "Within Every Page",
     description:
-      "Transform your mindset, harness your unique talents, and embark on a journey to create a life full of purpose, endless possibilities, and lasting fulfillment.",
+      "Open a book and open your mind. Through words, stories, and teachings, uncover the strength, purpose, and endless possibilities already living inside you.",
   },
   {
     image: zuula1.url,
-    title: "Transform Your Mind,",
-    highlight: "Heal Your Soul",
+    title: "Awaken Your Mind,",
+    highlight: "Empower Your Life",
     description:
-      "Let go of what no longer serves you. In stillness, you'll find clarity, strength, and a deeper connection to life.",
+      "From the stage to the page, every message is an invitation to grow — to think clearer, dream bigger, and step boldly into the life you were created for.",
   },
   {
     image: zuulaHome.url,
     title: "Your Soul Already",
     highlight: "Knows the Way",
     description:
-      "Slow down. Breathe. Everything you seek is already within you—waiting to be remembered.",
+      "Slow down. Breathe. The wisdom you seek is already within you — waiting to be remembered, honored, and finally lived.",
   },
 ];
 
