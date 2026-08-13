@@ -12,6 +12,8 @@ const slides = [
     highlight: "Within Every Page",
     description:
       "Open a book and open your mind. Through words, stories, and teachings, uncover the strength, purpose, and endless possibilities already living inside you.",
+    primaryCta: { label: "Shop Books", to: "/ebooks" },
+    secondaryCta: { label: "Learn More", to: "/about" },
   },
   {
     image: zuula1.url,
@@ -19,6 +21,8 @@ const slides = [
     highlight: "Empower Your Life",
     description:
       "From the stage to the page, every message is an invitation to grow — to think clearer, dream bigger, and step boldly into the life you were created for.",
+    primaryCta: { label: "Learn More", to: "/about" },
+    secondaryCta: { label: "Shop Books", to: "/ebooks" },
   },
   {
     image: zuulaHome.url,
@@ -26,6 +30,8 @@ const slides = [
     highlight: "Knows the Way",
     description:
       "Slow down. Breathe. The wisdom you seek is already within you — waiting to be remembered, honored, and finally lived.",
+    primaryCta: { label: "Listen to Audios", to: "/audio" },
+    secondaryCta: { label: "Learn More", to: "/about" },
   },
 ];
 
@@ -89,22 +95,21 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.div
+            key={`cta-${index}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.45 }}
             className="flex flex-wrap gap-4">
-            
+
             <Link
-              to="/ebooks"
-              className="inline-flex items-center px-8 py-3 rounded-full text-secondary-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg bg-accent">
-              
-              Browse eBooks
+              to={slide.primaryCta.to}
+              className="inline-flex items-center px-8 py-3 rounded-full bg-secondary text-secondary-foreground font-body font-semibold text-sm shadow-lg shadow-secondary/30 hover:brightness-110 active:scale-[0.98] transition-all">
+              {slide.primaryCta.label}
             </Link>
             <Link
-              to="/audio"
-              className="inline-flex items-center px-8 py-3 rounded-full border-2 text-primary-foreground font-body font-semibold text-sm hover:bg-primary-foreground/10 transition-colors border-accent">
-              
-              Listen to Audio
+              to={slide.secondaryCta.to}
+              className="inline-flex items-center px-8 py-3 rounded-full bg-primary-foreground/10 backdrop-blur-sm border-2 border-primary-foreground text-primary-foreground font-body font-semibold text-sm hover:bg-primary-foreground/20 active:scale-[0.98] transition-all">
+              {slide.secondaryCta.label}
             </Link>
           </motion.div>
 
