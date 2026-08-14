@@ -8,6 +8,7 @@ import AboutPage from "./pages/AboutPage.tsx";
 import EbooksPage from "./pages/EbooksPage.tsx";
 import AudioPage from "./pages/AudioPage.tsx";
 import ArticlesPage from "./pages/ArticlesPage.tsx";
+import ArticlePage from "./pages/ArticlePage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/ebooks" element={<EbooksPage />} />
           <Route path="/audio" element={<AudioPage />} />
           <Route path="/articles" element={<ArticlesPage />} />
+          <Route path="/articles/:slug" element={<ArticlePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

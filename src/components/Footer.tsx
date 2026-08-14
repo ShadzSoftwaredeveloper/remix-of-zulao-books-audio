@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronUp, MapPin, Phone, Mail, Facebook, Twitter, Youtube, Linkedin, ArrowRight } from "lucide-react";
 import logo from "@/assets/zuula-logo.png";
+import { toast } from "@/hooks/use-toast";
 
 const quickLinks = [
   { label: "About Us", href: "/about" },
@@ -26,12 +28,55 @@ const socials = [
 ];
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <footer className="bg-foreground">
+      {/* Newsletter */}
+      <div className="border-b border-background/10">
+        <div className="site-container py-10 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
+          <div className="lg:flex-1">
+            <h3 className="font-display text-2xl font-bold text-background mb-1">
+              Subscribe to Our Newsletter
+            </h3>
+            <p className="font-body text-sm text-background/60">
+              Inspiring articles, free resources and updates — straight to your inbox.
+            </p>
+          </div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              setEmail("");
+              toast({
+                title: "You're subscribed!",
+                description: "Thank you for joining our newsletter.",
+              });
+            }}
+            className="flex flex-col sm:flex-row gap-3 lg:w-[460px]"
+          >
+            <input
+              type="email"
+              required
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              aria-label="Email address"
+              className="flex-1 px-4 py-3 rounded-lg bg-background/10 border border-background/20 text-background placeholder:text-background/40 font-body text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
+            />
+            <button
+              type="submit"
+              className="px-7 py-3 rounded-lg bg-secondary text-secondary-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
       <div className="site-container py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
