@@ -45,7 +45,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[85vh] flex items-center pt-16 overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center pt-16 md:pt-[100px] overflow-hidden">
       <div className="absolute inset-0">
         <AnimatePresence mode="sync">
           <motion.img

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, Mail, Facebook, Twitter, Youtube, Linkedin } from "lucide-react";
 import logo from "@/assets/zuula-logo.png";
 
 const navLinks = [
@@ -18,6 +18,32 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      {/* Top contact bar */}
+      <div className="hidden md:block bg-accent text-accent-foreground">
+        <div className="container mx-auto flex items-center justify-between h-9 px-4 md:px-[70px]">
+          <div className="flex items-center gap-6 font-body text-xs">
+            <a href="tel:+256700000000" className="inline-flex items-center gap-2 hover:text-secondary transition-colors">
+              <Phone size={13} /> +256 700 000 000
+            </a>
+            <a href="mailto:info@zuulaobusobozibwo.com" className="inline-flex items-center gap-2 hover:text-secondary transition-colors">
+              <Mail size={13} /> info@zuulaobusobozibwo.com
+            </a>
+          </div>
+          <div className="flex items-center gap-4">
+            {[
+              { Icon: Facebook, label: "Facebook" },
+              { Icon: Twitter, label: "Twitter" },
+              { Icon: Youtube, label: "YouTube" },
+              { Icon: Linkedin, label: "LinkedIn" },
+            ].map(({ Icon, label }) => (
+              <a key={label} href="#" aria-label={label} className="hover:text-secondary transition-colors">
+                <Icon size={14} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="container mx-auto flex items-center justify-between h-16 px-4 md:px-[70px]">
         <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="Zuula Obusobozibwo" className="h-10 w-auto" />

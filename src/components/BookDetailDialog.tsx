@@ -1,5 +1,5 @@
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { ShoppingCart, Star, Eye } from "lucide-react";
+import { MessageCircle, Star, Eye } from "lucide-react";
 
 export interface BookItem {
   title: string;
@@ -22,6 +22,15 @@ const BookDetailDialog = ({ book, open, onOpenChange }: BookDetailDialogProps) =
 
   const handlePreview = () => {
     window.open(book.pdfUrl || "#", "_blank", "noopener,noreferrer");
+  };
+
+  const handleOrder = () => {
+    const message = `Hello, I would like to order "${book.title}" by ${book.author}${book.price ? ` (${book.price})` : ""}.`;
+    window.open(
+      `https://wa.me/256700000000?text=${encodeURIComponent(message)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   return (
@@ -84,9 +93,12 @@ const BookDetailDialog = ({ book, open, onOpenChange }: BookDetailDialogProps) =
 
             {/* Actions */}
             <div className="flex flex-col gap-3">
-              <button className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg bg-secondary text-secondary-foreground font-body text-sm font-semibold hover:opacity-90 transition-opacity active:scale-[0.98]">
-                <ShoppingCart size={16} />
-                Buy Now
+              <button
+                onClick={handleOrder}
+                className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg bg-secondary text-secondary-foreground font-body text-sm font-semibold hover:opacity-90 transition-opacity active:scale-[0.98]"
+              >
+                <MessageCircle size={16} />
+                Order Now
               </button>
               <button
                 onClick={handlePreview}
