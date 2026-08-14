@@ -1,18 +1,31 @@
 import { Link } from "react-router-dom";
-import { ChevronUp } from "lucide-react";
-import { useState } from "react";
+import { ChevronUp, MapPin, Phone, Mail, Facebook, Twitter, Youtube, Linkedin, ArrowRight } from "lucide-react";
+import logo from "@/assets/zuula-logo.png";
 
-const footerLinks = [
+const quickLinks = [
   { label: "About Us", href: "/about" },
   { label: "eBooks", href: "/ebooks" },
-  { label: "Audio", href: "/audio" },
+  { label: "Audio Teachings", href: "/audio" },
   { label: "Articles", href: "/articles" },
   { label: "Contact", href: "/contact" },
 ];
 
-const Footer = () => {
-  const [email, setEmail] = useState("");
+const services = [
+  { label: "Books & eBooks", href: "/ebooks" },
+  { label: "Audio Teachings", href: "/audio" },
+  { label: "Discipleship", href: "/about" },
+  { label: "Speaking & Seminars", href: "/contact" },
+  { label: "Mentorship", href: "/contact" },
+];
 
+const socials = [
+  { Icon: Facebook, href: "#", label: "Facebook" },
+  { Icon: Twitter, href: "#", label: "Twitter" },
+  { Icon: Youtube, href: "#", label: "YouTube" },
+  { Icon: Linkedin, href: "#", label: "LinkedIn" },
+];
+
+const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -20,43 +33,40 @@ const Footer = () => {
   return (
     <footer className="bg-foreground">
       <div className="site-container py-16">
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <h3 className="font-display text-2xl font-bold text-background mb-1">Zuula Obusobozibwo</h3>
-            <div className="w-10 h-0.5 bg-secondary mb-4" />
-            <p className="font-body text-sm text-background/60 leading-relaxed mb-5">
-              Empowering You To Impact Generations. Unlock your gifts, influence, and destiny for God's Kingdom through transformative books and audio teachings.
+            <img src={logo} alt="Zuula Obusobozibwo" className="h-12 w-auto mb-6" />
+            <p className="font-body text-sm text-background/60 leading-relaxed mb-6">
+              Zuula Obusobozibwo empowers you to impact generations — unlocking your gifts,
+              influence and destiny for God's Kingdom through transformative books and audio
+              teachings.
             </p>
-            <div className="flex gap-2">
-              {[
-                "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/inner-chamner.jpg",
-                "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/THE-MASTERS-INDWELLING.jpg",
-                "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/He-Holds-My-Tomorrows.jpg",
-                "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/the-Body-of-Christ.jpg",
-              ].map((src, i) => (
-                <img
-                  key={i}
-                  src={src}
-                  alt="Book cover"
-                  className="w-14 h-20 rounded object-cover opacity-70 hover:opacity-100 transition-opacity"
-                  loading="lazy"
-                />
+            <div className="flex gap-3">
+              {socials.map(({ Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="w-10 h-10 rounded-full border border-background/20 flex items-center justify-center text-background/60 hover:text-secondary hover:border-secondary transition-colors"
+                >
+                  <Icon size={16} />
+                </a>
               ))}
             </div>
           </div>
 
-          {/* Explore */}
+          {/* Quick Links */}
           <div>
-            <h3 className="font-display text-2xl font-bold text-background mb-1">Explore</h3>
-            <div className="w-10 h-0.5 bg-secondary mb-4" />
-            <ul className="space-y-3">
-              {footerLinks.map((l) => (
+            <h3 className="font-display text-xl font-bold text-background mb-6">Quick Links</h3>
+            <ul className="space-y-4">
+              {quickLinks.map((l) => (
                 <li key={l.label}>
                   <Link
                     to={l.href}
-                    className="font-body text-sm text-background/60 hover:text-background transition-colors"
+                    className="group flex items-center gap-3 font-body text-sm text-background/60 hover:text-background transition-colors"
                   >
+                    <ArrowRight size={14} className="text-secondary transition-transform group-hover:translate-x-1" />
                     {l.label}
                   </Link>
                 </li>
@@ -64,28 +74,45 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Services */}
           <div>
-            <h3 className="font-display text-2xl font-bold text-background mb-1">Newsletter</h3>
-            <div className="w-10 h-0.5 bg-secondary mb-4" />
-            <p className="font-body text-sm text-background/60 mb-4">
-              Subscribe to our newsletter for updates.
-            </p>
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 px-4 py-2.5 rounded-l-lg bg-background/10 border border-background/20 text-background placeholder:text-background/40 font-body text-sm focus:outline-none focus:border-secondary"
-              />
-              <button className="px-5 py-2.5 rounded-r-lg bg-background/20 text-background font-body text-sm font-medium hover:bg-secondary hover:text-secondary-foreground transition-colors border border-l-0 border-background/20">
-                Subscribe
-              </button>
-            </div>
-            <p className="font-body text-xs text-background/40 mt-2">
-              By subscribing, you consent to receive updates.
-            </p>
+            <h3 className="font-display text-xl font-bold text-background mb-6">Services</h3>
+            <ul className="space-y-4">
+              {services.map((l) => (
+                <li key={l.label}>
+                  <Link
+                    to={l.href}
+                    className="group flex items-center gap-3 font-body text-sm text-background/60 hover:text-background transition-colors"
+                  >
+                    <ArrowRight size={14} className="text-secondary transition-transform group-hover:translate-x-1" />
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="font-display text-xl font-bold text-background mb-6">Contact Us</h3>
+            <ul className="space-y-5">
+              <li className="flex items-start gap-3">
+                <MapPin size={18} className="text-secondary shrink-0 mt-0.5" />
+                <span className="font-body text-sm text-background/60">Kampala, Uganda</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone size={18} className="text-secondary shrink-0 mt-0.5" />
+                <a href="tel:+256700000000" className="font-body text-sm text-background/60 hover:text-background transition-colors">
+                  +256 700 000 000
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Mail size={18} className="text-secondary shrink-0 mt-0.5" />
+                <a href="mailto:info@zulaobusobozibwo.com" className="font-body text-sm text-background/60 hover:text-background transition-colors break-all">
+                  info@zulaobusobozibwo.com
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
