@@ -53,7 +53,7 @@ const EbooksPage = () => {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search books, authors, topics..."
+                placeholder={query ? "" : `${placeholder}|`}
                 className="w-full rounded-full bg-background py-4 pl-14 pr-32 font-body text-sm sm:text-base text-foreground placeholder:text-muted-foreground shadow-lg shadow-foreground/5 border border-border focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
               <span className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-primary/10 px-6 py-2.5 font-body text-sm font-semibold text-primary">
