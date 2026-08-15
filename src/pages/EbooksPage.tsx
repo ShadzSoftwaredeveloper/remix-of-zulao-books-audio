@@ -5,15 +5,23 @@ import { Search } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import EbooksSection from "@/components/EbooksSection";
 import Footer from "@/components/Footer";
+import { useTypewriter } from "@/hooks/use-typewriter";
 
 const EbooksPage = () => {
   const [query, setQuery] = useState("");
+  const placeholder = useTypewriter([
+    "Search books, authors, topics...",
+    "Find your next transformative read...",
+    "Search by title or author...",
+    "Discover faith-deepening books...",
+  ]);
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="relative bg-muted/60 pt-32 md:pt-44 pb-20 md:pb-28 overflow-hidden">
+      <section className="relative pt-32 md:pt-44 pb-20 md:pb-28 overflow-hidden bg-gradient-to-b from-accent/[0.08] via-background to-accent/[0.04]">
+        <div className="pointer-events-none absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(hsl(320 85% 45%) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
         <div className="site-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -46,7 +54,7 @@ const EbooksPage = () => {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search books, authors, topics..."
+                placeholder={query ? "" : `${placeholder}|`}
                 className="w-full rounded-full bg-background py-4 pl-14 pr-32 font-body text-sm sm:text-base text-foreground placeholder:text-muted-foreground shadow-lg shadow-foreground/5 border border-border focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
               <span className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-primary/10 px-6 py-2.5 font-body text-sm font-semibold text-primary">

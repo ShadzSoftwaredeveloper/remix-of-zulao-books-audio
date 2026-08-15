@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { BookOpen, Search, Download } from "lucide-react";
 import BookDetailDialog, { BookItem } from "./BookDetailDialog";
+import { useTypewriter } from "@/hooks/use-typewriter";
 import alterFrontCover from "@/assets/books/alter_front_cover.jpg";
 import alter100 from "@/assets/books/alter100.jpg";
 import omuwendo from "@/assets/books/omuwendo.jpg";
@@ -29,6 +30,12 @@ const EbooksSection = ({
   const search = searchProp !== undefined ? searchProp : internalSearch;
   const setSearch = onSearchChange ?? setInternalSearch;
   const [selectedBook, setSelectedBook] = useState<BookItem | null>(null);
+  const placeholder = useTypewriter([
+    "Search by title...",
+    "Search by author...",
+    "Search by topic...",
+    "Search transformative books...",
+  ]);
 
   const filtered = ebooks.filter(
     (b) =>
@@ -39,7 +46,8 @@ const EbooksSection = ({
   const displayed = showAll ? filtered : filtered.slice(0, 4);
 
   return (
-    <section id="ebooks" className="py-24 bg-muted/50">
+    <section id="ebooks" className="relative py-24 overflow-hidden bg-gradient-to-b from-accent/[0.06] via-background to-accent/[0.06]">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(hsl(320 85% 45%) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,7 +72,7 @@ const EbooksSection = ({
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
             <input
               type="text"
-              placeholder="Search by title or author..."
+              placeholder={search ? "" : `${placeholder}|`}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
