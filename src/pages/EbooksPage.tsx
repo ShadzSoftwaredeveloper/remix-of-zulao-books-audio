@@ -1,74 +1,78 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Search } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import EbooksSection from "@/components/EbooksSection";
 import Footer from "@/components/Footer";
-import booksHero from "@/assets/books-hero.jpg";
 
 const EbooksPage = () => {
+  const [query, setQuery] = useState("");
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <section className="relative min-h-[85vh] flex items-center pt-16 md:pt-[100px] overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={booksHero} alt="" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-hero-overlay" />
-        </div>
 
-        <div className="relative z-10 site-container py-20">
-          <div className="max-w-2xl">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="font-body text-sm uppercase tracking-[0.2em] text-secondary mb-4"
-            >
-              Read, Reflect, Be Transformed
-            </motion.p>
+      <section className="relative bg-muted/60 pt-32 md:pt-44 pb-20 md:pb-28 overflow-hidden">
+        <div className="site-container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <p className="font-body text-xs sm:text-sm font-semibold uppercase tracking-[0.22em] text-primary mb-5">
+              Read, Reflect, and Be Transformed
+            </p>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6"
-            >
-              Discover the Possibility{" "}
-              <span className="text-gold-gradient">Within Every Page</span>
-            </motion.h1>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-6">
+              Equipping People with Life-Changing Books
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="font-body text-lg text-primary-foreground/80 mb-8 max-w-lg"
-            >
-              Browse our curated collection of transformative books by Tumusiime Joseph
-              Prosper — written to deepen your faith and unlock your potential.
-            </motion.p>
+            <p className="font-body text-base sm:text-lg text-foreground/60 max-w-2xl mx-auto mb-10">
+              Transformative titles by Tumusiime Joseph Prosper — written to deepen your
+              faith, awaken your mind, and unlock the possibility within you.
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.45 }}
-              className="flex flex-wrap gap-4"
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="relative max-w-xl mx-auto mb-8"
             >
+              <Search
+                size={20}
+                className="absolute left-5 top-1/2 -translate-y-1/2 text-muted-foreground"
+              />
+              <input
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search books, authors, topics..."
+                className="w-full rounded-full bg-background py-4 pl-14 pr-32 font-body text-sm sm:text-base text-foreground placeholder:text-muted-foreground shadow-lg shadow-foreground/5 border border-border focus:outline-none focus:ring-2 focus:ring-primary/20"
+              />
+              <span className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-primary/10 px-6 py-2.5 font-body text-sm font-semibold text-primary">
+                Search
+              </span>
+            </form>
+
+            <div className="flex flex-wrap items-center justify-center gap-3">
               <a
                 href="#ebooks"
-                className="inline-flex items-center px-8 py-3 rounded-full bg-secondary text-secondary-foreground font-body font-semibold text-sm shadow-lg shadow-secondary/30 hover:brightness-110 active:scale-[0.98] transition-all"
+                className="inline-flex items-center rounded-full bg-primary/10 px-6 py-3 font-body text-sm font-semibold text-primary hover:bg-primary/20 transition-colors"
               >
                 Browse the Library
               </a>
               <Link
                 to="/about"
-                className="inline-flex items-center px-8 py-3 rounded-full bg-primary-foreground/10 backdrop-blur-sm border-2 border-primary-foreground text-primary-foreground font-body font-semibold text-sm hover:bg-primary-foreground/20 active:scale-[0.98] transition-all"
+                className="inline-flex items-center rounded-full bg-background px-6 py-3 font-body text-sm font-semibold text-foreground border border-border hover:bg-muted transition-colors"
               >
                 About the Author
               </Link>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
-      <EbooksSection showAll />
+
+      <EbooksSection showAll search={query} onSearchChange={setQuery} hideSearch />
       <Footer />
     </div>
   );
