@@ -5,9 +5,16 @@ import { Search } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import EbooksSection from "@/components/EbooksSection";
 import Footer from "@/components/Footer";
+import { useTypewriter } from "@/hooks/use-typewriter";
 
 const EbooksPage = () => {
   const [query, setQuery] = useState("");
+  const placeholder = useTypewriter([
+    "Search books, authors, topics...",
+    "Find your next transformative read...",
+    "Search by title or author...",
+    "Discover faith-deepening books...",
+  ]);
 
   return (
     <div className="min-h-screen bg-background">
