@@ -22,8 +22,8 @@ const Navbar = () => {
       <div className="hidden md:block bg-accent text-accent-foreground">
         <div className="container mx-auto flex items-center justify-between h-9 px-4 md:px-[70px]">
           <div className="flex items-center gap-6 font-body text-xs">
-            <a href="tel:+256700000000" className="inline-flex items-center gap-2 hover:text-secondary transition-colors">
-              <Phone size={13} /> +256 700 000 000
+            <a href="tel:+25677766708" className="inline-flex items-center gap-2 hover:text-secondary transition-colors">
+              <Phone size={13} /> 077766708
             </a>
             <a href="mailto:info@zuulaobusobozibwo.com" className="inline-flex items-center gap-2 hover:text-secondary transition-colors">
               <Mail size={13} /> info@zuulaobusobozibwo.com

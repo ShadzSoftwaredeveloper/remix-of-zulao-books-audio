@@ -27,7 +27,7 @@ const BookDetailDialog = ({ book, open, onOpenChange }: BookDetailDialogProps) =
   const handleOrder = () => {
     const message = `Hello, I would like to order "${book.title}" by ${book.author}${book.price ? ` (${book.price})` : ""}.`;
     window.open(
-      `https://wa.me/256700000000?text=${encodeURIComponent(message)}`,
+      `https://wa.me/25677766708?text=${encodeURIComponent(message)}`,
       "_blank",
       "noopener,noreferrer"
     );
