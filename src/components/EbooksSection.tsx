@@ -46,7 +46,8 @@ const EbooksSection = ({
   const displayed = showAll ? filtered : filtered.slice(0, 4);
 
   return (
-    <section id="ebooks" className="py-24 bg-muted/50">
+    <section id="ebooks" className="relative py-24 overflow-hidden bg-gradient-to-b from-accent/[0.06] via-background to-accent/[0.06]">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(hsl(320 85% 45%) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
