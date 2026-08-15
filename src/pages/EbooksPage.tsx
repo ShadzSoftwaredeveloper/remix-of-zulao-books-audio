@@ -70,7 +70,7 @@ const EbooksPage = () => {
                 Browse the Library
               </a>
               <Link
-                to="/about"
+                to="/about#about"
                 className="inline-flex items-center rounded-full bg-background px-6 py-3 font-body text-sm font-semibold text-foreground border border-border hover:bg-muted transition-colors"
               >
                 About the Author
