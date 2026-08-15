@@ -30,6 +30,12 @@ const EbooksSection = ({
   const search = searchProp !== undefined ? searchProp : internalSearch;
   const setSearch = onSearchChange ?? setInternalSearch;
   const [selectedBook, setSelectedBook] = useState<BookItem | null>(null);
+  const placeholder = useTypewriter([
+    "Search by title...",
+    "Search by author...",
+    "Search by topic...",
+    "Search transformative books...",
+  ]);
 
   const filtered = ebooks.filter(
     (b) =>
