@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { BookOpen, Search, Download } from "lucide-react";
 import BookDetailDialog, { BookItem } from "./BookDetailDialog";
+import { useTypewriter } from "@/hooks/use-typewriter";
 import alterFrontCover from "@/assets/books/alter_front_cover.jpg";
 import alter100 from "@/assets/books/alter100.jpg";
 import omuwendo from "@/assets/books/omuwendo.jpg";
