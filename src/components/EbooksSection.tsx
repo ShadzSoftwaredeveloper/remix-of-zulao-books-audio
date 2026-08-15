@@ -14,8 +14,20 @@ const ebooks: BookItem[] = [
   { title: "Ebwogeere Ku Kitabo", author: "Tumusiime Joseph Prosper", cover: alterBack, free: false, price: "UShs 20,000" },
 ];
 
-const EbooksSection = ({ showAll = false }: { showAll?: boolean }) => {
-  const [search, setSearch] = useState("");
+const EbooksSection = ({
+  showAll = false,
+  search: searchProp,
+  onSearchChange,
+  hideSearch = false,
+}: {
+  showAll?: boolean;
+  search?: string;
+  onSearchChange?: (value: string) => void;
+  hideSearch?: boolean;
+}) => {
+  const [internalSearch, setInternalSearch] = useState("");
+  const search = searchProp !== undefined ? searchProp : internalSearch;
+  const setSearch = onSearchChange ?? setInternalSearch;
   const [selectedBook, setSelectedBook] = useState<BookItem | null>(null);
 
   const filtered = ebooks.filter(
@@ -47,7 +59,7 @@ const EbooksSection = ({ showAll = false }: { showAll?: boolean }) => {
         </motion.div>
 
         {/* Search — only on full page */}
-        {showAll && (
+        {showAll && !hideSearch && (
           <div className="max-w-md mx-auto mb-10 relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
             <input
