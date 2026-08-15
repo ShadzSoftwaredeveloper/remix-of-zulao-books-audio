@@ -20,7 +20,8 @@ const EbooksPage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="relative bg-muted/60 pt-32 md:pt-44 pb-20 md:pb-28 overflow-hidden">
+      <section className="relative pt-32 md:pt-44 pb-20 md:pb-28 overflow-hidden bg-gradient-to-b from-accent/[0.08] via-background to-accent/[0.04]">
+        <div className="pointer-events-none absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(hsl(320 85% 45%) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
         <div className="site-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
