@@ -16,6 +16,7 @@ const Index = () => {
       <AboutSection />
       <EbooksSection />
       <HomeBlogSection />
+      <FeaturedPodcastHero />
       <HomeAudioSection />
       <NewsletterSection />
       <Footer />
