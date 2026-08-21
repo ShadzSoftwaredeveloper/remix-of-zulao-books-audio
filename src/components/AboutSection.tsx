@@ -22,9 +22,9 @@ const AboutSection = ({ variant = "founder" }: AboutSectionProps) => {
             
             <div className="relative">
               <img
-
-                alt="Joseph Prosper - Founder"
-                className="rounded-lg w-full max-w-md mx-auto shadow-xl" src="/lovable-uploads/927c6d88-9f65-4954-82af-f1e83c834b55.jpg" />
+                src={imgSrc}
+                alt={variant === "podcast" ? "Joseph Prosper recording a podcast teaching" : "Joseph Prosper - Founder"}
+                className="rounded-lg w-full max-w-md mx-auto shadow-xl" />
               
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-lg -z-10" />
             </div>
