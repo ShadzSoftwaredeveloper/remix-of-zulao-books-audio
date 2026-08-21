@@ -1,7 +1,15 @@
 import { motion } from "framer-motion";
-import authorImg from "@/assets/author-portrait.jpg";
+import podcastAsset from "@/assets/founder-podcast.png.asset.json";
 
-const AboutSection = () => {
+const FOUNDER_IMG = "/lovable-uploads/927c6d88-9f65-4954-82af-f1e83c834b55.jpg";
+
+interface AboutSectionProps {
+  /** Use the podcast still instead of the founder portrait (homepage). */
+  variant?: "founder" | "podcast";
+}
+
+const AboutSection = ({ variant = "founder" }: AboutSectionProps) => {
+  const imgSrc = variant === "podcast" ? podcastAsset.url : FOUNDER_IMG;
   return (
     <section id="about" className="py-24 bg-background">
       <div className="site-container">
@@ -14,9 +22,9 @@ const AboutSection = () => {
             
             <div className="relative">
               <img
-
-                alt="Joseph Prosper - Founder"
-                className="rounded-lg w-full max-w-md mx-auto shadow-xl" src="/lovable-uploads/927c6d88-9f65-4954-82af-f1e83c834b55.jpg" />
+                src={imgSrc}
+                alt={variant === "podcast" ? "Joseph Prosper recording a podcast teaching" : "Joseph Prosper - Founder"}
+                className="rounded-lg w-full max-w-md mx-auto shadow-xl" />
               
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-lg -z-10" />
             </div>
