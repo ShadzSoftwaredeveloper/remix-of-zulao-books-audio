@@ -44,7 +44,7 @@ const BookDetailDialog = ({ book, open, onOpenChange }: BookDetailDialogProps) =
             <img
               src={book.cover}
               alt={book.title}
-              className="w-full h-auto object-contain sm:h-full sm:object-cover"
+              className="w-full h-auto object-contain sm:h-full sm:object-contain"
             />
             {book.price && (
               <span className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-body font-bold bg-secondary text-secondary-foreground shadow-md">

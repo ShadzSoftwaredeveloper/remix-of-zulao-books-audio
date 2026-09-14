@@ -5,6 +5,7 @@ import EbooksSection from "@/components/EbooksSection";
 import HomeBlogSection from "@/components/HomeBlogSection";
 import FeaturedPodcastHero from "@/components/FeaturedPodcastHero";
 import HomeAudioSection from "@/components/HomeAudioSection";
+import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,7 @@ const Index = () => {
       <HomeBlogSection />
       <FeaturedPodcastHero />
       <HomeAudioSection />
+      <GoogleReviewsSection />
       <NewsletterSection />
       <Footer />
     </div>
