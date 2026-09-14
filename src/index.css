@@ -103,7 +103,13 @@
   }
 
   .bg-hero-overlay {
-    background: linear-gradient(135deg, hsl(280 45% 18% / 0.9), hsl(320 60% 30% / 0.75));
+    background: linear-gradient(to right, hsl(280 45% 18% / 0.93) 0%, hsl(280 45% 18% / 0.85) 40%, hsl(320 60% 30% / 0.5) 65%, transparent 100%);
+  }
+
+  @media (min-width: 768px) {
+    .bg-hero-overlay {
+      background: linear-gradient(to right, hsl(280 45% 18% / 0.92) 0%, hsl(280 45% 18% / 0.78) 35%, hsl(320 60% 30% / 0.4) 50%, transparent 65%);
+    }
   }
 
   .card-hover {
