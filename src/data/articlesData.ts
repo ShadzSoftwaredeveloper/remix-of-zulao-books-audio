@@ -61,6 +61,57 @@ export const articles: Article[] = [
       "Hold the vision loosely enough for God to edit it, and firmly enough that discouragement cannot delete it.",
     ],
   },
+  {
+    slug: "building-a-family-prayer-altar",
+    title: "Building a Family Prayer Altar",
+    excerpt:
+      "A praying family is a protected family. Learn how to establish a consistent altar that shapes generations.",
+    tag: "Family",
+    image:
+      "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-28-at-2.00.24-PM.jpeg",
+    date: "February 10, 2026",
+    author: "Tumusiime Joseph Prosper",
+    content: [
+      "An altar is simply a place of consistent meeting with God. When a family builds one, prayer stops being an emergency response and becomes a rhythm of life.",
+      "Start small and stay consistent: a fixed time, an open Bible, a short song, and honest prayer. Fifteen faithful minutes will outlast an hour attempted once a month.",
+      "Let every member participate. Children who are given words to pray grow into adults who know how to stand. Sharing needs out loud also teaches the family to celebrate answers together.",
+      "Over time the altar becomes a boundary line. What is settled in the place of prayer rarely gets negotiated in the pressures of the day.",
+    ],
+  },
+  {
+    slug: "discipline-the-quiet-engine-of-destiny",
+    title: "Discipline: The Quiet Engine of Destiny",
+    excerpt:
+      "Talent opens doors, but discipline keeps you in the room. Small daily choices decide the size of your future.",
+    tag: "Growth",
+    image:
+      "https://zulaobusobozibwo.com/wp-content/uploads/2025/08/pexels-pixabay-247195-scaled.jpg",
+    date: "February 24, 2026",
+    author: "Tumusiime Joseph Prosper",
+    content: [
+      "Most people do not fail because they lack vision. They fail because they lack the daily structures that carry vision to completion.",
+      "Discipline is not punishment; it is self-leadership. It is choosing in advance what you will do when you no longer feel like doing it.",
+      "Guard three things: your mornings, your inputs and your commitments. What you feed your mind and how you keep your word will quietly shape everything else.",
+      "Destiny is rarely decided in one dramatic moment. It is assembled from thousands of ordinary, unseen obediences.",
+    ],
+  },
+  {
+    slug: "divine-relocation-when-god-moves-you",
+    title: "Divine Relocation: When God Moves You",
+    excerpt:
+      "Sometimes the delay is not denial but direction. Understanding seasons of relocation in God's plan.",
+    tag: "Purpose",
+    image:
+      "https://zulaobusobozibwo.com/wp-content/uploads/2025/08/WhatsApp-Image-2026-01-28-at-1.59.28-PM.jpeg",
+    date: "March 6, 2026",
+    author: "Tumusiime Joseph Prosper",
+    content: [
+      "There are assignments that cannot be fulfilled where you currently stand. Relocation, whether geographic, relational or mental, is often the first step of a new chapter.",
+      "God's moves are rarely comfortable. They usually cost familiarity, and they always test whether our security is in the place or in the One who sent us.",
+      "Discern before you depart. Confirm the leading through scripture, counsel and peace, then move decisively rather than half-heartedly.",
+      "When the move is God's, provision follows obedience. What looked like loss becomes the doorway into enlargement.",
+    ],
+  },
 ];
 
 export const getArticleBySlug = (slug?: string) =>
