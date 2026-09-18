@@ -30,7 +30,7 @@ const ArticlePage = () => {
     );
   }
 
-  const related = articles.filter((a) => a.slug !== article.slug);
+  const related = articles.filter((a) => a.slug !== article.slug).slice(0, 2);
 
   return (
     <div className="min-h-screen bg-background">
