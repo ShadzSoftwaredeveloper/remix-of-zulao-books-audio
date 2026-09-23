@@ -16,22 +16,23 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [showAnnouncement, setShowAnnouncement] = useState(true);
   const location = useLocation();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
-      <div className="bg-primary text-primary-foreground">
+      {showAnnouncement && <div className="bg-primary text-primary-foreground">
         <div className="site-container relative flex min-h-11 items-center justify-center gap-4 py-2 pr-12 font-body text-xs sm:text-sm">
           <span className="hidden h-2 w-2 rounded-full bg-secondary sm:block" />
           <p className="text-center font-semibold">Kingdom Business Summit 2026 · Sat 24 Oct · Fidodido</p>
           <Link to="/contact" className="hidden items-center gap-2 rounded-full bg-primary-foreground/15 px-5 py-2 font-semibold transition-colors hover:bg-primary-foreground/25 sm:inline-flex">
             Get tickets <ArrowRight size={15} />
           </Link>
-          <Button type="button" variant="ghost" size="icon" aria-label="Dismiss announcement" className="absolute right-3 h-8 w-8 rounded-full text-primary-foreground hover:bg-primary-foreground/15 hover:text-primary-foreground">
+          <Button type="button" variant="ghost" size="icon" onClick={() => setShowAnnouncement(false)} aria-label="Dismiss announcement" className="absolute right-3 h-8 w-8 rounded-full text-primary-foreground hover:bg-primary-foreground/15 hover:text-primary-foreground">
             <X size={17} />
           </Button>
         </div>
-      </div>
+      </div>}
 
       <div className="site-container flex h-[84px] items-center justify-between gap-5">
         <Link to="/" className="flex shrink-0 items-center">
