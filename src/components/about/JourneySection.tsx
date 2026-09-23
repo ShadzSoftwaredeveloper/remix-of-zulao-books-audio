@@ -1,42 +1,71 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  BookOpen,
+  Building2,
+  Camera,
+  GraduationCap,
+  Mic2,
+  Radio,
+  Star,
+  Ticket,
+  Users,
+} from "lucide-react";
 
-const milestones = [
-  { year: "2018", title: "The Vision Begins", desc: "Joseph Prosper receives the calling to empower families through prayer and purpose." },
-  { year: "2020", title: "First Publication", desc: "The Generational Family Prayer Altar is published and reaches hundreds of homes." },
-  { year: "2022", title: "Digital Expansion", desc: "Audio teachings and eBooks launched online, reaching believers across East Africa." },
-  { year: "2024", title: "Growing Impact", desc: "Thousands of families empowered through books, teachings, and community gatherings." },
+const growthPaths = [
+  { Icon: Mic2, title: "Keynote Speaking", desc: "Book Joseph for conferences, churches and corporate stages.", action: "Book a date", to: "/contact" },
+  { Icon: Star, title: "1:1 Mentorship", desc: "Personalized coaching to discover your gifts and purpose.", action: "Join now", to: "https://t.me/ZuulaMentorship", external: true },
+  { Icon: GraduationCap, title: "Courses & Masterclasses", desc: "Purpose-led programs for personal growth, faith and leadership.", action: "Start learning", to: "/audio" },
+  { Icon: Ticket, title: "Live Events & Tickets", desc: "Join conferences and gatherings, in person and online.", action: "Get tickets", to: "/contact" },
+  { Icon: Users, title: "Membership Community", desc: "A tribe of purpose-driven believers walking together.", action: "Join the circle", to: "https://t.me/ZuulaMentorship", external: true },
+  { Icon: Radio, title: "Podcast & Video", desc: "Weekly teachings on Kingdom purpose and wholeness.", action: "Listen now", to: "/audio" },
+  { Icon: BookOpen, title: "Books & eBooks", desc: "A curated library to deepen your faith and potential.", action: "Browse library", to: "/ebooks" },
+  { Icon: Building2, title: "Corporate Packages", desc: "Tailored keynote and workshop bundles for teams.", action: "Enquire", to: "/contact" },
+  { Icon: Camera, title: "Media Kit & Reel", desc: "Speaker bio, photos and media details for organizers.", action: "Request kit", to: "/contact" },
 ];
 
 const JourneySection = () => (
-  <section className="py-20 bg-muted/50">
+  <section className="py-20 md:py-24 bg-muted/70">
     <div className="site-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-14"
+        className="text-center mb-12"
       >
-        <p className="font-body text-sm uppercase tracking-[0.2em] text-secondary mb-3">Our Story</p>
-        <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground">The Journey So Far</h2>
+        <p className="inline-flex rounded-full border border-primary/20 bg-background/60 px-4 py-2 font-body text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-4">
+          Everything in one place
+        </p>
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
+          Ways to grow with Joseph
+        </h2>
       </motion.div>
 
-      <div className="relative max-w-2xl mx-auto">
-        <div className="absolute left-5 sm:left-1/2 top-0 bottom-0 w-px bg-border sm:-translate-x-px" />
-        {milestones.map((m, i) => (
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {growthPaths.map(({ Icon, title, desc, action, to, external }, index) => (
           <motion.div
-            key={m.year}
+            key={title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className={`relative flex items-start gap-6 mb-10 sm:mb-12 ${i % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"}`}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: index * 0.05 }}
+            className="flex min-h-[220px] flex-col rounded-lg border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
           >
-            <div className="absolute left-5 sm:left-1/2 w-3 h-3 rounded-full bg-secondary border-2 border-background -translate-x-1/2 mt-1.5 z-10" />
-            <div className={`ml-12 sm:ml-0 sm:w-[calc(50%-2rem)] ${i % 2 === 0 ? "sm:text-right sm:pr-8" : "sm:text-left sm:pl-8"}`}>
-              <span className="inline-block font-display text-xs font-bold text-secondary bg-secondary/10 px-3 py-1 rounded-full mb-2">{m.year}</span>
-              <h4 className="font-display text-lg font-bold text-foreground mb-1">{m.title}</h4>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
+            <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg border border-primary/25 bg-primary/10 text-primary">
+              <Icon size={21} strokeWidth={1.8} />
             </div>
+            <h3 className="font-display text-xl font-bold text-foreground mb-2">{title}</h3>
+            <p className="font-body text-sm leading-relaxed text-muted-foreground mb-6">{desc}</p>
+            {external ? (
+              <a href={to} target="_blank" rel="noopener noreferrer" className="group mt-auto inline-flex items-center gap-2 font-body text-sm font-semibold text-primary">
+                {action}<ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+              </a>
+            ) : (
+              <Link to={to} className="group mt-auto inline-flex items-center gap-2 font-body text-sm font-semibold text-primary">
+                {action}<ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+            )}
           </motion.div>
         ))}
       </div>
