@@ -1,0 +1,3 @@
+- [ ] Replace the About timeline with the referenced nine-card growth section.
+- [ ] Redesign the site header to match the latest reference while preserving existing destinations.
+- [ ] Verify both updates in the live preview at desktop and mobile widths.
