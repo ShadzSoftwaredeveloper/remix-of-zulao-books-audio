@@ -1,5 +1,5 @@
-- [ ] Remove Home, search, and Instagram from the header.
-- [ ] Restyle Book Joseph as an outlined secondary button.
-- [ ] Add a persistent, quantity-aware book cart.
-- [ ] Add itemized WhatsApp checkout.
-- [ ] Verify the header and complete cart flow on desktop and mobile.
+- [x] Remove Home, search, and Instagram from the header.
+- [x] Restyle Book Joseph as an outlined secondary button.
+- [x] Add a persistent, quantity-aware book cart.
+- [x] Add itemized WhatsApp checkout.
+- [x] Verify the header and complete cart flow on desktop and mobile.
