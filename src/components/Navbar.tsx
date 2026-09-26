@@ -7,11 +7,13 @@ import CartSheet from "@/components/CartSheet";
 import { useCart } from "@/contexts/CartContext";
 
 const navLinks = [
-{ label: "Mentorship", href: "https://t.me/ZuulaMentorship", external: true },
+{ label: "Mentorship", href: "/mentorship" },
 { label: "Events", href: "/contact" },
 { label: "Library", href: "/ebooks" },
+{ label: "Audio", href: "/audio" },
 { label: "Articles", href: "/articles" },
 { label: "About", href: "/about" },
+{ label: "Contact", href: "/contact" },
 ];
 
 
@@ -41,7 +43,7 @@ const Navbar = () => {
           <img src={logo} alt="Zuula Obusobozibwo" className="h-11 w-auto lg:h-12" />
         </Link>
 
-        <ul className="hidden items-center gap-5 lg:flex xl:gap-7">
+        <ul className="hidden items-center gap-3 lg:flex xl:gap-5">
           {navLinks.map((l) =>
           <li key={l.href}>
             {l.external ? (
