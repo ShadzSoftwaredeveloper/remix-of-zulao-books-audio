@@ -1,5 +1,7 @@
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { MessageCircle, Star, Eye } from "lucide-react";
+import { ShoppingCart, Star, Eye } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useCart } from "@/contexts/CartContext";
 
 export interface BookItem {
   title: string;
@@ -18,19 +20,16 @@ interface BookDetailDialogProps {
 }
 
 const BookDetailDialog = ({ book, open, onOpenChange }: BookDetailDialogProps) => {
+  const { addItem } = useCart();
   if (!book) return null;
 
   const handlePreview = () => {
     window.open(book.pdfUrl || "#", "_blank", "noopener,noreferrer");
   };
 
-  const handleOrder = () => {
-    const message = `Hello, I would like to order "${book.title}" by ${book.author}${book.price ? ` (${book.price})` : ""}.`;
-    window.open(
-      `https://wa.me/25677766708?text=${encodeURIComponent(message)}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
+  const handleAddToCart = () => {
+    addItem(book);
+    onOpenChange(false);
   };
 
   return (
@@ -93,20 +92,23 @@ const BookDetailDialog = ({ book, open, onOpenChange }: BookDetailDialogProps) =
 
             {/* Actions */}
             <div className="flex flex-col gap-3">
-              <button
-                onClick={handleOrder}
+              <Button
+                type="button"
+                onClick={handleAddToCart}
                 className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg bg-secondary text-secondary-foreground font-body text-sm font-semibold hover:opacity-90 transition-opacity active:scale-[0.98]"
               >
-                <MessageCircle size={16} />
-                Order Now
-              </button>
-              <button
+                <ShoppingCart size={16} />
+                Add to Cart
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
                 onClick={handlePreview}
                 className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg border border-border text-foreground font-body text-sm font-medium hover:bg-muted transition-colors active:scale-[0.98]"
               >
                 <Eye size={16} />
                 Preview PDF
-              </button>
+              </Button>
             </div>
           </div>
         </div>

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, Instagram, Menu, Search, X } from "lucide-react";
+import { ArrowRight, Menu, ShoppingCart, X } from "lucide-react";
 import logo from "@/assets/zuula-logo.png";
 import { Button } from "@/components/ui/button";
+import CartSheet from "@/components/CartSheet";
+import { useCart } from "@/contexts/CartContext";
 
 const navLinks = [
-{ label: "Home", href: "/" },
 { label: "Mentorship", href: "https://t.me/ZuulaMentorship", external: true },
 { label: "Events", href: "/contact" },
 { label: "Library", href: "/ebooks" },
@@ -18,6 +19,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [showAnnouncement, setShowAnnouncement] = useState(true);
   const location = useLocation();
+  const { itemCount, openCart } = useCart();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
@@ -63,19 +65,25 @@ const Navbar = () => {
         </ul>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Link to="/contact" className="whitespace-nowrap font-body text-sm font-semibold text-foreground/80 transition-colors hover:text-primary">Book Joseph</Link>
-          <a href="https://t.me/ZuulaMentorship" target="_blank" rel="noopener noreferrer" className="inline-flex h-11 items-center rounded-full bg-primary px-5 font-body text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform hover:-translate-y-0.5">Join Mentorship</a>
-          <Button asChild variant="outline" size="icon" className="rounded-full bg-muted/50" title="Search articles">
-            <Link to="/articles" aria-label="Search articles"><Search size={19} /></Link>
+          <Button asChild variant="outline" className="rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary">
+            <Link to="/contact">Book Joseph</Link>
           </Button>
-          <Button asChild variant="outline" size="icon" className="rounded-full bg-muted/50" title="Instagram">
-            <a href="#" aria-label="Instagram"><Instagram size={19} /></a>
+          <a href="https://t.me/ZuulaMentorship" target="_blank" rel="noopener noreferrer" className="inline-flex h-11 items-center rounded-full bg-primary px-5 font-body text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform hover:-translate-y-0.5">Join Mentorship</a>
+          <Button type="button" variant="outline" size="icon" onClick={openCart} className="relative rounded-full bg-muted/50" title="Open cart" aria-label={`Open cart with ${itemCount} items`}>
+            <ShoppingCart size={19} />
+            {itemCount > 0 && <span className="absolute -right-1 -top-1 grid h-5 min-w-5 place-items-center rounded-full bg-primary px-1 font-body text-[10px] font-bold text-primary-foreground">{itemCount}</span>}
           </Button>
         </div>
 
-        <Button type="button" variant="ghost" size="icon" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} className="lg:hidden">
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </Button>
+        <div className="flex items-center gap-1 lg:hidden">
+          <Button type="button" variant="ghost" size="icon" onClick={openCart} className="relative" aria-label={`Open cart with ${itemCount} items`}>
+            <ShoppingCart size={22} />
+            {itemCount > 0 && <span className="absolute right-0 top-0 grid h-5 min-w-5 place-items-center rounded-full bg-primary px-1 font-body text-[10px] font-bold text-primary-foreground">{itemCount}</span>}
+          </Button>
+          <Button type="button" variant="ghost" size="icon" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </Button>
+        </div>
       </div>
 
       {open &&
@@ -99,11 +107,17 @@ const Navbar = () => {
               </li>
           )}
             <li>
+              <Button asChild variant="outline" className="mt-2 w-full border-primary text-primary hover:bg-primary/10 hover:text-primary">
+                <Link to="/contact" onClick={() => setOpen(false)}>Book Joseph</Link>
+              </Button>
+            </li>
+            <li>
               <a href="https://t.me/ZuulaMentorship" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="mt-2 inline-flex items-center rounded-full bg-primary px-5 py-2.5 font-body text-sm font-semibold text-primary-foreground">Join Mentorship</a>
             </li>
           </ul>
         </div>
       }
+      <CartSheet />
     </nav>);
 
 };
