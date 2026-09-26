@@ -10,6 +10,7 @@ import AudioPage from "./pages/AudioPage.tsx";
 import ArticlesPage from "./pages/ArticlesPage.tsx";
 import ArticlePage from "./pages/ArticlePage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
+import MentorshipPage from "./pages/MentorshipPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/articles/:slug" element={<ArticlePage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/mentorship" element={<MentorshipPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
