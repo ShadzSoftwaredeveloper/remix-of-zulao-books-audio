@@ -1,11 +1,16 @@
-## Plan: Replace the About timeline with a growth-services grid
+# Header and WhatsApp Cart
 
-### What will change
-- Replace “The Journey So Far” timeline with a “Ways to grow with Joseph” section matching the reference.
-- Add nine responsive service cards with outlined icons, concise descriptions, and action links.
-- Use the existing magenta, purple, gold, and warm background theme rather than copying the screenshot’s colors literally.
-- Connect available actions to the current eBooks, Audio, Articles, About, and Contact pages; unavailable offerings will lead to Contact.
+## Changes
+- Remove Home from the desktop and mobile navigation.
+- Remove the search and Instagram controls.
+- Restyle “Book Joseph” as an outlined secondary button.
+- Add a cart icon with a live item-count badge to desktop and mobile headers.
+- Let visitors add books to the cart from the book details window.
+- Add a cart panel with book covers, prices, quantity controls, remove actions, subtotal, and an empty state.
+- Persist the cart between visits and send the complete itemized order through WhatsApp at checkout.
 
-### Technical details
-- Update only the existing About-page section component.
-- Keep entrance motion subtle and preserve accessible link labels and mobile stacking.
+## Technical details
+- Use a shared React cart provider backed by browser storage.
+- Reuse the existing book data and WhatsApp number.
+- Build controls from the existing design system and semantic theme colors.
+- Verify adding, changing quantity, removing, persistence, and WhatsApp checkout at desktop and mobile sizes.
