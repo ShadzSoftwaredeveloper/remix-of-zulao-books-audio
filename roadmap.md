@@ -2,4 +2,4 @@
 - [x] Restyle Book Joseph as an outlined secondary button.
 - [x] Add a persistent, quantity-aware book cart.
 - [x] Add itemized WhatsApp checkout.
-- [ ] Verify the header and complete cart flow on desktop and mobile.
+- [x] Verify the header and complete cart flow on desktop and mobile.
