@@ -61,7 +61,7 @@ const Navbar = () => {
           )}
         </ul>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 lg:flex xl:ml-4">
           <Button asChild variant="outline" className="rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary">
             <Link to="/contact">Book Joseph</Link>
           </Button>
