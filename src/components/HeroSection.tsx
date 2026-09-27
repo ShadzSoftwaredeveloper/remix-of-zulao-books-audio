@@ -62,7 +62,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-hero-overlay" />
       </div>
 
-      <div className="relative z-10 site-container py-20">
+      <div className="relative z-10 site-container py-24 md:py-32">
         <div className="max-w-2xl">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
