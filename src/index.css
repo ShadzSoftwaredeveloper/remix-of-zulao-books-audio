@@ -122,12 +122,13 @@
   }
 
   .page-header {
-    @apply relative py-20 bg-accent overflow-hidden;
+    @apply relative py-20 bg-accent overflow-hidden bg-cover bg-center;
+    background-image: url('./assets/hero-bg.jpg');
   }
 
   .page-header::before {
     content: '';
     @apply absolute inset-0;
-    background: linear-gradient(135deg, hsl(280 45% 18%), hsl(320 60% 35%));
+    background: linear-gradient(135deg, hsl(280 45% 18% / 0.94), hsl(320 60% 35% / 0.76));
   }
 }

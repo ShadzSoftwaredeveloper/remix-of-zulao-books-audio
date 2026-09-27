@@ -6,3 +6,6 @@
 - [x] Add Audio and Contact to the header menu.
 - [x] Build the Mentorship membership page with currency switching and join actions.
 - [x] Verify the Mentorship page and updated navigation on desktop and mobile.
+- [ ] Add image backgrounds to page and article title areas.
+- [ ] Add an FAQ section to the Contact page.
+- [ ] Verify the updated headers and Contact FAQ.

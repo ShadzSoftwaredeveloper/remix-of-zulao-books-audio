@@ -4,6 +4,12 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const contactInfo = [
   {
@@ -29,6 +35,34 @@ const contactInfo = [
     label: "Hours",
     value: "Mon – Sat: 8 AM – 6 PM",
     href: "#",
+  },
+];
+
+const faqs = [
+  {
+    question: "How can I book Joseph for an event?",
+    answer:
+      "Send your event date, location, audience, and preferred topic through the contact form. Our team will respond with availability and next steps.",
+  },
+  {
+    question: "How do I join the mentorship community?",
+    answer:
+      "Choose a mentorship plan on the Mentorship page. You can join the free community on Telegram or contact us for the Inner Circle and one-on-one guidance.",
+  },
+  {
+    question: "How can I order a book?",
+    answer:
+      "Open the Library, add your chosen books to the cart, then complete your order through WhatsApp. We will confirm payment and delivery details with you.",
+  },
+  {
+    question: "Where can I listen to the audio teachings?",
+    answer:
+      "Visit the Audio page to browse and play teachings on spiritual growth, personal development, leadership, and business.",
+  },
+  {
+    question: "How soon will I receive a response?",
+    answer:
+      "We normally respond during our working hours, Monday to Saturday from 8 AM to 6 PM.",
   },
 ];
 
@@ -188,6 +222,40 @@ const ContactPage = () => {
                 Kampala, Uganda · Serving communities across East Africa
               </p>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section className="bg-muted/50 py-20">
+        <div className="site-container">
+          <div className="mx-auto max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-10 text-center"
+            >
+              <p className="mb-3 font-body text-sm uppercase tracking-[0.2em] text-secondary">
+                Helpful Answers
+              </p>
+              <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
+                Frequently Asked Questions
+              </h2>
+            </motion.div>
+
+            <Accordion type="single" collapsible className="border-t border-border">
+              {faqs.map((faq, index) => (
+                <AccordionItem key={faq.question} value={`faq-${index}`}>
+                  <AccordionTrigger className="text-left font-display text-base font-semibold text-foreground hover:text-primary hover:no-underline sm:text-lg">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="pr-8 font-body text-sm leading-7 text-muted-foreground sm:text-base">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
