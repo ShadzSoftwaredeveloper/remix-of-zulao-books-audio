@@ -38,12 +38,13 @@ const Navbar = () => {
         </div>
       </div>}
 
-      <div className="site-container flex h-[84px] items-center justify-between gap-5">
+      <div className="site-container flex h-[84px] items-center gap-5">
         <Link to="/" className="flex shrink-0 items-center">
           <img src={logo} alt="Zuula Obusobozibwo" className="h-11 w-auto lg:h-12" />
         </Link>
 
-        <ul className="hidden items-center gap-3 lg:flex xl:gap-5">
+        <ul className="ml-auto hidden items-center gap-3 lg:flex xl:gap-5">
+
           {navLinks.map((l) =>
           <li key={l.label}>
               <Link
