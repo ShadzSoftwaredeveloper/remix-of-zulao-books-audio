@@ -45,7 +45,7 @@ const Navbar = () => {
 
         <ul className="hidden items-center gap-3 lg:flex xl:gap-5">
           {navLinks.map((l) =>
-          <li key={l.href}>
+          <li key={l.label}>
               <Link
               to={l.href}
               className={`font-body text-sm font-medium transition-colors ${
@@ -86,7 +86,7 @@ const Navbar = () => {
       <div className="border-t border-border bg-background px-4 pb-5 lg:hidden">
           <ul className="flex flex-col gap-1 pt-3">
             {navLinks.map((l) =>
-          <li key={l.href}>
+          <li key={l.label}>
                 <Link
               to={l.href}
               onClick={() => setOpen(false)}

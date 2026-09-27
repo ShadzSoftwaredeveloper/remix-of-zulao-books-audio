@@ -3,6 +3,6 @@
 - [x] Add a persistent, quantity-aware book cart.
 - [x] Add itemized WhatsApp checkout.
 - [x] Verify the header and complete cart flow on desktop and mobile.
-- [ ] Add Audio and Contact to the header menu.
-- [ ] Build the Mentorship membership page with currency switching and join actions.
-- [ ] Verify the Mentorship page and updated navigation on desktop and mobile.
+- [x] Add Audio and Contact to the header menu.
+- [x] Build the Mentorship membership page with currency switching and join actions.
+- [x] Verify the Mentorship page and updated navigation on desktop and mobile.
