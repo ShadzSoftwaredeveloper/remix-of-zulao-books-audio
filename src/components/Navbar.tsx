@@ -38,12 +38,13 @@ const Navbar = () => {
         </div>
       </div>}
 
-      <div className="site-container flex h-[84px] items-center justify-between gap-5">
+      <div className="site-container flex h-[84px] items-center gap-5">
         <Link to="/" className="flex shrink-0 items-center">
           <img src={logo} alt="Zuula Obusobozibwo" className="h-11 w-auto lg:h-12" />
         </Link>
 
-        <ul className="hidden items-center gap-3 lg:flex xl:gap-5">
+        <ul className="ml-auto hidden items-center gap-3 lg:flex xl:gap-5">
+
           {navLinks.map((l) =>
           <li key={l.label}>
               <Link
@@ -60,7 +61,7 @@ const Navbar = () => {
           )}
         </ul>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 lg:flex xl:ml-4">
           <Button asChild variant="outline" className="rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary">
             <Link to="/contact">Book Joseph</Link>
           </Button>
@@ -71,7 +72,7 @@ const Navbar = () => {
           </Button>
         </div>
 
-        <div className="flex items-center gap-1 lg:hidden">
+        <div className="ml-auto flex items-center gap-1 lg:hidden">
           <Button type="button" variant="ghost" size="icon" onClick={openCart} className="relative" aria-label={`Open cart with ${itemCount} items`}>
             <ShoppingCart size={22} />
             {itemCount > 0 && <span className="absolute right-0 top-0 grid h-5 min-w-5 place-items-center rounded-full bg-primary px-1 font-body text-[10px] font-bold text-primary-foreground">{itemCount}</span>}
