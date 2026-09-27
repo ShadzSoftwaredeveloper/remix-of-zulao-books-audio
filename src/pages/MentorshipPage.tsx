@@ -8,7 +8,17 @@ import { cn } from "@/lib/utils";
 
 type Currency = "UGX" | "USD";
 
-const plans = [
+type MembershipPlan = {
+  name: string;
+  price: Record<Currency, string>;
+  benefits: readonly string[];
+  action: string;
+  href: string;
+  icon: typeof Send;
+  featured?: boolean;
+};
+
+const plans: readonly MembershipPlan[] = [
   {
     name: "Free Community",
     price: { UGX: "Free", USD: "Free" },
