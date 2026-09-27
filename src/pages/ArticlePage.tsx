@@ -35,7 +35,10 @@ const ArticlePage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="page-header">
+      <div
+        className="page-header"
+        style={{ backgroundImage: `url(${article.image})` }}
+      >
         <div className="relative z-10 site-container text-center">
           <p className="font-body text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-3">
             {article.tag}
