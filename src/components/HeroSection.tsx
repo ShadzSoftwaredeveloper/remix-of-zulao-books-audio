@@ -56,7 +56,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="absolute inset-0 w-full h-full object-contain object-top md:object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-top"
           />
         </AnimatePresence>
         <div className="absolute inset-0 bg-hero-overlay" />
