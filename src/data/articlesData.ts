@@ -1,3 +1,9 @@
+import blogSunsetAsset from "@/assets/blog/blog-3.jpg.asset.json";
+import blogReflectionAsset from "@/assets/blog/blog-4.jpg.asset.json";
+import blogMentorshipAsset from "@/assets/blog/bkog-4.jpeg.asset.json";
+import blogLeadershipAsset from "@/assets/blog/blo-2.jpeg.asset.json";
+import blogStewardshipAsset from "@/assets/blog/blog-1.jpeg.asset.json";
+
 export interface Article {
   slug: string;
   title: string;
@@ -16,8 +22,7 @@ export const articles: Article[] = [
     excerpt:
       "Stewardship is a Kingdom mandate. Resources, talents, and finances managed with integrity expand influence and honor God.",
     tag: "Kingdom",
-    image:
-      "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-28-at-2.00.24-PM.jpeg",
+    image: blogStewardshipAsset.url,
     date: "January 28, 2026",
     author: "Tumusiime Joseph Prosper",
     content: [
@@ -33,8 +38,7 @@ export const articles: Article[] = [
     excerpt:
       "Kingdom legacy is built when mature leaders intentionally mentor the next generation to carry God's purposes forward.",
     tag: "Mentorship",
-    image:
-      "https://zulaobusobozibwo.com/wp-content/uploads/2025/08/WhatsApp-Image-2026-01-28-at-1.59.28-PM.jpeg",
+    image: blogLeadershipAsset.url,
     date: "January 28, 2026",
     author: "Tumusiime Joseph Prosper",
     content: [
@@ -50,8 +54,7 @@ export const articles: Article[] = [
     excerpt:
       "Vision is prophetic fuel, and purpose is the power behind it. Together, they propel believers into divine impact.",
     tag: "Vision",
-    image:
-      "https://zulaobusobozibwo.com/wp-content/uploads/2025/08/pexels-pixabay-247195-scaled.jpg",
+    image: blogSunsetAsset.url,
     date: "August 12, 2025",
     author: "Tumusiime Joseph Prosper",
     content: [
@@ -67,8 +70,7 @@ export const articles: Article[] = [
     excerpt:
       "A praying family is a protected family. Learn how to establish a consistent altar that shapes generations.",
     tag: "Family",
-    image:
-      "https://zulaobusobozibwo.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-28-at-2.00.24-PM.jpeg",
+    image: blogMentorshipAsset.url,
     date: "February 10, 2026",
     author: "Tumusiime Joseph Prosper",
     content: [
@@ -84,8 +86,7 @@ export const articles: Article[] = [
     excerpt:
       "Talent opens doors, but discipline keeps you in the room. Small daily choices decide the size of your future.",
     tag: "Growth",
-    image:
-      "https://zulaobusobozibwo.com/wp-content/uploads/2025/08/pexels-pixabay-247195-scaled.jpg",
+    image: blogReflectionAsset.url,
     date: "February 24, 2026",
     author: "Tumusiime Joseph Prosper",
     content: [
@@ -101,8 +102,7 @@ export const articles: Article[] = [
     excerpt:
       "Sometimes the delay is not denial but direction. Understanding seasons of relocation in God's plan.",
     tag: "Purpose",
-    image:
-      "https://zulaobusobozibwo.com/wp-content/uploads/2025/08/WhatsApp-Image-2026-01-28-at-1.59.28-PM.jpeg",
+    image: blogSunsetAsset.url,
     date: "March 6, 2026",
     author: "Tumusiime Joseph Prosper",
     content: [

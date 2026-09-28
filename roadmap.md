@@ -13,3 +13,4 @@
 - [x] Show the slider photo whole (contained) on mobile and verify on phone and desktop.
 - [x] Align slider photos to the top and fade the overlay at the bottom.
 - [x] Make the slider photo cover the whole area, anchored top center.
+- [x] Replace external blog imagery with the five supplied blog photos.
