@@ -9,3 +9,5 @@
 - [x] Add image backgrounds to page and article title areas.
 - [x] Add an FAQ section to the Contact page.
 - [x] Verify the updated headers and Contact FAQ.
+- [x] Anchor slider content to the bottom on mobile with smaller heading and paragraph sizes.
+- [x] Show the slider photo whole (contained) on mobile and verify on phone and desktop.
