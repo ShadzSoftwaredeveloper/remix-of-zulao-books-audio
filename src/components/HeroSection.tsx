@@ -45,8 +45,8 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[92vh] lg:min-h-screen flex items-center pt-16 md:pt-[100px] overflow-hidden">
-      <div className="absolute inset-0">
+    <section className="relative min-h-[92vh] lg:min-h-screen flex items-end md:items-center pt-16 md:pt-[100px] overflow-hidden">
+      <div className="absolute inset-0 bg-accent">
         <AnimatePresence mode="sync">
           <motion.img
             key={index}
@@ -56,13 +56,13 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-contain md:object-cover"
           />
         </AnimatePresence>
         <div className="absolute inset-0 bg-hero-overlay" />
       </div>
 
-      <div className="relative z-10 site-container py-24 md:py-32">
+      <div className="relative z-10 site-container pb-10 pt-16 md:py-32">
         <div className="max-w-2xl">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
+            className="font-display text-2xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4 md:mb-6">
             
             {slide.title}{" "}
             <span className="text-gold-gradient">{slide.highlight}</span>
@@ -89,7 +89,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="font-body text-lg text-primary-foreground/80 mb-8 max-w-lg">
+            className="font-body text-sm md:text-lg text-primary-foreground/80 mb-6 md:mb-8 max-w-lg">
             
             {slide.description}
           </motion.p>
@@ -114,7 +114,7 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Slider dots */}
-          <div className="flex gap-2 mt-10">
+          <div className="flex gap-2 mt-6 md:mt-10">
             {slides.map((_, i) => (
               <button
                 key={i}
