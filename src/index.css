@@ -103,7 +103,7 @@
   }
 
   .bg-hero-overlay {
-    background: linear-gradient(to top, hsl(280 45% 18% / 0.95) 0%, hsl(280 45% 18% / 0.8) 35%, hsl(280 45% 18% / 0.35) 60%, hsl(280 45% 18% / 0.15) 100%);
+    background: linear-gradient(to top, hsl(280 45% 18% / 0.96) 0%, hsl(280 45% 18% / 0.82) 16%, hsl(280 45% 18% / 0.42) 34%, transparent 56%);
   }
 
   @media (min-width: 768px) {
