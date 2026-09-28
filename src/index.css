@@ -122,7 +122,7 @@
   }
 
   .page-header {
-    @apply relative py-20 bg-accent overflow-hidden bg-cover bg-center;
+    @apply relative overflow-hidden bg-accent bg-cover bg-center pb-20 pt-40 md:pt-48;
     background-image: url('./assets/hero-bg.jpg');
   }
 
