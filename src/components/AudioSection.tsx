@@ -128,7 +128,7 @@ const AudioSection = () => {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <section id="audio" className="py-12 pb-32 bg-background">
+     <section id="audio" className="py-10 pb-32 sm:py-12 bg-background overflow-hidden">
       <div className="site-container">
         {/* Back button */}
         <button
@@ -177,10 +177,10 @@ const AudioSection = () => {
           viewport={{ once: true }}
           className="mt-10"
         >
-          <div className="flex items-center justify-between mb-4">
+           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-4">
             <h2 className="font-display text-xl sm:text-2xl font-bold text-foreground">All Teachings</h2>
             <Select value={categoryFilter} onValueChange={setCategoryFilter}>
-              <SelectTrigger className="w-[180px] font-body text-sm">
+               <SelectTrigger className="w-full font-body text-sm sm:w-[180px]">
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
               <SelectContent>
@@ -258,7 +258,7 @@ const AudioSection = () => {
           {/* Track Info */}
           <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-shrink-0 w-auto sm:w-64">
             <img src={current.image} alt={current.title} className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0" />
-            <div className="min-w-0 hidden xs:block sm:block">
+             <div className="hidden min-w-0 min-[360px]:block">
               <p className="font-display text-xs sm:text-sm font-semibold text-foreground truncate max-w-[100px] sm:max-w-none">{current.title}</p>
               <p className="font-body text-xs text-muted-foreground hidden sm:block">Zula Obusobozi Bwo</p>
             </div>

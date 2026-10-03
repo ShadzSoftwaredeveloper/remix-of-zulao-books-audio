@@ -52,15 +52,15 @@ const TelegramSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-background">
+    <section id="contact" className="py-16 md:py-28 bg-background overflow-hidden">
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="rounded-3xl bg-muted/60 border border-border overflow-hidden"
+          className="rounded-xl md:rounded-3xl bg-muted/60 border border-border overflow-hidden"
         >
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 p-8 md:p-12 lg:p-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 p-5 sm:p-8 md:p-12 lg:p-16 items-center">
             {/* Left content */}
             <div>
               <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
@@ -97,7 +97,7 @@ const TelegramSection = () => {
                 href={inviteLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-primary/20"
+                className="inline-flex w-full items-center justify-center gap-2 px-5 py-4 text-center rounded-full bg-primary text-primary-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-primary/20 sm:w-auto sm:px-8"
               >
                 <Send size={18} />
                 Join the channel — @ZuulaMentorship
@@ -105,7 +105,7 @@ const TelegramSection = () => {
             </div>
 
             {/* Right invite card */}
-            <div className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-sm">
+            <div className="bg-card rounded-xl p-4 sm:p-6 md:p-8 border border-border shadow-sm">
               <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-2">
                 Invite someone in
               </h3>
@@ -114,7 +114,7 @@ const TelegramSection = () => {
                 along.
               </p>
 
-              <div className="flex items-center gap-2 p-2 rounded-full bg-muted border border-border mb-4">
+              <div className="flex flex-col gap-2 rounded-xl bg-muted p-2 border border-border mb-4 sm:flex-row sm:items-center sm:rounded-full">
                 <input
                   type="text"
                   readOnly
@@ -123,7 +123,7 @@ const TelegramSection = () => {
                 />
                 <button
                   onClick={handleCopy}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity shrink-0"
+                  className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity shrink-0"
                 >
                   {copied ? <Check size={16} /> : <Copy size={16} />}
                   {copied ? "Copied" : "Copy invite link"}

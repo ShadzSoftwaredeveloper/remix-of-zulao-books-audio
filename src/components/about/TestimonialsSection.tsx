@@ -39,7 +39,7 @@ const TestimonialsSection = () => {
   const t = testimonials[current];
 
   return (
-    <section className="relative py-20 bg-muted/20 overflow-hidden">
+    <section className="relative py-16 sm:py-20 bg-muted/20 overflow-hidden">
       {/* Decorative dots */}
       <DotPattern className="absolute top-8 right-8 opacity-50" />
       <DotPattern className="absolute bottom-12 left-6 opacity-30" />
@@ -57,7 +57,7 @@ const TestimonialsSection = () => {
               Testimonials
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-2 leading-tight">
-              What Our Community<br />Has To Say
+              What Our Community <span className="sm:block">Has To Say</span>
             </h2>
             {/* Decorative swirl */}
             <svg width="80" height="16" viewBox="0 0 80 16" className="mb-6">
@@ -133,9 +133,9 @@ const TestimonialsSection = () => {
                   className="absolute inset-0 w-full h-full"
                 />
               </div>
-              <div className="p-6">
+                <div className="p-5 sm:p-6">
                 <h3 className="font-display text-xl font-bold text-foreground leading-snug">
-                  Take a Video Tour to Learn<br />About Our Ministry
+                  Take a Video Tour to Learn <span className="sm:block">About Our Ministry</span>
                 </h3>
               </div>
             </div>

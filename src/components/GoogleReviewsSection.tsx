@@ -26,7 +26,7 @@ const reviews = [
 
 const GoogleReviewsSection = () => {
   return (
-    <section id="reviews" className="py-20 bg-muted/20 overflow-hidden">
+    <section id="reviews" className="py-16 sm:py-20 bg-muted/20 overflow-hidden">
       <div className="site-container">
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 items-center">
           {/* Left: Rating summary + CTA */}
@@ -47,7 +47,7 @@ const GoogleReviewsSection = () => {
               Readers and listeners across Uganda and beyond are sharing how these teachings are transforming their lives. Join the conversation.
             </p>
 
-            <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-5 rounded-2xl bg-card border border-border shadow-sm">
+            <div className="flex w-full flex-col items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-sm sm:inline-flex sm:w-auto sm:flex-row sm:rounded-2xl">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                   <span className="font-display font-bold text-primary text-lg">G</span>

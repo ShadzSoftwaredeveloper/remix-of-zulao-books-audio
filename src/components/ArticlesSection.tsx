@@ -7,13 +7,13 @@ const ArticlesSection = () => {
   const [featured, ...rest] = articles;
 
   return (
-    <section id="articles" className="py-24 bg-muted/50">
+    <section id="articles" className="py-16 sm:py-24 bg-muted/50 overflow-hidden">
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
           <p className="font-body text-sm uppercase tracking-[0.2em] text-secondary mb-3">Blog</p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground">
@@ -26,7 +26,7 @@ const ArticlesSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card-hover grid md:grid-cols-2 gap-0 rounded-xl overflow-hidden bg-background shadow-lg border border-border/60 mb-14"
+            className="card-hover grid md:grid-cols-2 gap-0 rounded-xl overflow-hidden bg-background shadow-lg border border-border/60 mb-10 sm:mb-14"
           >
             <div className="aspect-[16/10] md:aspect-auto overflow-hidden">
               <img
@@ -35,7 +35,7 @@ const ArticlesSection = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="p-7 sm:p-10 flex flex-col justify-center">
+            <div className="p-5 sm:p-10 flex flex-col justify-center">
               <span className="font-body text-xs uppercase tracking-wider text-secondary font-semibold">
                 Featured · {featured.tag}
               </span>
@@ -56,7 +56,7 @@ const ArticlesSection = () => {
           </motion.article>
         )}
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 scrollbar-hide md:mx-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0 md:pb-0">
           {rest.map((a, i) => (
             <motion.article
               key={a.slug}
@@ -64,7 +64,7 @@ const ArticlesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="card-hover rounded-lg overflow-hidden bg-background shadow-md border border-border/60 flex flex-col"
+              className="card-hover flex w-[84vw] max-w-[330px] shrink-0 snap-start flex-col overflow-hidden rounded-lg bg-background shadow-md border border-border/60 md:w-auto md:max-w-none"
             >
               <div className="aspect-[16/10] overflow-hidden">
                 <img src={a.image} alt={a.title} className="w-full h-full object-cover" loading="lazy" />

@@ -40,8 +40,8 @@ const CartSheet = () => {
 
   return (
     <Sheet open={isOpen} onOpenChange={(open) => !open && closeCart()}>
-      <SheetContent className="flex w-full flex-col p-0 sm:max-w-md">
-        <SheetHeader className="border-b border-border px-6 py-5 text-left">
+       <SheetContent className="flex w-full max-w-full flex-col p-0 sm:max-w-md">
+         <SheetHeader className="border-b border-border px-4 py-5 text-left sm:px-6">
           <SheetTitle className="font-display text-2xl">Your Cart</SheetTitle>
           <SheetDescription>
             {items.length ? "Review your books before ordering." : "Your selected books will appear here."}
@@ -63,7 +63,7 @@ const CartSheet = () => {
           </div>
         ) : (
           <>
-            <div className="flex-1 space-y-5 overflow-y-auto px-6 py-5">
+             <div className="flex-1 space-y-5 overflow-y-auto px-4 py-5 sm:px-6">
               {items.map((item) => (
                 <div key={item.title} className="flex gap-4 border-b border-border pb-5 last:border-0">
                   <div className="h-28 w-20 shrink-0 overflow-hidden rounded-md bg-muted">
@@ -117,7 +117,7 @@ const CartSheet = () => {
               ))}
             </div>
 
-            <div className="border-t border-border bg-muted/40 p-6">
+             <div className="border-t border-border bg-muted/40 p-4 sm:p-6">
               <div className="mb-4 flex items-center justify-between">
                 <span className="font-body text-sm text-muted-foreground">Subtotal</span>
                 <span className="font-display text-xl font-bold text-foreground">{formatPrice(subtotal)}</span>

@@ -34,16 +34,16 @@ const BookDetailDialog = ({ book, open, onOpenChange }: BookDetailDialogProps) =
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-2xl p-0 overflow-hidden rounded-xl border-border bg-background">
+      <DialogContent className="max-h-[92dvh] w-[calc(100%-2rem)] overflow-y-auto p-0 rounded-xl border-border bg-background sm:max-w-2xl">
         <DialogTitle className="sr-only">{book.title}</DialogTitle>
 
         <div className="grid sm:grid-cols-[220px_1fr]">
           {/* Cover — left */}
-          <div className="relative bg-muted flex items-center justify-center p-4 sm:p-0">
+          <div className="relative flex max-h-[38dvh] items-center justify-center bg-muted p-4 sm:max-h-none sm:p-0">
             <img
               src={book.cover}
               alt={book.title}
-              className="w-full h-auto object-contain sm:h-full sm:object-contain"
+              className="h-full w-full object-contain"
             />
             {book.price && (
               <span className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-body font-bold bg-secondary text-secondary-foreground shadow-md">
@@ -53,7 +53,7 @@ const BookDetailDialog = ({ book, open, onOpenChange }: BookDetailDialogProps) =
           </div>
 
           {/* Details — right */}
-          <div className="p-6 sm:p-8 flex flex-col justify-between">
+          <div className="p-5 sm:p-8 flex flex-col justify-between">
             <div>
               <p className="font-body text-xs uppercase tracking-[0.15em] text-secondary font-semibold mb-2">
                 Premium eBook
