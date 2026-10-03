@@ -26,7 +26,7 @@ const growthPaths = [
 ];
 
 const JourneySection = () => (
-  <section className="py-20 md:py-24 bg-muted/70">
+  <section className="py-16 md:py-24 bg-muted/70 overflow-hidden">
     <div className="site-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ const JourneySection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: index * 0.05 }}
-            className="flex min-h-[220px] flex-col rounded-lg border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
+            className="flex flex-col rounded-lg border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg sm:min-h-[220px] sm:p-6"
           >
             <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg border border-primary/25 bg-primary/10 text-primary">
               <Icon size={21} strokeWidth={1.8} />

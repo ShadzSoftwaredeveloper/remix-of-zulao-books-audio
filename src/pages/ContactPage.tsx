@@ -102,9 +102,9 @@ const ContactPage = () => {
       </div>
 
       {/* Contact Info Cards */}
-      <section className="py-16 bg-muted/50">
+       <section className="py-12 sm:py-16 bg-muted/50 overflow-hidden">
         <div className="site-container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {contactInfo.map((item, i) => (
               <motion.a
                 key={item.label}
@@ -113,7 +113,7 @@ const ContactPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="group flex flex-col items-center text-center p-6 rounded-xl bg-background border border-border hover:border-secondary/40 hover:shadow-lg transition-all duration-300"
+                 className="group flex min-w-0 flex-col items-center rounded-xl border border-border bg-background p-5 text-center transition-all duration-300 hover:border-secondary/40 hover:shadow-lg sm:p-6"
               >
                 <span className="w-12 h-12 flex items-center justify-center rounded-full bg-secondary/10 text-secondary mb-4 group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors duration-300">
                   <item.icon size={20} />
@@ -121,7 +121,7 @@ const ContactPage = () => {
                 <p className="font-display text-sm font-semibold text-foreground mb-1">
                   {item.label}
                 </p>
-                <p className="font-body text-xs text-muted-foreground leading-relaxed">
+                 <p className="max-w-full break-words font-body text-xs leading-relaxed text-muted-foreground">
                   {item.value}
                 </p>
               </motion.a>
@@ -131,9 +131,9 @@ const ContactPage = () => {
       </section>
 
       {/* Form + Map */}
-      <section className="py-20 bg-background">
+       <section className="py-16 sm:py-20 bg-background overflow-hidden">
         <div className="site-container">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
             {/* Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -143,7 +143,7 @@ const ContactPage = () => {
               <p className="font-body text-sm uppercase tracking-[0.2em] text-secondary mb-3">
                 Send a Message
               </p>
-              <h2 className="font-display text-3xl font-bold text-foreground mb-8">
+               <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-6 sm:mb-8">
                 Get in Touch
               </h2>
 
@@ -205,7 +205,7 @@ const ContactPage = () => {
               <p className="font-body text-sm uppercase tracking-[0.2em] text-secondary mb-3">
                 Our Location
               </p>
-              <h2 className="font-display text-3xl font-bold text-foreground mb-8">
+               <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-6 sm:mb-8">
                 Find Us
               </h2>
               <div className="rounded-xl overflow-hidden border border-border shadow-lg">
@@ -227,7 +227,7 @@ const ContactPage = () => {
       </section>
 
       {/* Frequently Asked Questions */}
-      <section className="bg-muted/50 py-20">
+       <section className="bg-muted/50 py-16 sm:py-20">
         <div className="site-container">
           <div className="mx-auto max-w-3xl">
             <motion.div

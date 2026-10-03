@@ -7,13 +7,13 @@ const HomeBlogSection = () => {
   const latest = articles.slice(0, 3);
 
   return (
-    <section className="py-20 bg-muted/40">
+    <section className="py-16 sm:py-20 bg-muted/40 overflow-hidden">
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12"
+          className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 sm:mb-12"
         >
           <div>
             <p className="font-body text-xs sm:text-sm uppercase tracking-[0.22em] text-primary mb-3 flex items-center gap-2">
@@ -31,7 +31,7 @@ const HomeBlogSection = () => {
           </Link>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 scrollbar-hide md:mx-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0 md:pb-0">
           {latest.map((a, i) => (
             <motion.article
               key={a.slug}
@@ -39,7 +39,7 @@ const HomeBlogSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="card-hover rounded-xl overflow-hidden bg-background shadow-md border border-border/60"
+              className="card-hover w-[84vw] max-w-[330px] shrink-0 snap-start rounded-xl overflow-hidden bg-background shadow-md border border-border/60 md:w-auto md:max-w-none"
             >
               <div className="aspect-[16/10] overflow-hidden">
                 <img

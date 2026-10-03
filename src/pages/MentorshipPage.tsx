@@ -71,7 +71,7 @@ const MentorshipPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="pb-24 pt-48 sm:pt-52">
+      <main className="pb-16 pt-44 sm:pb-24 sm:pt-52">
         <section className="site-container">
           <motion.header
             initial={{ opacity: 0, y: 18 }}
@@ -81,7 +81,7 @@ const MentorshipPage = () => {
             <p className="mx-auto mb-5 w-fit rounded-full border border-border bg-card px-5 py-2 font-body text-xs font-semibold uppercase text-primary">
               Community
             </p>
-            <h1 className="font-display text-4xl font-bold text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-3xl font-bold text-foreground sm:text-5xl lg:text-6xl">
               Join the membership
             </h1>
 
@@ -116,7 +116,7 @@ const MentorshipPage = () => {
                   viewport={{ once: true, amount: 0.25 }}
                   transition={{ delay: index * 0.08 }}
                   className={cn(
-                    "relative flex min-h-[430px] flex-col rounded-lg border bg-card p-7 sm:p-9",
+                    "relative flex flex-col rounded-lg border bg-card p-6 sm:min-h-[430px] sm:p-9",
                     plan.featured
                       ? "border-primary bg-primary/5 shadow-xl shadow-primary/10"
                       : "border-border",
@@ -132,7 +132,7 @@ const MentorshipPage = () => {
                     {plan.name}
                   </h2>
                   <div className="mt-4 flex flex-wrap items-end gap-1">
-                    <p className="font-body text-4xl font-bold text-foreground sm:text-5xl">
+                    <p className="font-body text-3xl font-bold text-foreground sm:text-5xl">
                       {plan.price[currency]}
                     </p>
                     {plan.price[currency] !== "Free" && (

@@ -15,7 +15,7 @@ const DotPattern = ({ className, cols = 7, count = 49, color = "bg-secondary/50"
 
 const AboutHeroSection = () => {
   return (
-    <section className="relative py-16 md:py-24 lg:py-28 bg-muted/30 overflow-hidden">
+    <section className="relative pb-16 pt-36 md:pb-24 md:pt-48 lg:py-28 bg-muted/30 overflow-hidden">
       <div className="site-container">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
           {/* Left: Text */}
@@ -50,7 +50,7 @@ const AboutHeroSection = () => {
             </p>
 
             {/* Vision & Mission cards */}
-            <div className="grid grid-cols-2 gap-6 lg:gap-8">
+            <div className="grid gap-6 min-[360px]:grid-cols-2 lg:gap-8">
               <div>
                 <span className="w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-3">
                   <Eye size={24} />

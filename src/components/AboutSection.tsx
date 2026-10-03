@@ -11,9 +11,9 @@ interface AboutSectionProps {
 const AboutSection = ({ variant = "founder" }: AboutSectionProps) => {
   const imgSrc = variant === "podcast" ? podcastAsset.url : FOUNDER_IMG;
   return (
-    <section id="about" className="py-24 bg-background">
+    <section id="about" className="py-16 sm:py-24 bg-background overflow-hidden">
       <div className="site-container">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}

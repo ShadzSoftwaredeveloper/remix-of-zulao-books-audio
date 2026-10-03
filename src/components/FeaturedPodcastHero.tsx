@@ -62,16 +62,16 @@ const FeaturedPodcastHero = () => {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <section className="pt-20 pb-4 bg-background">
+    <section className="pt-16 sm:pt-20 pb-4 bg-background overflow-hidden">
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-br from-accent/15 via-card to-primary/10 shadow-lg"
+          className="relative overflow-hidden rounded-xl sm:rounded-3xl border border-border/60 bg-gradient-to-br from-accent/15 via-card to-primary/10 shadow-lg"
         >
           <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
-          <div className="relative grid gap-8 p-6 sm:p-10 md:grid-cols-[280px_1fr] md:items-center">
+          <div className="relative grid gap-7 p-5 sm:p-10 md:grid-cols-[280px_1fr] md:items-center">
             <div className="relative mx-auto w-full max-w-[280px]">
               <img
                 src={featured.image}
@@ -114,17 +114,17 @@ const FeaturedPodcastHero = () => {
                 </span>
               </div>
 
-              <div className="mt-7 flex flex-wrap items-center gap-3">
+              <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                 <button
                   onClick={togglePlay}
-                  className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-body text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 font-body text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity"
                 >
                   {isPlaying ? <Pause size={16} /> : <Play size={16} />}
                   {isPlaying ? "Pause Sample" : "Play Sample"}
                 </button>
                 <Link
                   to="/audio"
-                  className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-background/60 px-6 py-3 font-body text-sm font-semibold text-foreground hover:bg-accent/10 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/40 bg-background/60 px-6 py-3 font-body text-sm font-semibold text-foreground hover:bg-accent/10 transition-colors"
                 >
                   <Volume2 size={16} /> Start Listening <ArrowRight size={16} />
                 </Link>

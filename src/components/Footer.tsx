@@ -164,7 +164,7 @@ const Footer = () => {
 
       {/* Bottom bar */}
       <div className="border-t border-background/10">
-        <div className="site-container py-5 flex items-center justify-between">
+        <div className="site-container py-5 flex items-center justify-between gap-4">
           <p className="font-body text-xs text-background/40">
             © {new Date().getFullYear()} Zuula Obusobozibwo. All rights reserved.
           </p>
@@ -174,6 +174,7 @@ const Footer = () => {
             </p>
             <button
               onClick={scrollToTop}
+              aria-label="Back to top"
               className="p-2 rounded-lg border border-background/20 text-background/60 hover:text-background hover:border-background/40 transition-colors"
             >
               <ChevronUp size={16} />

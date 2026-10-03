@@ -9,7 +9,7 @@ const values = [
 ];
 
 const CoreValuesSection = () => (
-  <section className="py-20 bg-background">
+  <section className="py-16 sm:py-20 bg-background">
     <div className="site-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}

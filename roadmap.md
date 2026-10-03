@@ -14,3 +14,5 @@
 - [x] Align slider photos to the top and fade the overlay at the bottom.
 - [x] Make the slider photo cover the whole area, anchored top center.
 - [x] Replace external blog imagery with the five supplied blog photos.
+- [x] Make blog cards swipe in one row on mobile.
+- [x] Audit and improve responsive layouts across all public pages.

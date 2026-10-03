@@ -20,7 +20,7 @@ const EbooksPage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="relative pt-32 md:pt-44 pb-20 md:pb-28 overflow-hidden bg-gradient-to-b from-accent/[0.08] via-background to-accent/[0.04]">
+       <section className="relative pt-40 md:pt-44 pb-16 md:pb-28 overflow-hidden bg-gradient-to-b from-accent/[0.08] via-background to-accent/[0.04]">
         <div className="pointer-events-none absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(hsl(320 85% 45%) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
         <div className="site-container">
           <motion.div
@@ -33,7 +33,7 @@ const EbooksPage = () => {
               Read, Reflect, and Be Transformed
             </p>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-6">
+             <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-6">
               Equipping People with Life-Changing Books
             </h1>
 
@@ -55,9 +55,9 @@ const EbooksPage = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={query ? "" : `${placeholder}|`}
-                className="w-full rounded-full bg-background py-4 pl-14 pr-32 font-body text-sm sm:text-base text-foreground placeholder:text-muted-foreground shadow-lg shadow-foreground/5 border border-border focus:outline-none focus:ring-2 focus:ring-primary/20"
+                 className="w-full rounded-full bg-background py-4 pl-12 pr-5 font-body text-sm sm:pl-14 sm:pr-32 sm:text-base text-foreground placeholder:text-muted-foreground shadow-lg shadow-foreground/5 border border-border focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
-              <span className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-primary/10 px-6 py-2.5 font-body text-sm font-semibold text-primary">
+               <span className="absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-full bg-primary/10 px-6 py-2.5 font-body text-sm font-semibold text-primary sm:block">
                 Search
               </span>
             </form>

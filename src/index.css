@@ -83,6 +83,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    overflow-x: clip;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -92,7 +93,16 @@
 
 @layer components {
   .site-container {
-    @apply container mx-auto px-4 md:px-[70px];
+    @apply container mx-auto w-full px-4 md:px-[70px];
+  }
+
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 
   .text-gold-gradient {
