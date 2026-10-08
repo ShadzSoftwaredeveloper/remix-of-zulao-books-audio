@@ -13,6 +13,8 @@ export interface Article {
   date: string;
   author: string;
   content: string[];
+  sections: { heading: string; paragraphs: string[] }[];
+  relatedSlugs: string[];
 }
 
 export const articles: Article[] = [
@@ -31,6 +33,23 @@ export const articles: Article[] = [
       "Practically, integrity looks like keeping honest books, honoring commitments on time, refusing income that compromises conscience, and building margin so that generosity is planned rather than accidental.",
       "When resources are managed this way, influence expands naturally. God does not entrust Kingdom weight to hands that leak. Faithfulness in the little becomes the doorway to the much.",
     ],
+    sections: [
+      {
+        heading: "Stewardship Begins with the Heart",
+        paragraphs: [
+          "Before stewardship becomes a budget, it is an attitude. A steward lives with gratitude rather than entitlement and asks how every resource can serve God's purposes. This perspective removes both pride in seasons of abundance and shame in seasons of limitation.",
+          "The heart is revealed in ordinary decisions: whether we tell the truth when no one can verify it, whether we return what we borrowed, and whether generosity remains part of our lives when finances feel tight. These quiet choices prepare us for greater trust.",
+        ],
+      },
+      {
+        heading: "Build Practices That Protect Integrity",
+        paragraphs: [
+          "Good intentions need practical systems. Record income and expenses, separate personal and ministry funds, invite appropriate accountability, and review commitments before taking on new ones. Clear records protect relationships as much as they protect money.",
+          "Set aside giving first, meet obligations faithfully, save with wisdom, and resist the pressure to display a lifestyle that your present season cannot sustain. Financial peace grows when private choices agree with public values.",
+        ],
+      },
+    ],
+    relatedSlugs: ["discipline-the-quiet-engine-of-destiny", "the-power-of-vision-and-purpose-in-the-kingdom"],
   },
   {
     slug: "raising-the-next-generation-of-kingdom-leaders",
@@ -47,6 +66,23 @@ export const articles: Article[] = [
       "Give young leaders real assignments, real feedback and real room to fail safely. Protect them from cynicism by letting them see how you handle pressure, correction and delay.",
       "The measure of your leadership is not the crowd you gather, but the leaders who outgrow you and still call you father or mother in the faith.",
     ],
+    sections: [
+      {
+        heading: "Model Before You Instruct",
+        paragraphs: [
+          "Emerging leaders listen to our teaching, but they study our lives. They notice how we speak about absent people, respond to disappointment, honor authority, and treat those who cannot advance us. What is demonstrated consistently becomes permission for the next generation.",
+          "This is why mentorship requires access rather than occasional speeches. Invite younger leaders into preparation, service, decision-making, and reflection. Explain not only what you chose, but the values and prayers that shaped the choice.",
+        ],
+      },
+      {
+        heading: "Create a Path from Potential to Responsibility",
+        paragraphs: [
+          "Affirming potential is only the beginning. Give clear assignments with real outcomes, agree on what faithfulness looks like, and schedule honest feedback. Responsibility should grow as character, competence, and consistency become visible.",
+          "Do not rescue a developing leader from every consequence. Walk with them as they learn, helping them name what went wrong and what they will do differently. Safe correction produces durable confidence and humble leadership.",
+        ],
+      },
+    ],
+    relatedSlugs: ["building-a-family-prayer-altar", "discipline-the-quiet-engine-of-destiny"],
   },
   {
     slug: "the-power-of-vision-and-purpose-in-the-kingdom",
@@ -63,6 +99,23 @@ export const articles: Article[] = [
       "Purpose is sustained in seasons where nothing visible is happening. That is where character is formed and capacity is stretched for what is coming.",
       "Hold the vision loosely enough for God to edit it, and firmly enough that discouragement cannot delete it.",
     ],
+    sections: [
+      {
+        heading: "Turn Vision into a Faithful Plan",
+        paragraphs: [
+          "A vision becomes useful when it begins to shape priorities. Write it in language clear enough to guide a decision, then identify the people you are called to serve, the change you hope to see, and the next measurable act of obedience.",
+          "Place that next step on the calendar. Assign resources to it and decide what must be declined so attention remains focused. Planning does not replace faith; it gives faith a practical expression.",
+        ],
+      },
+      {
+        heading: "Remain Teachable While You Build",
+        paragraphs: [
+          "Purpose provides stability, but methods must remain open to refinement. Seek counsel from people who understand both your calling and your blind spots. Their questions may sharpen what enthusiasm alone cannot see.",
+          "Review the fruit without worshipping the numbers. Growth, delays, and closed doors can all provide direction. A mature visionary knows the difference between abandoning an assignment and allowing God to improve the route.",
+        ],
+      },
+    ],
+    relatedSlugs: ["divine-relocation-when-god-moves-you", "kingdom-stewardship-and-financial-integrity"],
   },
   {
     slug: "building-a-family-prayer-altar",
@@ -79,6 +132,23 @@ export const articles: Article[] = [
       "Let every member participate. Children who are given words to pray grow into adults who know how to stand. Sharing needs out loud also teaches the family to celebrate answers together.",
       "Over time the altar becomes a boundary line. What is settled in the place of prayer rarely gets negotiated in the pressures of the day.",
     ],
+    sections: [
+      {
+        heading: "Choose a Rhythm Your Family Can Keep",
+        paragraphs: [
+          "Consistency matters more than complexity. Choose a time when most family members can be present and begin with a simple pattern: gratitude, scripture, conversation, and prayer. A sustainable rhythm gives everyone room to grow.",
+          "Expect interruptions and imperfect days. If a gathering is missed, return without guilt. The goal is not a flawless religious performance but a home where turning toward God becomes natural in celebration, uncertainty, and need.",
+        ],
+      },
+      {
+        heading: "Let Prayer Shape Family Culture",
+        paragraphs: [
+          "Keep a record of requests and answered prayers. Revisiting them teaches children that God is present in the family's real story. It also moves testimony from a vague idea to a shared memory.",
+          "Use the altar to bless one another, reconcile quickly, and pray beyond your own household. Families become spiritually strong when prayer produces forgiveness inside the home and compassion for people outside it.",
+        ],
+      },
+    ],
+    relatedSlugs: ["raising-the-next-generation-of-kingdom-leaders", "discipline-the-quiet-engine-of-destiny"],
   },
   {
     slug: "discipline-the-quiet-engine-of-destiny",
@@ -95,6 +165,23 @@ export const articles: Article[] = [
       "Guard three things: your mornings, your inputs and your commitments. What you feed your mind and how you keep your word will quietly shape everything else.",
       "Destiny is rarely decided in one dramatic moment. It is assembled from thousands of ordinary, unseen obediences.",
     ],
+    sections: [
+      {
+        heading: "Design the Environment for Consistency",
+        paragraphs: [
+          "Willpower is unreliable when the environment continually pulls in the opposite direction. Prepare what you need the night before, remove obvious distractions, and make the desired action easier to begin. Small arrangements can protect important commitments.",
+          "Connect each habit to a clear purpose. Reading, prayer, exercise, and focused work last longer when they are understood as preparation for service rather than attempts to prove personal worth.",
+        ],
+      },
+      {
+        heading: "Recover Quickly After a Missed Day",
+        paragraphs: [
+          "Discipline is not the absence of failure; it is the refusal to turn one failure into an identity. Review what interrupted the rhythm, make one useful adjustment, and begin again at the next opportunity.",
+          "Track progress over weeks rather than judging one difficult day. Quiet growth often becomes visible only after repetition has formed capacity. Celebrate faithfulness, then keep moving without becoming impressed by your own momentum.",
+        ],
+      },
+    ],
+    relatedSlugs: ["the-power-of-vision-and-purpose-in-the-kingdom", "kingdom-stewardship-and-financial-integrity"],
   },
   {
     slug: "divine-relocation-when-god-moves-you",
@@ -111,6 +198,23 @@ export const articles: Article[] = [
       "Discern before you depart. Confirm the leading through scripture, counsel and peace, then move decisively rather than half-heartedly.",
       "When the move is God's, provision follows obedience. What looked like loss becomes the doorway into enlargement.",
     ],
+    sections: [
+      {
+        heading: "Discern the Difference Between Escape and Direction",
+        paragraphs: [
+          "Not every desire to leave is divine leading. Exhaustion, offense, comparison, and impatience can make any new place look like promise. Allow time for motives to settle before treating discomfort as instruction.",
+          "Test the direction through scripture, prayer, wise counsel, and the responsibilities already entrusted to you. God's guidance will not require dishonesty or careless abandonment of commitments in order to appear spiritual.",
+        ],
+      },
+      {
+        heading: "Honor Both the Departure and the Arrival",
+        paragraphs: [
+          "Finish well where possible. Express gratitude, communicate clearly, settle obligations, and release relationships without unnecessary conflict. The way you leave one season often influences the health with which you enter the next.",
+          "In the new place, resist the urge to recreate immediate familiarity. Listen, learn, serve, and allow fresh relationships to develop at a healthy pace. Relocation becomes fruitful when obedience is followed by humility and patient roots.",
+        ],
+      },
+    ],
+    relatedSlugs: ["the-power-of-vision-and-purpose-in-the-kingdom", "raising-the-next-generation-of-kingdom-leaders"],
   },
 ];
 
