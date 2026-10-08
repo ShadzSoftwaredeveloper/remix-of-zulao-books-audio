@@ -16,3 +16,5 @@
 - [x] Replace external blog imagery with the five supplied blog photos.
 - [x] Make blog cards swipe in one row on mobile.
 - [x] Audit and improve responsive layouts across all public pages.
+- [x] Expand every blog article with deeper teaching content.
+- [x] Interlink related blog articles for continued reading.
