@@ -7,6 +7,7 @@ import AboutHeroSection from "@/components/about/AboutHeroSection";
 import CoreValuesSection from "@/components/about/CoreValuesSection";
 import JourneySection from "@/components/about/JourneySection";
 import AboutCtaSection from "@/components/about/AboutCtaSection";
+import TeamSection from "@/components/about/TeamSection";
 import MediaCtaSection from "@/components/about/MediaCtaSection";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
 
@@ -36,6 +37,7 @@ const AboutPage = () => {
       <AboutHeroSection />
       <AboutSection />
       <CoreValuesSection />
+      <TeamSection />
       <JourneySection />
       <TestimonialsSection />
       <MediaCtaSection />

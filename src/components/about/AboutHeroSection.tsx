@@ -15,7 +15,7 @@ const DotPattern = ({ className, cols = 7, count = 49, color = "bg-secondary/50"
 
 const AboutHeroSection = () => {
   return (
-    <section className="relative pb-16 pt-36 md:pb-24 md:pt-48 lg:py-28 bg-muted/30 overflow-hidden">
+    <section className="relative pb-16 pt-40 md:pb-24 md:pt-52 lg:pb-28 lg:pt-56 bg-muted/30 overflow-hidden">
       <div className="site-container">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
           {/* Left: Text */}

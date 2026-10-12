@@ -19,3 +19,5 @@
 - [x] Expand every blog article with deeper teaching content.
 - [x] Interlink related blog articles for continued reading.
 - [x] Add a reference-style related-article sidebar and verify its links and layout.
+- [x] Add a "Meet The Team" section to the About page and verify cards on desktop and mobile.
+- [x] Increase the top space above the About page title and verify it clears the header.
