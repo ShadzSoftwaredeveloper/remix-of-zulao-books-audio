@@ -37,6 +37,7 @@ const AboutPage = () => {
       <AboutHeroSection />
       <AboutSection />
       <CoreValuesSection />
+      <TeamSection />
       <JourneySection />
       <TestimonialsSection />
       <MediaCtaSection />
