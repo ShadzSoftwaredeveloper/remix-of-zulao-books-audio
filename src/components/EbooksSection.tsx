@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { BookOpen, Search, Download } from "lucide-react";
+import { BookOpen, Search } from "lucide-react";
 import BookDetailDialog, { BookItem } from "./BookDetailDialog";
 import { useTypewriter } from "@/hooks/use-typewriter";
 import alterFrontCover from "@/assets/books/alter_front_cover.jpg";
@@ -14,6 +14,12 @@ const ebooks: BookItem[] = [
   { title: "Omuwendo Gw'Obulamu", author: "Tumusiime Joseph Prosper", cover: omuwendo, free: false, price: "UShs 20,000" },
   { title: "Ebwogeere Ku Kitabo", author: "Tumusiime Joseph Prosper", cover: alterBack, free: false, price: "UShs 20,000" },
 ];
+
+const PriceBadge = ({ price }: { price: string }) => (
+  <span className="absolute top-2 right-2 px-2 py-1 rounded text-xs font-body font-semibold bg-secondary text-secondary-foreground shadow-sm">
+    {price}
+  </span>
+);
 
 const EbooksSection = ({
   showAll = false,
@@ -44,26 +50,62 @@ const EbooksSection = ({
   );
 
   const displayed = showAll ? filtered : filtered.slice(0, 4);
+  const [featured, ...rest] = displayed;
+
+  const renderCover = (book: BookItem, large = false) => (
+    <div className="relative rounded-lg overflow-hidden">
+      <div className="aspect-[3/4] overflow-hidden">
+        <img
+          src={book.cover}
+          alt={book.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          loading="lazy"
+        />
+      </div>
+      {book.price && <PriceBadge price={book.price} />}
+      {large && (
+        <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <span className="p-3 rounded-full bg-primary-foreground/90 text-primary">
+            <BookOpen size={22} />
+          </span>
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <section id="ebooks" className="relative py-16 sm:py-24 overflow-hidden bg-gradient-to-b from-accent/[0.06] via-background to-accent/[0.06]">
       <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(hsl(320 85% 45%) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
       <div className="site-container">
+        {/* Header row — heading left, link right */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="mb-10 flex flex-wrap items-center justify-between gap-4"
         >
-          <p className="font-body text-sm uppercase tracking-[0.2em] text-secondary mb-3">
-            Library
-          </p>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            eBook Resources
-          </h2>
-          <p className="font-body text-foreground/60 max-w-lg mx-auto">
-            Curated collection of transformative books to deepen your faith and unlock your potential.
-          </p>
+          <div className="flex items-center gap-3">
+            <span className="hidden sm:flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0">
+              <BookOpen size={22} />
+            </span>
+            <div>
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground leading-tight">
+                Discover Your Next Book
+              </h2>
+              <p className="font-body text-sm text-muted-foreground mt-1">
+                Transformative titles to deepen your faith and unlock your potential.
+              </p>
+            </div>
+          </div>
+          {!showAll && (
+            <a
+              href="/ebooks"
+              className="inline-flex items-center gap-1.5 font-body text-sm font-semibold text-primary hover:opacity-80 transition-opacity"
+            >
+              More Books
+              <span aria-hidden="true">→</span>
+            </a>
+          )}
         </motion.div>
 
         {/* Search — only on full page */}
@@ -80,71 +122,64 @@ const EbooksSection = ({
           </div>
         )}
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-7 sm:gap-6">
-          {displayed.map((book, i) => (
+        {/* Grid — featured card + smaller cards */}
+        {displayed.length > 0 && (
+          <div className="grid grid-cols-2 gap-3 gap-y-7 sm:gap-6 md:grid-cols-5">
+            {/* Featured */}
             <motion.div
-              key={book.title}
+              key={featured.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="card-hover group cursor-pointer"
-              onClick={() => setSelectedBook(book)}
+              className="card-hover group cursor-pointer col-span-2 md:col-span-2 md:row-span-2"
+              onClick={() => setSelectedBook(featured)}
             >
-              <div className="relative rounded-lg overflow-hidden bg-background shadow-md">
-                <div className="aspect-[3/4] overflow-hidden">
-                  <img
-                    src={book.cover}
-                    alt={book.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
+              <div className="flex h-full flex-col rounded-xl border border-border bg-card p-3 sm:p-4 shadow-md">
+                {renderCover(featured, true)}
+                <div className="mt-4 flex flex-1 flex-col">
+                  <h3 className="font-display text-lg sm:text-xl font-semibold text-foreground leading-tight">
+                    {featured.title}
+                  </h3>
+                  <p className="font-body text-xs text-muted-foreground mt-1">{featured.author}</p>
+                  <p className="font-body text-sm font-semibold text-primary mt-3">
+                    {featured.price || "Free"}
+                  </p>
+                  <p className="font-body text-xs text-muted-foreground mt-1">
+                    eBook · PDF preview available
+                  </p>
                 </div>
-                {book.free ? (
-                  <span className="absolute top-2 right-2 px-2 py-1 rounded text-xs font-body font-semibold bg-primary text-primary-foreground">
-                    Free
-                  </span>
-                ) : book.price && (
-                  <span className="absolute top-2 right-2 px-2 py-1 rounded text-xs font-body font-semibold bg-secondary text-secondary-foreground">
-                    {book.price}
-                  </span>
-                )}
-                <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-                  <span className="p-2 rounded-full bg-primary-foreground/90 text-primary">
-                    <BookOpen size={18} />
-                  </span>
-                  <span className="p-2 rounded-full bg-primary-foreground/90 text-primary">
-                    <Download size={18} />
-                  </span>
-                </div>
-              </div>
-              <div className="mt-3 px-1">
-                <h3 className="font-display text-sm font-semibold text-foreground leading-tight">
-                  {book.title}
-                </h3>
-                <p className="font-body text-xs text-muted-foreground mt-1">{book.author}</p>
               </div>
             </motion.div>
-          ))}
-        </div>
 
-        {/* More Books button — only on home */}
-        {!showAll && (
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mt-10"
-          >
-            <a
-              href="/ebooks"
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-body text-sm font-semibold hover:opacity-90 transition-opacity active:scale-[0.98]"
-            >
-              <BookOpen size={16} />
-              More Books
-            </a>
-          </motion.div>
+            {/* Smaller cards */}
+            {rest.map((book, i) => (
+              <motion.div
+                key={book.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (i + 1) * 0.05 }}
+                className={`card-hover group cursor-pointer ${i === rest.length - 1 && rest.length % 2 !== 0 ? "col-span-2 md:col-span-1" : ""}`}
+                onClick={() => setSelectedBook(book)}
+              >
+                <div className="flex h-full flex-col rounded-xl border border-border bg-card p-2.5 sm:p-3 shadow-md">
+                  {renderCover(book)}
+                  <div className="mt-3 flex flex-1 flex-col">
+                    <h3 className="font-display text-sm font-semibold text-foreground leading-tight">
+                      {book.title}
+                    </h3>
+                    <p className="font-body text-xs text-muted-foreground mt-1">{book.author}</p>
+                    <p className="font-body text-sm font-semibold text-primary mt-2">
+                      {book.price || "Free"}
+                    </p>
+                    <p className="font-body text-xs text-muted-foreground mt-0.5">
+                      eBook · PDF preview available
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         )}
       </div>
 
