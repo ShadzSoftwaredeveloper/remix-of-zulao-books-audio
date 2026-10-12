@@ -18,4 +18,4 @@
 - [x] Audit and improve responsive layouts across all public pages.
 - [x] Expand every blog article with deeper teaching content.
 - [x] Interlink related blog articles for continued reading.
-- [ ] Add a reference-style related-article sidebar and verify its links and layout.
+- [x] Add a reference-style related-article sidebar and verify its links and layout.
