@@ -55,7 +55,8 @@ const ArticlePage = () => {
       </div>
 
       <article className="py-16">
-        <div className="site-container max-w-3xl">
+        <div className="site-container grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_300px] xl:gap-14">
+          <div className="min-w-0">
           <div className="aspect-[16/9] overflow-hidden rounded-lg shadow-md mb-10">
             <img src={article.image} alt={article.title} className="w-full h-full object-cover" />
           </div>
@@ -82,31 +83,40 @@ const ArticlePage = () => {
             </section>
           ))}
 
-          {related.length > 0 && (
-            <aside className="mt-12 border-l-4 border-primary bg-muted/60 px-5 py-5 sm:px-6">
-              <p className="mb-3 font-body text-xs font-semibold uppercase tracking-[0.16em] text-secondary">
-                Continue exploring
-              </p>
-              <div className="flex flex-col gap-3">
-                {related.map((relatedArticle) => (
-                  <Link
-                    key={relatedArticle.slug}
-                    to={`/articles/${relatedArticle.slug}`}
-                    className="font-display text-lg font-bold text-primary transition-colors hover:text-secondary"
-                  >
-                    {relatedArticle.title}
-                  </Link>
-                ))}
-              </div>
-            </aside>
-          )}
-
           <Link
             to="/articles"
             className="inline-flex items-center gap-2 mt-12 font-body text-sm font-semibold text-primary hover:text-secondary transition-colors"
           >
             <ArrowLeft size={16} /> Back to Articles
           </Link>
+          </div>
+
+          <aside aria-label="Article sidebar" className="min-w-0 space-y-8 lg:sticky lg:top-40">
+            <div className="border-b border-border pb-7">
+              <p className="mb-3 font-body text-xs font-semibold uppercase tracking-wide text-muted-foreground">Advertise with us</p>
+              <Link to="/contact" className="font-body text-sm leading-relaxed text-muted-foreground transition-colors hover:text-primary">
+                Contact us to place your advertisement here.
+              </Link>
+            </div>
+            {related.length > 0 && (
+              <section aria-labelledby="sidebar-related-heading">
+                <h2 id="sidebar-related-heading" className="font-display text-xl font-bold text-foreground">Related articles</h2>
+                <p className="mb-5 mt-3 font-body text-sm leading-relaxed text-muted-foreground">Keep reading for more Kingdom-focused teachings.</p>
+                <div className="space-y-4">
+                  {related.map((relatedArticle) => (
+                    <Link
+                      key={relatedArticle.slug}
+                      to={`/articles/${relatedArticle.slug}`}
+                      className="group block rounded-lg border border-border bg-card p-5 transition-colors hover:border-primary/50 hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      <h3 className="font-body text-base font-semibold leading-snug text-foreground group-hover:text-primary">{relatedArticle.title}</h3>
+                      <p className="mt-2 line-clamp-3 font-body text-sm leading-relaxed text-muted-foreground">{relatedArticle.excerpt}</p>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
+          </aside>
         </div>
       </article>
 
