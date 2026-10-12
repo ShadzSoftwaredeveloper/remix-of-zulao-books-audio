@@ -4,6 +4,7 @@ import { ArrowRight, Menu, ShoppingCart, X } from "lucide-react";
 import logo from "@/assets/zuula-logo.png";
 import { Button } from "@/components/ui/button";
 import CartSheet from "@/components/CartSheet";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useCart } from "@/contexts/CartContext";
 
 const navLinks = [
@@ -62,6 +63,7 @@ const Navbar = () => {
         </ul>
 
         <div className="hidden items-center gap-3 lg:flex xl:ml-4">
+          <LanguageSwitcher />
           <Button asChild variant="outline" className="rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary">
             <Link to="/contact">Book Joseph</Link>
           </Button>
@@ -73,6 +75,7 @@ const Navbar = () => {
         </div>
 
         <div className="ml-auto flex items-center gap-1 lg:hidden">
+          <LanguageSwitcher className="h-9 px-2 text-xs" />
           <Button type="button" variant="ghost" size="icon" onClick={openCart} className="relative" aria-label={`Open cart with ${itemCount} items`}>
             <ShoppingCart size={22} />
             {itemCount > 0 && <span className="absolute right-0 top-0 grid h-5 min-w-5 place-items-center rounded-full bg-primary px-1 font-body text-[10px] font-bold text-primary-foreground">{itemCount}</span>}
