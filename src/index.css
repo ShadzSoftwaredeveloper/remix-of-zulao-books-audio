@@ -142,3 +142,8 @@
     background: linear-gradient(135deg, hsl(280 45% 18% / 0.94), hsl(320 60% 35% / 0.76));
   }
 }
+
+/* Hide Google Translate banner */
+.goog-te-banner-frame, .skiptranslate iframe, #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+body { top: 0 !important; }
+.goog-text-highlight { background: none !important; box-shadow: none !important; }
