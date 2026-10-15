@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import booksSlider from "@/assets/books-slider.png";
-import zuula1 from "@/assets/zuula-1.webp.asset.json";
+import slider1 from "@/assets/slider-1.jpeg";
+import slider2 from "@/assets/slider 2.jpeg";
 import zuulaHome from "@/assets/zuula-homep.webp.asset.json";
 
 const slides = [
   {
-    image: booksSlider,
+    image: slider1,
     title: "Discover the Possibility",
     highlight: "Within Every Page",
     description:
@@ -16,7 +16,7 @@ const slides = [
     secondaryCta: { label: "Learn More", to: "/about" },
   },
   {
-    image: zuula1.url,
+    image: slider2,
     title: "Awaken Your Mind,",
     highlight: "Empower Your Life",
     description:
