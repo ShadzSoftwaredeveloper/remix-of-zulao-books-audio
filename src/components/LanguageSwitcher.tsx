@@ -4,7 +4,6 @@ import { Languages } from "lucide-react";
 const LANGS = [
   { code: "en", label: "EN" },
   { code: "lg", label: "Luganda" },
-  { code: "sw", label: "Kiswahili" },
 ];
 
 declare global {
@@ -36,7 +35,7 @@ const LanguageSwitcher = ({ className = "" }: { className?: string }) => {
     if (document.getElementById("google-translate-script")) return;
     window.googleTranslateElementInit = () => {
       new window.google.translate.TranslateElement(
-        { pageLanguage: "en", includedLanguages: "en,lg,sw", autoDisplay: false },
+        { pageLanguage: "en", includedLanguages: "en,lg", autoDisplay: false },
         "google_translate_element",
       );
     };
