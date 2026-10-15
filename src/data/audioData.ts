@@ -156,9 +156,9 @@ export const audioSeries: AudioTrack[] = [
 ];
 
 export const categories = [
-  { value: "all", label: "All Categories" },
-  { value: "kingship", label: "Kingship" },
-  { value: "spiritual", label: "Spiritual" },
-  { value: "financial", label: "Financial" },
-  { value: "personal-discovery", label: "Personal Discovery" },
+  { value: "all", label: "All Categories", descEn: "", descLg: "" },
+  { value: "kingship", label: "Kingship", descEn: "Teachings on ruling and reigning as sons of the Kingdom.", descLg: "Enjigiriza ku kufuga n'okulamula ng'abaana b'Obwakabaka." },
+  { value: "spiritual", label: "Spiritual", descEn: "Messages that strengthen your walk with God and your inner life.", descLg: "Obubaka obunyweza okutambula kwo ne Katonda n'obulamu bwo obw'omunda." },
+  { value: "financial", label: "Financial", descEn: "Kingdom principles for stewardship, work and wealth.", descLg: "Emisingi gy'Obwakabaka ku buwanika, emirimu n'obugagga." },
+  { value: "personal-discovery", label: "Personal Discovery", descEn: "Find your gifts, your purpose and your place.", descLg: "Zuula ebirabo byo, ekigendererwa kyo n'ekifo kyo." },
 ];

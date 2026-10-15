@@ -2,17 +2,28 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { BookOpen, Search } from "lucide-react";
 import BookDetailDialog, { BookItem } from "./BookDetailDialog";
+import LugandaToggle, { DescLang } from "./LugandaToggle";
 import { useTypewriter } from "@/hooks/use-typewriter";
 import alterFrontCover from "@/assets/books/alter_front_cover.jpg";
 import alter100 from "@/assets/books/alter100.jpg";
 import omuwendo from "@/assets/books/omuwendo.jpg";
 import alterBack from "@/assets/books/alter_back.jpg";
 
-const ebooks: BookItem[] = [
-  { title: "The Generational Family Prayer Altar", author: "Tumusiime Joseph Prosper", cover: alterFrontCover, free: false, price: "UShs 25,000" },
-  { title: "The Generational Family Prayer Altar (Edition 2)", author: "Tumusiime Joseph Prosper", cover: alter100, free: false, price: "UShs 25,000" },
-  { title: "Omuwendo Gw'Obulamu", author: "Tumusiime Joseph Prosper", cover: omuwendo, free: false, price: "UShs 20,000" },
-  { title: "Ebwogeere Ku Kitabo", author: "Tumusiime Joseph Prosper", cover: alterBack, free: false, price: "UShs 20,000" },
+type ListedBook = BookItem & { descEn: string; descLg: string };
+
+const ebooks: ListedBook[] = [
+  { title: "The Generational Family Prayer Altar", author: "Tumusiime Joseph Prosper", cover: alterFrontCover, free: false, price: "UShs 25,000",
+    descEn: "A practical guide to building a prayer altar that carries your family's faith from one generation to the next.",
+    descLg: "Ekitabo ekikulambika okuzimba ekyoto ky'okusaba ekitwala okukkiriza kw'amaka go okuva ku mulembe ogumu okutuuka ku mulala." },
+  { title: "The Generational Family Prayer Altar (Edition 2)", author: "Tumusiime Joseph Prosper", cover: alter100, free: false, price: "UShs 25,000",
+    descEn: "The expanded edition with new teachings and prayer guides for families who want lasting spiritual foundations.",
+    descLg: "Ekitabo kino ekyongezeddwako enjigiriza empya n'endagiriro z'okusaba eri amaka agaagala omusingi gw'omwoyo ogw'olubeerera." },
+  { title: "Omuwendo Gw'Obulamu", author: "Tumusiime Joseph Prosper", cover: omuwendo, free: false, price: "UShs 20,000",
+    descEn: "Discover the true value of your life and the purpose God placed within you.",
+    descLg: "Zuula omuwendo omutuufu ogw'obulamu bwo n'ekigendererwa Katonda kye yateeka munda yo." },
+  { title: "Ebwogeere Ku Kitabo", author: "Tumusiime Joseph Prosper", cover: alterBack, free: false, price: "UShs 20,000",
+    descEn: "Reflections and testimonies from readers whose lives were changed by these teachings.",
+    descLg: "Ebirowoozo n'obujulirwa bw'abasomi obulamu bwabwe bwe bwakyusibwa enjigiriza zino." },
 ];
 
 const PriceBadge = ({ price }: { price: string }) => (
@@ -36,6 +47,8 @@ const EbooksSection = ({
   const search = searchProp !== undefined ? searchProp : internalSearch;
   const setSearch = onSearchChange ?? setInternalSearch;
   const [selectedBook, setSelectedBook] = useState<BookItem | null>(null);
+  const [lang, setLang] = useState<DescLang>("en");
+  const desc = (b: ListedBook) => (lang === "lg" ? b.descLg : b.descEn);
   const placeholder = useTypewriter([
     "Search by title...",
     "Search by author...",
@@ -52,7 +65,7 @@ const EbooksSection = ({
   const displayed = showAll ? filtered : filtered.slice(0, 4);
   const [featured, ...rest] = displayed;
 
-  const renderCover = (book: BookItem, large = false) => (
+  const renderCover = (book: ListedBook, large = false) => (
     <div className="relative rounded-lg overflow-hidden">
       <div className="aspect-[3/4] overflow-hidden">
         <img
@@ -97,6 +110,8 @@ const EbooksSection = ({
               </p>
             </div>
           </div>
+          <div className="flex items-center gap-4">
+          <LugandaToggle value={lang} onChange={setLang} />
           {!showAll && (
             <a
               href="/ebooks"
@@ -106,6 +121,7 @@ const EbooksSection = ({
               <span aria-hidden="true">→</span>
             </a>
           )}
+          </div>
         </motion.div>
 
         {/* Search — only on full page */}
@@ -132,7 +148,7 @@ const EbooksSection = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="card-hover group cursor-pointer col-span-2 md:col-span-2 md:row-span-2"
-              onClick={() => setSelectedBook(featured)}
+              onClick={() => setSelectedBook({ ...featured, description: desc(featured) })}
             >
               <div className="flex h-full flex-col rounded-xl border border-border bg-card p-3 sm:p-4 shadow-md">
                 {renderCover(featured, true)}
@@ -141,6 +157,7 @@ const EbooksSection = ({
                     {featured.title}
                   </h3>
                   <p className="font-body text-xs text-muted-foreground mt-1">{featured.author}</p>
+                  <p lang={lang} className="font-body text-sm text-foreground/75 mt-2">{desc(featured)}</p>
                   <p className="font-body text-sm font-semibold text-primary mt-3">
                     {featured.price || "Free"}
                   </p>
@@ -160,7 +177,7 @@ const EbooksSection = ({
                 viewport={{ once: true }}
                 transition={{ delay: (i + 1) * 0.05 }}
                 className={`card-hover group cursor-pointer ${i === rest.length - 1 && rest.length % 2 !== 0 ? "col-span-2 md:col-span-1" : ""}`}
-                onClick={() => setSelectedBook(book)}
+                onClick={() => setSelectedBook({ ...book, description: desc(book) })}
               >
                 <div className="flex h-full flex-col rounded-xl border border-border bg-card p-2.5 sm:p-3 shadow-md">
                   {renderCover(book)}
@@ -169,6 +186,7 @@ const EbooksSection = ({
                       {book.title}
                     </h3>
                     <p className="font-body text-xs text-muted-foreground mt-1">{book.author}</p>
+                    <p lang={lang} className="font-body text-xs text-foreground/75 mt-1.5 line-clamp-3">{desc(book)}</p>
                     <p className="font-body text-sm font-semibold text-primary mt-2">
                       {book.price || "Free"}
                     </p>

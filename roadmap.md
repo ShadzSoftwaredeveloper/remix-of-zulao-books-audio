@@ -21,3 +21,6 @@
 - [x] Add a reference-style related-article sidebar and verify its links and layout.
 - [x] Add a "Meet The Team" section to the About page and verify cards on desktop and mobile.
 - [x] Increase the top space above the About page title and verify it clears the header.
+- [x] Articles hover mega menu (categories + featured posts).
+- [x] English/Luganda description toggle on book and audio listings.
+- [x] AI Luganda translator for book/audio descriptions.
