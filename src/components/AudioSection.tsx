@@ -5,6 +5,7 @@ import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useNavigate } from "react-router-dom";
 import { audioSeries, categories } from "@/data/audioData";
+import LugandaToggle, { DescLang } from "@/components/LugandaToggle";
 
 const formatTime = (seconds: number) => {
   if (isNaN(seconds)) return "0:00";
@@ -23,6 +24,7 @@ const AudioSection = () => {
   const [muted, setMuted] = useState(false);
   const [liked, setLiked] = useState<Set<number>>(new Set());
   const [categoryFilter, setCategoryFilter] = useState("all");
+  const [lang, setLang] = useState<DescLang>("en");
   const [trackDurations, setTrackDurations] = useState<Record<number, string>>({});
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -145,9 +147,12 @@ const AudioSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-display text-2xl font-bold text-foreground mb-6">
-            Recommended Teachings
-          </h2>
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+            <h2 className="font-display text-2xl font-bold text-foreground">
+              Recommended Teachings
+            </h2>
+            <LugandaToggle value={lang} onChange={setLang} />
+          </div>
           <div className="flex gap-4 sm:gap-5 overflow-x-auto pb-4 scrollbar-hide">
             {categories.filter(cat => cat.value !== "all").map((cat) => {
               const catTracks = audioSeries.filter(a => a.category === cat.value);
@@ -164,6 +169,7 @@ const AudioSection = () => {
                   </div>
                   <p className="font-display text-xs sm:text-sm font-semibold text-foreground mt-2 truncate w-28 sm:w-36">{cat.label}</p>
                   <p className="font-body text-xs text-muted-foreground">{catTracks.length} tracks</p>
+                  <p lang={lang} className="font-body text-xs text-foreground/70 mt-1 w-28 sm:w-36 line-clamp-3">{lang === "lg" ? cat.descLg : cat.descEn}</p>
                 </button>
               );
             })}
