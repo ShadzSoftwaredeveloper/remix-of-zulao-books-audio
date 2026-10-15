@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import booksSlider from "@/assets/books-slider.png";
 import slider1 from "@/assets/slider-1.jpeg";
 import slider2 from "@/assets/slider 2.jpeg";
 import zuulaHome from "@/assets/zuula-homep.webp.asset.json";
@@ -31,6 +32,15 @@ const slides = [
     description:
       "Slow down. Breathe. The wisdom you seek is already within you — waiting to be remembered, honored, and finally lived.",
     primaryCta: { label: "Listen to Audios", to: "/audio" },
+    secondaryCta: { label: "Learn More", to: "/about" },
+  },
+  {
+    image: booksSlider,
+    title: "A Library of Possibilities",
+    highlight: "Made for Your Journey",
+    description:
+      "Explore transformative books that deepen your faith, awaken your mind, and help you discover the possibility within you.",
+    primaryCta: { label: "Shop Books", to: "/ebooks" },
     secondaryCta: { label: "Learn More", to: "/about" },
   },
 ];
