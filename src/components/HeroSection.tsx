@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import booksSlider from "@/assets/books-slider.png";
 import zuula1 from "@/assets/zuula-1.webp.asset.json";
 import zuulaHome from "@/assets/zuula-homep.webp.asset.json";
-import booksCollage from "@/assets/books-collage.jpg.asset.json";
 
 const slides = [
   {
-    image: booksCollage.url,
+    image: booksSlider,
     title: "Discover the Possibility",
     highlight: "Within Every Page",
     description:
