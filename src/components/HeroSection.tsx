@@ -4,18 +4,19 @@ import { Link } from "react-router-dom";
 import booksSlider from "@/assets/books-slider.png";
 import slider1 from "@/assets/slider-1.jpeg";
 import slider2 from "@/assets/slider 2.jpeg";
-import zuulaHome from "@/assets/zuula-homep.webp.asset.json";
+import yourSoul from "@/assets/your soul.jpeg";
 
 const slides = [
   {
-    image: slider1,
-    title: "Discover the Possibility",
-    highlight: "Within Every Page",
+title: "A Library of Possibilities",
+    highlight: "Made for Your Journey",
     description:
-      "Open a book and open your mind. Through words, stories, and teachings, uncover the strength, purpose, and endless possibilities already living inside you.",
+      "Explore transformative books that deepen your faith, awaken your mind, and help you discover the possibility within you.",
     primaryCta: { label: "Shop Books", to: "/ebooks" },
     secondaryCta: { label: "Learn More", to: "/about" },
   },
+
+
   {
     image: slider2,
     title: "Awaken Your Mind,",
@@ -26,7 +27,7 @@ const slides = [
     secondaryCta: { label: "Shop Books", to: "/ebooks" },
   },
   {
-    image: zuulaHome.url,
+    image: yourSoul,
     title: "Your Soul Already",
     highlight: "Knows the Way",
     description:
@@ -36,10 +37,10 @@ const slides = [
   },
   {
     image: booksSlider,
-    title: "A Library of Possibilities",
-    highlight: "Made for Your Journey",
+    title: "Discover the Possibility",
+    highlight: "Within Every Page",
     description:
-      "Explore transformative books that deepen your faith, awaken your mind, and help you discover the possibility within you.",
+      "Open a book and open your mind. Through words, stories, and teachings, uncover the strength, purpose, and endless possibilities already living inside you.",
     primaryCta: { label: "Shop Books", to: "/ebooks" },
     secondaryCta: { label: "Learn More", to: "/about" },
   },
