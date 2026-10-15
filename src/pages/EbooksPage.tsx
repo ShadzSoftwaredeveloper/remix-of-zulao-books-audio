@@ -5,7 +5,6 @@ import { Search } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import EbooksSection from "@/components/EbooksSection";
 import Footer from "@/components/Footer";
-import LugandaTranslator from "@/components/LugandaTranslator";
 import { useTypewriter } from "@/hooks/use-typewriter";
 
 const EbooksPage = () => {
@@ -82,7 +81,6 @@ const EbooksPage = () => {
       </section>
 
       <EbooksSection showAll search={query} onSearchChange={setQuery} hideSearch />
-      <LugandaTranslator kind="book" />
       <Footer />
     </div>
   );

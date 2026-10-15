@@ -170,7 +170,7 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-4">
             <p className="font-body text-xs text-background/40 hidden sm:block">
-              Designed and Developed by Lovable
+              Designed and Developed by Excel Technologies.
             </p>
             <button
               onClick={scrollToTop}
