@@ -6,6 +6,16 @@ import { Button } from "@/components/ui/button";
 import CartSheet from "@/components/CartSheet";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useCart } from "@/contexts/CartContext";
+import { articles } from "@/data/articlesData";
+
+const categoryNotes: Record<string, string> = {
+  Kingdom: "Stewardship & Kingdom living",
+  Mentorship: "Growing under godly guidance",
+  Vision: "Clarity, vision & direction",
+  Family: "Faith that lasts generations",
+  Growth: "Personal & spiritual growth",
+  Purpose: "Discovering why you exist",
+};
 
 const navLinks = [
 { label: "Mentorship", href: "/mentorship" },
@@ -47,7 +57,7 @@ const Navbar = () => {
         <ul className="ml-auto hidden items-center gap-3 lg:flex xl:gap-5">
 
           {navLinks.map((l) =>
-          <li key={l.label}>
+          <li key={l.label} className={l.label === "Articles" ? "group relative" : undefined}>
               <Link
               to={l.href}
               className={`font-body text-sm font-medium transition-colors ${
@@ -58,6 +68,40 @@ const Navbar = () => {
               
                 {l.label}
               </Link>
+              {l.label === "Articles" && (
+                <div className="invisible absolute right-0 top-full z-50 pt-5 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                  <div className="grid w-[min(760px,90vw)] grid-cols-2 overflow-hidden rounded-2xl bg-primary shadow-2xl shadow-primary/30">
+                    <div className="p-6">
+                      <p className="mb-4 font-body text-xs font-bold uppercase tracking-[0.2em] text-secondary">Categories</p>
+                      <Link to="/articles" className="block rounded-lg px-3 py-2 hover:bg-primary-foreground/10">
+                        <span className="block font-display text-base font-semibold text-primary-foreground">All Posts</span>
+                        <span className="block font-body text-xs text-primary-foreground/70">Browse every teaching & story</span>
+                      </Link>
+                      {articles.map((a) => (
+                        <Link key={a.slug} to={`/articles/${a.slug}`} className="block rounded-lg px-3 py-2 hover:bg-primary-foreground/10">
+                          <span className="block font-display text-base font-semibold text-primary-foreground">{a.tag}</span>
+                          <span className="block font-body text-xs text-primary-foreground/70">{categoryNotes[a.tag] ?? a.title}</span>
+                        </Link>
+                      ))}
+                    </div>
+                    <div className="bg-primary-foreground/5 p-6">
+                      <p className="mb-4 font-body text-xs font-bold uppercase tracking-[0.2em] text-secondary">Featured</p>
+                      <div className="space-y-4">
+                        {articles.slice(0, 2).map((a) => (
+                          <Link key={a.slug} to={`/articles/${a.slug}`} className="group/card relative block h-32 overflow-hidden rounded-xl">
+                            <img src={a.image} alt={a.title} className="h-full w-full object-cover transition-transform duration-500 group-hover/card:scale-105" />
+                            <span className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent" />
+                            <span className="absolute inset-x-3 bottom-3 text-center font-display text-sm font-semibold text-background">{a.title}</span>
+                          </Link>
+                        ))}
+                      </div>
+                      <Link to="/articles" className="mt-5 flex items-center justify-center gap-2 font-body text-sm font-semibold text-secondary hover:opacity-80">
+                        View All Posts <ArrowRight size={15} />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
             </li>
           )}
         </ul>
