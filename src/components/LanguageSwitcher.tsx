@@ -5,18 +5,27 @@ const LANGS = [
   { code: "en", label: "EN" },
   { code: "lg", label: "Luganda" },
 ];
+const LANGUAGE_PREFERENCE_KEY = "zuula-language";
 
 declare global {
+  interface GoogleTranslateElementOptions {
+    pageLanguage: string;
+    includedLanguages: string;
+    autoDisplay: boolean;
+  }
+
   interface Window {
-    google?: any;
+    google?: {
+      translate: {
+        TranslateElement: new (
+          options: GoogleTranslateElementOptions,
+          elementId: string,
+        ) => unknown;
+      };
+    };
     googleTranslateElementInit?: () => void;
   }
 }
-
-const getCurrent = () => {
-  const m = document.cookie.match(/googtrans=\/en\/([a-z]+)/);
-  return m ? m[1] : "en";
-};
 
 const setCookie = (val: string | null) => {
   const host = window.location.hostname;
@@ -31,7 +40,11 @@ const LanguageSwitcher = ({ className = "" }: { className?: string }) => {
   const [lang, setLang] = useState("en");
 
   useEffect(() => {
-    setLang(getCurrent());
+    const savedLanguage = localStorage.getItem(LANGUAGE_PREFERENCE_KEY);
+    const initialLanguage = savedLanguage === "lg" ? "lg" : "en";
+    setLang(initialLanguage);
+    setCookie(initialLanguage === "en" ? null : `/en/${initialLanguage}`);
+
     if (document.getElementById("google-translate-script")) return;
     window.googleTranslateElementInit = () => {
       new window.google.translate.TranslateElement(
@@ -46,6 +59,7 @@ const LanguageSwitcher = ({ className = "" }: { className?: string }) => {
   }, []);
 
   const change = (code: string) => {
+    localStorage.setItem(LANGUAGE_PREFERENCE_KEY, code);
     setCookie(code === "en" ? null : `/en/${code}`);
     window.location.reload();
   };

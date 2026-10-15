@@ -35,7 +35,7 @@ const Navbar = () => {
   const { itemCount, openCart } = useCart();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
+    <nav translate="no" className="notranslate fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       {showAnnouncement && <div className="bg-primary text-primary-foreground">
         <div className="site-container relative flex min-h-11 items-center justify-center gap-4 py-2 pr-12 font-body text-xs sm:text-sm">
           <span className="hidden h-2 w-2 rounded-full bg-secondary sm:block" />
@@ -54,10 +54,10 @@ const Navbar = () => {
           <img src={logo} alt="Zuula Obusobozibwo" className="h-11 w-auto lg:h-12" />
         </Link>
 
-        <ul className="ml-auto hidden items-center gap-3 lg:flex xl:gap-5">
+        <ul className="relative ml-auto hidden items-center gap-3 lg:flex xl:gap-5">
 
           {navLinks.map((l) =>
-          <li key={l.label} className={l.label === "Articles" ? "group relative" : undefined}>
+          <li key={l.label} className={l.label === "Articles" ? "group" : undefined}>
               <Link
               to={l.href}
               className={`font-body text-sm font-medium transition-colors ${
