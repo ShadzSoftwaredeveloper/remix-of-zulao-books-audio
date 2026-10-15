@@ -8,7 +8,8 @@ import yourSoul from "@/assets/your soul.jpeg";
 
 const slides = [
   {
-title: "A Library of Possibilities",
+    image: slider1,
+    title: "A Library of Possibilities",
     highlight: "Made for Your Journey",
     description:
       "Explore transformative books that deepen your faith, awaken your mind, and help you discover the possibility within you.",
@@ -80,7 +81,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="font-body text-sm uppercase tracking-[0.2em] text-secondary mb-4">
-            
+
             Zuula Obusobozibwo
           </motion.p>
 
@@ -90,7 +91,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
             className="font-display text-2xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4 md:mb-6">
-            
+
             {slide.title}{" "}
             <span className="text-gold-gradient">{slide.highlight}</span>
           </motion.h1>
@@ -101,7 +102,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="font-body text-sm md:text-lg text-primary-foreground/80 mb-6 md:mb-8 max-w-lg">
-            
+
             {slide.description}
           </motion.p>
 
@@ -131,15 +132,13 @@ const HeroSection = () => {
                 key={i}
                 onClick={() => setIndex(i)}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`h-2 rounded-full transition-all ${
-                  i === index ? "w-8 bg-accent" : "w-2 bg-primary-foreground/40"
-                }`}
+                className={`h-2 rounded-full transition-all ${i === index ? "w-8 bg-accent" : "w-2 bg-primary-foreground/40"
+                  }`}
               />
             ))}
           </div>
 
           {/* Stats */}
-          
 
 
 
@@ -157,7 +156,8 @@ const HeroSection = () => {
 
 
 
-          
+
+
         </div>
       </div>
     </section>);
