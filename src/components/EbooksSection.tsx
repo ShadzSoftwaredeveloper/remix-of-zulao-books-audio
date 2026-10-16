@@ -6,12 +6,41 @@ import LugandaToggle, { DescLang } from "./LugandaToggle";
 import { useTypewriter } from "@/hooks/use-typewriter";
 import alterFrontCover from "@/assets/books/alter_front_cover.jpg";
 import alter100 from "@/assets/books/alter100.jpg";
-import omuwendo from "@/assets/books/omuwendo.jpg";
 import alterBack from "@/assets/books/alter_back.jpg";
+import spiritualBloodlines from "@/assets/books/spiritual-bloodline.png";
+import valueOfLife from "@/assets/books/the value of lif.jpg";
+import priestsWhoEquip from "@/assets/books/priests who equip kings who govern.jpeg";
 
 type ListedBook = BookItem & { descEn: string; descLg: string };
 
 const ebooks: ListedBook[] = [
+  {
+    title: "Priests Who Equip, Kings Who Govern",
+    author: "Tumusiime Joseph Prosper",
+    cover: priestsWhoEquip,
+    free: false,
+    price: "UShs 25,000",
+    descEn: "A guide to the divine architecture of spiritual covering and marketplace dominion.",
+    descLg: "Ekitabo ekiraga enteekateeka ey'obwakatonda ey'okubikka okw'omwoyo n'okufuga mu katale.",
+  },
+  {
+    title: "The Spirituality of Bloodlines",
+    author: "Tumusiime Joseph Prosper",
+    cover: spiritualBloodlines,
+    free: false,
+    price: "UShs 25,000",
+    descEn: "Explore how family history can shape your spiritual life and how Christ's redemption can transform your bloodline.",
+    descLg: "Noonyereza engeri ebyafaayo by'omu maka gye biyinza okukwata ku bulamu bwo obw'omwoyo n'engeri okununulibwa kwa Kristo gye kuyinza okukyusa omusaayi gw'olulyo lwo.",
+  },
+  {
+    title: "The Value of Life",
+    author: "Tumusiime Joseph Prosper",
+    cover: valueOfLife,
+    free: false,
+    price: "UShs 20,000",
+    descEn: "A reflection on the worth of your life and the purpose God has placed within you.",
+    descLg: "Ekitabo kino kyogera ku muwendo gw'obulamu bwo n'ekigendererwa Katonda kye yateeka munda yo.",
+  },
   {
     title: "The Generational Family Prayer Altar",
     author: "Tumusiime Joseph Prosper",
@@ -22,31 +51,22 @@ const ebooks: ListedBook[] = [
     descLg: "Ekitabo ekikulambika okuzimba ekyoto ky'okusaba ekitwala okukkiriza kw'amaka go okuva ku mulembe ogumu okutuuka ku mulala.",
   },
   {
-    title: "The Generational Family Prayer Altar (Edition 2)",
-    author: "Tumusiime Joseph Prosper",
-    cover: alter100,
-    free: false,
-    price: "UShs 25,000",
-    descEn: "The expanded edition with new teachings and prayer guides for families who want lasting spiritual foundations.",
-    descLg: "Ekitabo kino ekyongezeddwako enjigiriza empya n'endagiriro z'okusaba eri amaka agaagala omusingi gw'omwoyo ogw'olubeerera.",
-  },
-  {
     title: "Omuwendo Gw'Obulamu",
     author: "Tumusiime Joseph Prosper",
-    cover: omuwendo,
+    cover: alter100,
     free: false,
     price: "UShs 20,000",
     descEn: "Discover the true value of your life and the purpose God placed within you.",
     descLg: "Zuula omuwendo omutuufu ogw'obulamu bwo n'ekigendererwa Katonda kye yateeka munda yo.",
   },
   {
-    title: "Ebwogeere Ku Kitabo",
+    title: "Divine Relocation",
     author: "Tumusiime Joseph Prosper",
     cover: alterBack,
     free: false,
     price: "UShs 20,000",
-    descEn: "Reflections and testimonies from readers whose lives were changed by these teachings.",
-    descLg: "Ebirowoozo n'obujulirwa bw'abasomi obulamu bwabwe bwe bwakyusibwa enjigiriza zino.",
+    descEn: "A book about how God changes your location to change your destiny.",
+    descLg: "Ekitabo ekiraga Katonda bw'akyusa ekifo kyo okukyusa n'ekigendererwa kyo.",
   },
 ];
 
