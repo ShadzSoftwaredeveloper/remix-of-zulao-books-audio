@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Seo from "@/components/Seo";
 
 const contactInfo = [
   {
@@ -87,6 +88,10 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Contact | Zuula Obusobozibwo"
+        description="Contact Zuula Obusobozibwo in Kampala, Uganda, for book orders, event bookings, prayer requests, and mentorship enquiries."
+      />
       <Navbar />
 
       {/* Header */}

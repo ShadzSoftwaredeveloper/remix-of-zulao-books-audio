@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, MessageCircle, Send } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Seo from "@/components/Seo";
 
 type Currency = "UGX" | "USD";
 
@@ -64,12 +65,12 @@ const plans: readonly MembershipPlan[] = [
 const MentorshipPage = () => {
   const [currency, setCurrency] = useState<Currency>("UGX");
 
-  useEffect(() => {
-    document.title = "Mentorship Membership | Zuula Obusobozibwo";
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Christian Mentorship & Membership | Zuula Obusobozibwo"
+        description="Join the Zuula Obusobozibwo mentorship community for Christian guidance, group coaching, and one-on-one mentorship with Joseph Prosper."
+      />
       <Navbar />
       <main className="pb-16 pt-44 sm:pb-24 sm:pt-52">
         <section className="site-container">

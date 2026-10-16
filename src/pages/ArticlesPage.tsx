@@ -2,10 +2,15 @@ import Navbar from "@/components/Navbar";
 import ArticlesSection from "@/components/ArticlesSection";
 import Footer from "@/components/Footer";
 import { articles } from "@/data/articlesData";
+import Seo from "@/components/Seo";
 
 const ArticlesPage = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Christian Articles on Faith & Purpose | Zuula Obusobozibwo"
+        description="Read Kingdom-focused Christian articles on faith, family, stewardship, leadership, personal growth, and discovering God's purpose."
+      />
       <Navbar />
       <div
         className="page-header"

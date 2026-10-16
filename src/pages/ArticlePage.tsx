@@ -1,23 +1,22 @@
-import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { articles, getArticleBySlug } from "@/data/articlesData";
+import Seo, { SITE_URL } from "@/components/Seo";
 
 const ArticlePage = () => {
   const { slug } = useParams();
   const article = getArticleBySlug(slug);
 
-  useEffect(() => {
-    document.title = article
-      ? `${article.title} | Zuula Obusobozibwo`
-      : "Article Not Found | Zuula Obusobozibwo";
-  }, [article]);
-
   if (!article) {
     return (
       <div className="min-h-screen bg-background">
+        <Seo
+          title="Article Not Found | Zuula Obusobozibwo"
+          description="This article could not be found."
+          noIndex
+        />
         <Navbar />
         <div className="site-container py-32 text-center">
           <h1 className="font-display text-3xl font-bold text-foreground mb-4">Article not found</h1>
@@ -33,9 +32,34 @@ const ArticlePage = () => {
   const related = article.relatedSlugs
     .map((relatedSlug) => getArticleBySlug(relatedSlug))
     .filter((relatedArticle): relatedArticle is (typeof articles)[number] => Boolean(relatedArticle));
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.excerpt,
+    image: new URL(article.image, SITE_URL).toString(),
+    datePublished: new Date(article.date).toISOString(),
+    author: {
+      "@type": "Person",
+      name: article.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Zuula Obusobozibwo",
+      url: SITE_URL,
+    },
+    mainEntityOfPage: `${SITE_URL}/articles/${article.slug}`,
+  };
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title={`${article.title} | Zuula Obusobozibwo`}
+        description={article.excerpt}
+        image={article.image}
+        type="article"
+        structuredData={articleSchema}
+      />
       <Navbar />
       <div
         className="page-header"

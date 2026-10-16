@@ -7,6 +7,7 @@ import EbooksSection from "@/components/EbooksSection";
 import Footer from "@/components/Footer";
 import { useTypewriter } from "@/hooks/use-typewriter";
 import booksBg from "@/assets/books-slider.png";
+import Seo from "@/components/Seo";
 
 const EbooksPage = () => {
   const [query, setQuery] = useState("");
@@ -19,6 +20,10 @@ const EbooksPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Christian Books & Ebooks | Zuula Obusobozibwo"
+        description="Browse transformative Christian books by Tumusiime Joseph Prosper on faith, personal growth, purpose, and Kingdom leadership."
+      />
       <Navbar />
 
       <section className="relative pt-40 md:pt-44 pb-16 md:pb-28 overflow-hidden">
