@@ -32,7 +32,7 @@ const CartSheet = () => {
       "Please confirm availability and delivery details.",
     ].join("\n");
     window.open(
-      `https://wa.me/25677766708?text=${encodeURIComponent(message)}`,
+      `https://wa.me/256777667080?text=${encodeURIComponent(message)}`,
       "_blank",
       "noopener,noreferrer",
     );

@@ -57,7 +57,7 @@ const plans: readonly MembershipPlan[] = [
       "Direct accountability",
     ],
     action: "Start mentorship",
-    href: "https://wa.me/25677766708?text=Hello%20Joseph%2C%20I%20would%20like%20to%20start%20one-on-one%20mentorship.",
+    href: "https://wa.me/256777667080?text=Hello%20Joseph%2C%20I%20would%20like%20to%20start%20one-on-one%20mentorship.",
     icon: MessageCircle,
   },
 ] as const;
