@@ -10,9 +10,10 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "David Mugisha",
-    role: "Youth Pastor",
-    text: "The resources and audio teachings have been a game-changer for our youth ministry. We've seen young people step boldly into their Kingdom assignments like never before.",
+    name: "Samuel Katende",
+    role: "Mentee",
+    text: `I really appreciate Almighty God for the anointing He gave to His servant.
+  In one of his meetings at our church, the gathering was like a normal one but yet it was not ordinary. I was stirred up to start focusing on my financial sphere and I really believe that was my day of transformation. May God richly bless you.`,
     rating: 5,
   },
   {
@@ -99,9 +100,8 @@ const TestimonialsSection = () => {
                   <button
                     key={i}
                     onClick={() => setCurrent(i)}
-                    className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                      i === current ? "bg-secondary" : "bg-muted-foreground/30"
-                    }`}
+                    className={`w-2.5 h-2.5 rounded-full transition-colors ${i === current ? "bg-secondary" : "bg-muted-foreground/30"
+                      }`}
                   />
                 ))}
               </div>
@@ -133,7 +133,7 @@ const TestimonialsSection = () => {
                   className="absolute inset-0 w-full h-full"
                 />
               </div>
-                <div className="p-5 sm:p-6">
+              <div className="p-5 sm:p-6">
                 <h3 className="font-display text-xl font-bold text-foreground leading-snug">
                   Take a Video Tour to Learn <span className="sm:block">About Our Ministry</span>
                 </h3>

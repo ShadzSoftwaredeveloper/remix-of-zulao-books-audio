@@ -31,7 +31,7 @@ const MediaCtaSection = () => (
             to="/audio"
             className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-border bg-background text-foreground font-body text-sm font-semibold hover:bg-muted transition-colors active:scale-[0.98]"
           >
-            <Headphones size={16} /> Listen to Audios
+            <Headphones size={16} /> Listen to  Our Audios
           </Link>
         </div>
       </motion.div>

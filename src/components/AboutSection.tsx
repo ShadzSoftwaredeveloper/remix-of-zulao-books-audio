@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import podcastAsset from "@/assets/founder-podcast.png.asset.json";
-
-const FOUNDER_IMG = "/lovable-uploads/927c6d88-9f65-4954-82af-f1e83c834b55.jpg";
+import founderImage from "@/assets/tumusime joseph prosper.jpeg";
 
 interface AboutSectionProps {
   /** Use the podcast still instead of the founder portrait (homepage). */
@@ -13,7 +12,7 @@ interface AboutSectionProps {
 }
 
 const AboutSection = ({ variant = "founder", showBookCta = false }: AboutSectionProps) => {
-  const imgSrc = variant === "podcast" ? podcastAsset.url : FOUNDER_IMG;
+  const imgSrc = variant === "podcast" ? podcastAsset.url : founderImage;
   return (
     <section id="about" className="py-16 sm:py-24 bg-cream overflow-hidden">
       <div className="site-container">
@@ -27,7 +26,7 @@ const AboutSection = ({ variant = "founder", showBookCta = false }: AboutSection
             <div className="relative">
               <img
                 src={imgSrc}
-                alt={variant === "podcast" ? "Joseph Prosper recording a podcast teaching" : "Joseph Prosper - Founder"}
+                alt={variant === "podcast" ? "Joseph Prosper recording a podcast teaching" : "Tumusiime Joseph Prosper - Founder"}
                 className="rounded-lg w-full max-w-md mx-auto shadow-xl" />
 
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-lg -z-10" />

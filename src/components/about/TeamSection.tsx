@@ -22,26 +22,33 @@ const team = [
     background: "bg-accent",
   },
   {
-    name: "Sarah Nakamya",
-    role: "Community & Partnerships",
+    name: "Eng. Sentongo Gerald Mukasa",
+    role: "Mentor & Partnerships",
     bio: "Leads our circles and church partnerships, walking with new members from their first teaching to their first step of impact.",
     initials: "SN",
     background: "bg-secondary",
   },
   {
-    name: "David Mugisha",
-    role: "Youth & Media",
-    bio: "Shapes the podcast, video and social content that carries the teachings to young people across the region and beyond.",
+    name: "Mrs Rose Sentongo",
+    role: "Mentor",
+    bio: "walking with new members from their first teaching to their first step of impact.",
     initials: "DM",
     background: "bg-primary",
   },
   {
-    name: "Grace Atuhaire",
+    name: "Pastor Nelson Mandela",
     role: "Events & Operations",
     bio: "Runs the logistics behind every conference, masterclass and mentoring season, so every gathering flows with care.",
     initials: "GA",
     background: "bg-muted-foreground",
   },
+  //  {
+  //   name: "Mugerwa Shadrach",
+  //   role: "Mentor",
+  //   bio: "Shapes the podcast, video and social content that carries the teachings to young people across the region and beyond.",
+  //   initials: "DM",
+  //   background: "bg-primary",
+  // },
 ];
 
 const TeamSection = () => {
