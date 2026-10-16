@@ -20,7 +20,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection showBookCta />
-      <EbooksSection />
+      <EbooksSection hideBookDetails />
       <HomeBlogSection />
       <FeaturedPodcastHero />
       <HomeAudioSection />

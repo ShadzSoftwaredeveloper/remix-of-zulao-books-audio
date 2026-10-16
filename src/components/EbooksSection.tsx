@@ -75,11 +75,13 @@ const EbooksSection = ({
   search: searchProp,
   onSearchChange,
   hideSearch = false,
+  hideBookDetails = false,
 }: {
   showAll?: boolean;
   search?: string;
   onSearchChange?: (value: string) => void;
   hideSearch?: boolean;
+  hideBookDetails?: boolean;
 }) => {
   const [internalSearch, setInternalSearch] = useState("");
   const search = searchProp !== undefined ? searchProp : internalSearch;
@@ -193,20 +195,22 @@ const EbooksSection = ({
                   </span>
                 </div>
               </div>
-              <div className="mt-3 px-1">
-                <h3 className="font-display text-sm font-semibold text-foreground leading-tight">
-                  {book.title}
-                </h3>
-                <p className="font-body text-xs text-muted-foreground mt-1">
-                  {book.author}
-                </p>
-                <p
-                  lang={lang}
-                  className="font-body text-xs text-foreground/75 mt-1.5 line-clamp-3"
-                >
-                  {desc(book)}
-                </p>
-              </div>
+              {!hideBookDetails && (
+                <div className="mt-3 px-1">
+                  <h3 className="font-display text-sm font-semibold text-foreground leading-tight">
+                    {book.title}
+                  </h3>
+                  <p className="font-body text-xs text-muted-foreground mt-1">
+                    {book.author}
+                  </p>
+                  <p
+                    lang={lang}
+                    className="font-body text-xs text-foreground/75 mt-1.5 line-clamp-3"
+                  >
+                    {desc(book)}
+                  </p>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
