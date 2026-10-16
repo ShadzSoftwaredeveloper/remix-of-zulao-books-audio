@@ -49,7 +49,7 @@ const TeamSection = () => {
     useState<(typeof team)[number] | null>(null);
 
   return (
-  <section id="team" className="overflow-hidden bg-background py-16 sm:py-24">
+  <section id="team" className="overflow-hidden bg-cream py-16 sm:py-24">
     <div className="site-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}

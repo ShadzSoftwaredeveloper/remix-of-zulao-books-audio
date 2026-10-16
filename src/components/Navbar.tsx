@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight, Menu, ShoppingCart, X } from "lucide-react";
-import logo from "@/assets/zuula-logo.png";
+import LogoLockup from "@/components/LogoLockup";
 import { Button } from "@/components/ui/button";
 import CartSheet from "@/components/CartSheet";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -51,7 +51,7 @@ const Navbar = () => {
 
       <div className="site-container flex h-[84px] items-center gap-5">
         <Link to="/" className="flex shrink-0 items-center">
-          <img src={logo} alt="Zuula Obusobozibwo" className="h-11 w-auto lg:h-12" />
+          <LogoLockup />
         </Link>
 
         <ul className="relative ml-auto hidden items-center gap-3 lg:flex xl:gap-5">

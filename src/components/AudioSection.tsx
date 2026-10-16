@@ -130,7 +130,7 @@ const AudioSection = () => {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-     <section id="audio" className="py-10 pb-32 sm:py-12 bg-background overflow-hidden">
+     <section id="audio" className="py-10 pb-32 sm:py-12 bg-cream overflow-hidden">
       <div className="site-container">
         {/* Back button */}
         <button
