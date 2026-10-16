@@ -1,8 +1,8 @@
-import blogSunsetAsset from "@/assets/blog/blog-3.jpg.asset.json";
-import blogReflectionAsset from "@/assets/blog/blog-4.jpg.asset.json";
-import blogMentorshipAsset from "@/assets/blog/bkog-4.jpeg.asset.json";
-import blogLeadershipAsset from "@/assets/blog/blo-2.jpeg.asset.json";
-import blogStewardshipAsset from "@/assets/blog/blog-1.jpeg.asset.json";
+import blogSunset from "@/assets/blog/blog-3.jpg";
+import blogReflection from "@/assets/blog/blog-4.jpg";
+import blogMentorship from "@/assets/blog/bkog-4.jpeg";
+import blogLeadership from "@/assets/blog/blo-2.jpeg";
+import blogStewardship from "@/assets/blog/blog-1.jpeg";
 
 export interface Article {
   slug: string;
