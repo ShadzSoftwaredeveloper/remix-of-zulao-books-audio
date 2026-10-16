@@ -62,7 +62,7 @@ const FeaturedPodcastHero = () => {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <section className="pt-16 sm:pt-20 pb-4 bg-background overflow-hidden">
+    <section className="pt-16 sm:pt-20 pb-4 bg-cream overflow-hidden">
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

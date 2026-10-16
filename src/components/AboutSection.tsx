@@ -15,7 +15,7 @@ interface AboutSectionProps {
 const AboutSection = ({ variant = "founder", showBookCta = false }: AboutSectionProps) => {
   const imgSrc = variant === "podcast" ? podcastAsset.url : FOUNDER_IMG;
   return (
-    <section id="about" className="py-16 sm:py-24 bg-background overflow-hidden">
+    <section id="about" className="py-16 sm:py-24 bg-cream overflow-hidden">
       <div className="site-container">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <motion.div

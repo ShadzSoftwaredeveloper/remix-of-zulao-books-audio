@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronUp, MapPin, Phone, Mail, Facebook, Twitter, Youtube, Linkedin, ArrowRight } from "lucide-react";
-import logo from "@/assets/zuula-logo.png";
+import LogoLockup from "@/components/LogoLockup";
 import { toast } from "@/hooks/use-toast";
 
 const quickLinks = [
@@ -81,7 +81,7 @@ const Footer = () => {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <img src={logo} alt="Zuula Obusobozibwo" className="h-12 w-auto mb-6" />
+            <div className="mb-6"><LogoLockup tone="dark" imgClassName="h-12 w-auto" textClassName="flex" /></div>
             <p className="font-body text-sm text-background/60 leading-relaxed mb-6">
               Zuula Obusobozibwo empowers you to impact generations — unlocking your gifts,
               influence and destiny for God's Kingdom through transformative books and audio

@@ -52,7 +52,7 @@ const TelegramSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-28 bg-background overflow-hidden">
+    <section id="contact" className="py-16 md:py-28 bg-cream overflow-hidden">
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

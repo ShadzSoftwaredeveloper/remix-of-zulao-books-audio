@@ -131,7 +131,7 @@ const ContactPage = () => {
       </section>
 
       {/* Form + Map */}
-       <section className="py-16 sm:py-20 bg-background overflow-hidden">
+       <section className="py-16 sm:py-20 bg-cream overflow-hidden">
         <div className="site-container">
            <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
             {/* Form */}

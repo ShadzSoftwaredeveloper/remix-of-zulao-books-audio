@@ -85,7 +85,7 @@ const EbooksSection = ({
   return (
     <section
       id="ebooks"
-      className="relative py-16 sm:py-24 overflow-hidden bg-gradient-to-b from-accent/[0.06] via-background to-accent/[0.06]"
+      className="relative py-16 sm:py-24 overflow-hidden bg-gradient-to-b from-accent/[0.06] via-cream to-accent/[0.06]"
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.04]"
