@@ -107,9 +107,6 @@ const Navbar = () => {
 
         <div className="hidden items-center gap-3 lg:flex xl:ml-4">
           <LanguageSwitcher />
-          <Button asChild variant="outline" className="rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary">
-            <Link to="/contact">Book Joseph</Link>
-          </Button>
           <a href="https://t.me/ZuulaMentorship" target="_blank" rel="noopener noreferrer" className="inline-flex h-11 items-center rounded-full bg-primary px-5 font-body text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform hover:-translate-y-0.5">Join Mentorship</a>
           <Button type="button" variant="outline" size="icon" onClick={openCart} className="relative rounded-full bg-muted/50" title="Open cart" aria-label={`Open cart with ${itemCount} items`}>
             <ShoppingCart size={19} />
@@ -144,11 +141,6 @@ const Navbar = () => {
                 </Link>
               </li>
             )}
-            <li>
-              <Button asChild variant="outline" className="mt-2 w-full border-primary text-primary hover:bg-primary/10 hover:text-primary">
-                <Link to="/contact" onClick={() => setOpen(false)}>Book Joseph</Link>
-              </Button>
-            </li>
             <li>
               <a href="https://t.me/ZuulaMentorship" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="mt-2 inline-flex items-center rounded-full bg-primary px-5 py-2.5 font-body text-sm font-semibold text-primary-foreground">Join Mentorship</a>
             </li>
