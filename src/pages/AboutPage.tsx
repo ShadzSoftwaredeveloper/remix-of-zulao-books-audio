@@ -36,7 +36,7 @@ const AboutPage = () => {
       />
       <Navbar />
       <AboutHeroSection />
-      <AboutSection />
+      {/* <AboutSection /> */}
       <CoreValuesSection />
       <TeamSection />
       <JourneySection />

@@ -23,7 +23,7 @@ const navLinks = [
   // { label: "Events", href: "/contact" },
   { label: "Ebooks", href: "/ebooks" },
   { label: "Audio", href: "/audio" },
-  { label: "Blogs", href: "/articles" },
+  { label: "articles", href: "/articles" },
   { label: "Contact", href: "/contact" },
 ];
 

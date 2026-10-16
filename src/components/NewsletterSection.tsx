@@ -72,11 +72,11 @@ const TelegramSection = () => {
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-5">
                 Join our Telegram
               </h2>
-              <p className="font-body text-muted-foreground leading-relaxed mb-8 max-w-md">
+              {/* <p className="font-body text-muted-foreground leading-relaxed mb-8 max-w-md">
                 Walk the journey alongside a tribe of purpose-driven believers.
                 Our private Telegram channel is where the mentorship comes
                 alive between sessions.
-              </p>
+              </p> */}
 
               <ul className="space-y-4 mb-10">
                 {benefits.map((benefit, index) => (
