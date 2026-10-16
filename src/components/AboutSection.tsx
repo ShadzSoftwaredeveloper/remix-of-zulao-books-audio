@@ -43,7 +43,7 @@ const AboutSection = ({ variant = "founder", showBookCta = false }: AboutSection
               About the Founder
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              I'm Joseph Prosper
+              I'm Tumusiime Joseph Prosper
             </h2>
             <p className="font-body text-foreground/70 leading-relaxed mb-4">
               Founder of Zuula Obusobozibwo — Empowering You To Impact
@@ -61,7 +61,7 @@ const AboutSection = ({ variant = "founder", showBookCta = false }: AboutSection
             </blockquote>
             {showBookCta && (
               <Button asChild variant="outline" className="mt-8 rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary">
-                <Link to="/contact">Book Joseph</Link>
+                <Link to="/contact">Book Tumusiime Joseph Prosper</Link>
               </Button>
             )}
           </motion.div>
