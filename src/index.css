@@ -124,6 +124,12 @@
     }
   }
 
+  .bg-books-overlay {
+    background:
+      radial-gradient(120% 85% at 50% 0%, hsl(320 60% 32% / 0.5) 0%, transparent 58%),
+      linear-gradient(to bottom, hsl(280 45% 9% / 0.9) 0%, hsl(280 45% 11% / 0.82) 48%, hsl(280 45% 7% / 0.93) 100%);
+  }
+
   .card-hover {
     @apply transition-all duration-300;
   }
