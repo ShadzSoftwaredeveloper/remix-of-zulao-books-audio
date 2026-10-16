@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import EbooksSection from "@/components/EbooksSection";
 import Footer from "@/components/Footer";
 import { useTypewriter } from "@/hooks/use-typewriter";
+import booksBg from "@/assets/books-slider.png";
 
 const EbooksPage = () => {
   const [query, setQuery] = useState("");
@@ -20,24 +21,30 @@ const EbooksPage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-       <section className="relative pt-40 md:pt-44 pb-16 md:pb-28 overflow-hidden bg-gradient-to-b from-accent/[0.08] via-background to-accent/[0.04]">
-        <div className="pointer-events-none absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(hsl(320 85% 45%) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
-        <div className="site-container">
+      <section className="relative pt-40 md:pt-44 pb-16 md:pb-28 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${booksBg})` }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-books-overlay" aria-hidden="true" />
+
+        <div className="relative site-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <p className="font-body text-xs sm:text-sm font-semibold uppercase tracking-[0.22em] text-primary mb-5">
+            <p className="font-body text-xs sm:text-sm font-semibold uppercase tracking-[0.22em] text-secondary mb-5">
               Read, Reflect, and Be Transformed
             </p>
 
-             <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-6">
+            <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-[1.1] mb-6">
               Equipping People with Life-Changing Books
             </h1>
 
-            <p className="font-body text-base sm:text-lg text-foreground/60 max-w-2xl mx-auto mb-10">
+            <p className="font-body text-base sm:text-lg text-primary-foreground/75 max-w-2xl mx-auto mb-10">
               Transformative titles by Tumusiime Joseph Prosper — written to deepen your
               faith, awaken your mind, and unlock the possibility within you.
             </p>
@@ -55,9 +62,9 @@ const EbooksPage = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={query ? "" : `${placeholder}|`}
-                 className="w-full rounded-full bg-background py-4 pl-12 pr-5 font-body text-sm sm:pl-14 sm:pr-32 sm:text-base text-foreground placeholder:text-muted-foreground shadow-lg shadow-foreground/5 border border-border focus:outline-none focus:ring-2 focus:ring-primary/20"
+                className="w-full rounded-full bg-background py-4 pl-12 pr-5 font-body text-sm sm:pl-14 sm:pr-32 sm:text-base text-foreground placeholder:text-muted-foreground shadow-xl shadow-foreground/20 border border-border focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
-               <span className="absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-full bg-primary/10 px-6 py-2.5 font-body text-sm font-semibold text-primary sm:block">
+              <span className="absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-full bg-primary/10 px-6 py-2.5 font-body text-sm font-semibold text-primary sm:block">
                 Search
               </span>
             </form>
@@ -65,7 +72,7 @@ const EbooksPage = () => {
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
                 href="#ebooks"
-                className="inline-flex items-center rounded-full bg-primary/10 px-6 py-3 font-body text-sm font-semibold text-primary hover:bg-primary/20 transition-colors"
+                className="inline-flex items-center rounded-full bg-secondary px-6 py-3 font-body text-sm font-semibold text-secondary-foreground shadow-lg shadow-secondary/25 hover:brightness-110 transition-all"
               >
                 Browse the Library
               </a>
