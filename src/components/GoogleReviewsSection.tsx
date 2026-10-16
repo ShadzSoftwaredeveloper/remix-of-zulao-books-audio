@@ -7,7 +7,8 @@ const reviews = [
   {
     name: "Sarah Nakamya",
     role: "Community Leader",
-    text: "Zuula Obusobozibwo transformed how I see my purpose. The teachings on generational prayer altars opened my eyes to a deeper walk with God.",
+    text: `I really appreciate Almighty God for the anointing He gave to His servant.
+  At one of his meetings at our church, the gathering seemed normal, yet it was extraordinary. I was stirred to start focusing on my financial sphere, and I truly believe that was my day of transformation. May God richly bless you.`,
     rating: 5,
   },
   {

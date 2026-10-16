@@ -5,7 +5,7 @@ const LANGS = [
   { code: "en", label: "EN" },
   { code: "lg", label: "Luganda" },
 ];
-const LANGUAGE_PREFERENCE_KEY = "zuula-language";
+const LANGUAGE_PREFERENCE_KEY = "zuula-language-v2";
 
 declare global {
   interface GoogleTranslateElementOptions {

@@ -18,13 +18,13 @@ const categoryNotes: Record<string, string> = {
 };
 
 const navLinks = [
-{ label: "Mentorship", href: "/mentorship" },
-{ label: "Events", href: "/contact" },
-{ label: "Library", href: "/ebooks" },
-{ label: "Audio", href: "/audio" },
-{ label: "Articles", href: "/articles" },
-{ label: "About", href: "/about" },
-{ label: "Contact", href: "/contact" },
+  { label: "About", href: "/about" },
+  { label: "Mentorship", href: "/mentorship" },
+  // { label: "Events", href: "/contact" },
+  { label: "Ebooks", href: "/ebooks" },
+  { label: "Audio", href: "/audio" },
+  { label: "Blogs", href: "/articles" },
+  { label: "Contact", href: "/contact" },
 ];
 
 
@@ -57,15 +57,14 @@ const Navbar = () => {
         <ul className="relative ml-auto hidden items-center gap-3 lg:flex xl:gap-5">
 
           {navLinks.map((l) =>
-          <li key={l.label} className={l.label === "Articles" ? "group" : undefined}>
+            <li key={l.label} className={l.label === "Articles" ? "group" : undefined}>
               <Link
-              to={l.href}
-              className={`font-body text-sm font-medium transition-colors ${
-              location.pathname === l.href ?
-              "text-primary font-semibold" :
-              "text-foreground/80 hover:text-primary"}`
-              }>
-              
+                to={l.href}
+                className={`font-body text-sm font-medium transition-colors ${location.pathname === l.href ?
+                    "text-primary font-semibold" :
+                    "text-foreground/80 hover:text-primary"}`
+                }>
+
                 {l.label}
               </Link>
               {l.label === "Articles" && (
@@ -131,21 +130,20 @@ const Navbar = () => {
       </div>
 
       {open &&
-      <div className="border-t border-border bg-background px-4 pb-5 lg:hidden">
+        <div className="border-t border-border bg-background px-4 pb-5 lg:hidden">
           <ul className="flex flex-col gap-1 pt-3">
             {navLinks.map((l) =>
-          <li key={l.label}>
+              <li key={l.label}>
                 <Link
-              to={l.href}
-              onClick={() => setOpen(false)}
-              className={`block font-body text-sm font-medium py-2 ${
-              location.pathname === l.href ? "text-primary" : "text-foreground/80"}`
-              }>
-              
+                  to={l.href}
+                  onClick={() => setOpen(false)}
+                  className={`block font-body text-sm font-medium py-2 ${location.pathname === l.href ? "text-primary" : "text-foreground/80"}`
+                  }>
+
                   {l.label}
                 </Link>
               </li>
-          )}
+            )}
             <li>
               <Button asChild variant="outline" className="mt-2 w-full border-primary text-primary hover:bg-primary/10 hover:text-primary">
                 <Link to="/contact" onClick={() => setOpen(false)}>Book Joseph</Link>

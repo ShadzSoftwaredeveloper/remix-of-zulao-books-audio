@@ -1,6 +1,14 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const FOUNDER_IMG = "/lovable-uploads/927c6d88-9f65-4954-82af-f1e83c834b55.jpg";
 
@@ -10,74 +18,60 @@ const team = [
     role: "Founder & Lead Teacher",
     bio: "Author, keynote speaker and founder of Zuula Obusobozibwo — equipping believers to discover their gifts and build generational altars.",
     image: FOUNDER_IMG,
-    accent: "primary",
+    initials: "JP",
+    background: "bg-accent",
   },
   {
     name: "Sarah Nakamya",
     role: "Community & Partnerships",
     bio: "Leads our circles and church partnerships, walking with new members from their first teaching to their first step of impact.",
     initials: "SN",
-    accent: "secondary",
+    background: "bg-secondary",
   },
   {
     name: "David Mugisha",
     role: "Youth & Media",
     bio: "Shapes the podcast, video and social content that carries the teachings to young people across the region and beyond.",
     initials: "DM",
-    accent: "accent",
+    background: "bg-primary",
   },
   {
     name: "Grace Atuhaire",
     role: "Events & Operations",
     bio: "Runs the logistics behind every conference, masterclass and mentoring season, so every gathering flows with care.",
     initials: "GA",
-    accent: "primary",
+    background: "bg-muted-foreground",
   },
 ];
 
-const accentText: Record<string, string> = {
-  primary: "text-primary",
-  secondary: "text-secondary",
-  accent: "text-accent",
-};
+const TeamSection = () => {
+  const [selectedMember, setSelectedMember] =
+    useState<(typeof team)[number] | null>(null);
 
-const accentRing: Record<string, string> = {
-  primary: "ring-primary/25",
-  secondary: "ring-secondary/30",
-  accent: "ring-accent/25",
-};
-
-const TeamSection = () => (
-  <section id="team" className="py-16 sm:py-24 bg-muted/40 overflow-hidden">
+  return (
+  <section id="team" className="overflow-hidden bg-background py-16 sm:py-24">
     <div className="site-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-12"
+        className="mx-auto mb-12 max-w-3xl text-center sm:mb-16"
       >
-        <p className="inline-flex rounded-full border border-primary/20 bg-background/60 px-4 py-2 font-body text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-4">
-          The People Behind The Work
+        <p className="mb-4 font-body text-xs font-bold uppercase tracking-[0.2em] text-primary sm:text-sm">
+          Serving With Purpose
         </p>
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-3">
-          Meet The Team
+        <div className="mx-auto mb-6 h-1 w-16 rounded-full bg-primary" />
+        <h2 className="mb-4 font-display text-3xl font-bold leading-tight text-foreground sm:text-5xl lg:text-6xl">
+          Meet Our Team
         </h2>
-        <svg width="90" height="16" viewBox="0 0 90 16" className="mx-auto">
-          <path
-            d="M2 14C22 -2 45 18 88 2"
-            stroke="hsl(var(--secondary))"
-            strokeWidth="3"
-            fill="none"
-            strokeLinecap="round"
-          />
-        </svg>
-        <p className="mx-auto mt-5 max-w-xl font-body text-sm leading-relaxed text-muted-foreground sm:text-base">
+        <p className="mx-auto max-w-3xl font-body text-sm leading-relaxed text-muted-foreground sm:text-lg">
           A small, dedicated team serving the vision behind Zuula Obusobozibwo —
-          every book, teaching, event and mentoring circle is carried by real hands.
+          equipping believers through every book, teaching, event, and mentoring
+          circle.
         </p>
       </motion.div>
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
         {team.map((member, index) => (
           <motion.div
             key={member.name}
@@ -85,42 +79,37 @@ const TeamSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: index * 0.06 }}
-            className="flex flex-col items-center rounded-lg border border-border bg-card p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
+            className="group relative aspect-[3/4] overflow-hidden rounded-2xl bg-muted shadow-lg transition-transform duration-300 hover:-translate-y-1 sm:rounded-3xl"
           >
             {member.image ? (
-              <div
-                className={`mb-5 h-24 w-24 overflow-hidden rounded-full ring-4 ${accentRing[member.accent]} bg-muted`}
-              >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
+              <img
+                src={member.image}
+                alt={member.name}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
             ) : (
-              <div
-                className={`mb-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-primary/15 via-secondary/15 to-accent/15 ring-4 ${accentRing[member.accent]}`}
-              >
-                <span
-                  className={`font-display text-2xl font-bold ${accentText[member.accent]}`}
-                >
+              <div className={`absolute inset-0 flex items-center justify-center ${member.background}`}>
+                <span className="font-display text-5xl font-bold text-primary-foreground/80 sm:text-7xl">
                   {member.initials}
                 </span>
               </div>
             )}
 
-            <h3 className="font-display text-lg font-bold leading-snug text-foreground">
-              {member.name}
-            </h3>
-            <p
-              className={`mt-1 font-body text-xs font-semibold uppercase tracking-[0.15em] ${accentText[member.accent]}`}
-            >
-              {member.role}
-            </p>
-            <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
-              {member.bio}
-            </p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-3 text-center text-white sm:p-4">
+              <h3 className="font-display text-sm font-bold leading-tight sm:text-lg">
+                {member.name}
+              </h3>
+              <button
+                type="button"
+                onClick={() => setSelectedMember(member)}
+                className="mt-2 rounded-full border border-white/70 px-3 py-1 font-body text-[10px] font-semibold text-white transition-colors hover:bg-white hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:text-xs"
+                aria-label={`View ${member.name}'s full profile`}
+              >
+                Full details
+              </button>
+            </div>
           </motion.div>
         ))}
       </div>
@@ -143,7 +132,49 @@ const TeamSection = () => (
         </Link>
       </motion.div>
     </div>
+
+    <Dialog
+      open={!!selectedMember}
+      onOpenChange={(open) => {
+        if (!open) setSelectedMember(null);
+      }}
+    >
+      {selectedMember && (
+        <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-lg">
+          <div className="flex flex-col items-center text-center">
+            {selectedMember.image ? (
+              <img
+                src={selectedMember.image}
+                alt={selectedMember.name}
+                className="mb-5 h-32 w-32 rounded-full object-cover"
+              />
+            ) : (
+              <div
+                className={`mb-5 flex h-32 w-32 items-center justify-center rounded-full ${selectedMember.background}`}
+                aria-hidden="true"
+              >
+                <span className="font-display text-4xl font-bold text-primary-foreground">
+                  {selectedMember.initials}
+                </span>
+              </div>
+            )}
+            <DialogHeader className="items-center">
+              <DialogTitle className="font-display text-2xl font-bold text-foreground">
+                {selectedMember.name}
+              </DialogTitle>
+              <DialogDescription className="font-body font-semibold text-primary">
+                {selectedMember.role}
+              </DialogDescription>
+            </DialogHeader>
+            <p className="mt-5 font-body text-sm leading-relaxed text-muted-foreground">
+              {selectedMember.bio}
+            </p>
+          </div>
+        </DialogContent>
+      )}
+    </Dialog>
   </section>
-);
+  );
+};
 
 export default TeamSection;
