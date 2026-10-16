@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronUp, MapPin, Phone, Mail, Facebook, Twitter, Youtube, Linkedin, ArrowRight } from "lucide-react";
-import logo from "@/assets/zuula-logo.png";
+import LogoLockup from "@/components/LogoLockup";
 import { toast } from "@/hooks/use-toast";
 
 const quickLinks = [
