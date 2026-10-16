@@ -24,7 +24,7 @@ export const articles: Article[] = [
     excerpt:
       "Stewardship is a Kingdom mandate. Resources, talents, and finances managed with integrity expand influence and honor God.",
     tag: "Kingdom",
-    image: blogStewardshipAsset.url,
+    image: blogStewardship,
     date: "January 28, 2026",
     author: "Tumusiime Joseph Prosper",
     content: [
@@ -57,7 +57,7 @@ export const articles: Article[] = [
     excerpt:
       "Kingdom legacy is built when mature leaders intentionally mentor the next generation to carry God's purposes forward.",
     tag: "Mentorship",
-    image: blogLeadershipAsset.url,
+    image: blogLeadership,
     date: "January 28, 2026",
     author: "Tumusiime Joseph Prosper",
     content: [
@@ -90,7 +90,7 @@ export const articles: Article[] = [
     excerpt:
       "Vision is prophetic fuel, and purpose is the power behind it. Together, they propel believers into divine impact.",
     tag: "Vision",
-    image: blogSunsetAsset.url,
+    image: blogSunset,
     date: "August 12, 2025",
     author: "Tumusiime Joseph Prosper",
     content: [
@@ -123,7 +123,7 @@ export const articles: Article[] = [
     excerpt:
       "A praying family is a protected family. Learn how to establish a consistent altar that shapes generations.",
     tag: "Family",
-    image: blogMentorshipAsset.url,
+    image: blogMentorship,
     date: "February 10, 2026",
     author: "Tumusiime Joseph Prosper",
     content: [
@@ -156,7 +156,7 @@ export const articles: Article[] = [
     excerpt:
       "Talent opens doors, but discipline keeps you in the room. Small daily choices decide the size of your future.",
     tag: "Growth",
-    image: blogReflectionAsset.url,
+    image: blogReflection,
     date: "February 24, 2026",
     author: "Tumusiime Joseph Prosper",
     content: [
@@ -189,7 +189,7 @@ export const articles: Article[] = [
     excerpt:
       "Sometimes the delay is not denial but direction. Understanding seasons of relocation in God's plan.",
     tag: "Purpose",
-    image: blogSunsetAsset.url,
+    image: blogSunset,
     date: "March 6, 2026",
     author: "Tumusiime Joseph Prosper",
     content: [
