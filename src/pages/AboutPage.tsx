@@ -42,7 +42,7 @@ const AboutPage = () => {
       <JourneySection />
       <TestimonialsSection />
       <MediaCtaSection />
-      <AboutCtaSection />
+      {/* <AboutCtaSection /> */}
       <Footer />
     </div>
   );
