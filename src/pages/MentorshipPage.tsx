@@ -30,7 +30,7 @@ const plans: readonly MembershipPlan[] = [
       "Event announcements",
     ],
     action: "Join the community",
-    href: "https://t.me/ZuulaMentorship",
+    href: "vhttps://chat.whatsapp.com/JMpHuFJxL3E1zuDEmOlOBo?s=cl&p=a&mlu=4&ilr=4",
     icon: Send,
   },
   {
