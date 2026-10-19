@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight, Menu, ShoppingCart, X } from "lucide-react";
 import LogoLockup from "@/components/LogoLockup";
+import headerAnimation from "@/assets/Top header animation.gif";
 import { Button } from "@/components/ui/button";
 import CartSheet from "@/components/CartSheet";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -36,14 +37,22 @@ const Navbar = () => {
 
   return (
     <nav translate="no" className="notranslate fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
-      {showAnnouncement && <div className="bg-primary text-primary-foreground">
-        <div className="site-container relative flex min-h-11 items-center justify-center gap-4 py-2 pr-12 font-body text-xs sm:text-sm">
-          <span className="hidden h-2 w-2 rounded-full bg-secondary sm:block" />
-          <p className="text-center font-semibold">Kingdom Business Summit 2026 · Sat 24 Oct · Fidodido</p>
-          <Link to="/contact" className="hidden items-center gap-2 rounded-full bg-primary-foreground/15 px-5 py-2 font-semibold transition-colors hover:bg-primary-foreground/25 sm:inline-flex">
-            Get tickets <ArrowRight size={15} />
+      {showAnnouncement && <div
+        className="text-slate-900"
+        style={{
+          backgroundImage:
+            "linear-gradient(135deg, rgb(213 218 250), rgb(244 241 243))",
+        }}
+      >
+        <div className="site-container relative flex items-center justify-center pr-12">
+          <Link to="/contact" aria-label="Contact us about the Kingdom Business Summit">
+            <img
+              src={headerAnimation}
+              alt="Kingdom Business Summit 2026 animated banner"
+              className="block h-auto w-full md:h-10 md:w-auto"
+            />
           </Link>
-          <Button type="button" variant="ghost" size="icon" onClick={() => setShowAnnouncement(false)} aria-label="Dismiss announcement" className="absolute right-3 h-8 w-8 rounded-full text-primary-foreground hover:bg-primary-foreground/15 hover:text-primary-foreground">
+          <Button type="button" variant="ghost" size="icon" onClick={() => setShowAnnouncement(false)} aria-label="Dismiss announcement" className="absolute right-3 h-8 w-8 rounded-full text-slate-900 hover:bg-slate-900/10 hover:text-slate-900">
             <X size={17} />
           </Button>
         </div>
