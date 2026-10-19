@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ChevronUp, MapPin, Phone, Mail, Facebook, Twitter, Youtube, Linkedin, ArrowRight } from "lucide-react";
+import { ChevronUp, MapPin, Phone, Mail, Facebook, Instagram, Music2, Youtube, ArrowRight } from "lucide-react";
 import LogoLockup from "@/components/LogoLockup";
 
 const quickLinks = [
@@ -19,10 +19,10 @@ const services = [
 ];
 
 const socials = [
-  { Icon: Facebook, href: "#", label: "Facebook" },
-  { Icon: Twitter, href: "#", label: "Twitter" },
-  { Icon: Youtube, href: "#", label: "YouTube" },
-  { Icon: Linkedin, href: "#", label: "LinkedIn" },
+  { Icon: Instagram, href: "https://www.instagram.com/zuulaug", label: "Instagram" },
+  { Icon: Music2, href: "https://www.tiktok.com/@tumusiimejosephprosper", label: "TikTok" },
+  { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=100094900429500", label: "Facebook" },
+  { Icon: Youtube, href: "https://www.youtube.com/@zuulaobusobozibwo", label: "YouTube" },
 ];
 
 const Footer = () => {
@@ -102,6 +102,8 @@ const Footer = () => {
                   key={label}
                   href={href}
                   aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full border border-background/20 flex items-center justify-center text-background/60 hover:text-secondary hover:border-secondary transition-colors"
                 >
                   <Icon size={16} />
