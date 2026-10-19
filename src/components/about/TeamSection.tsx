@@ -91,7 +91,7 @@ const TeamSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: index * 0.06 }}
-            className="group relative aspect-[3/4] overflow-hidden rounded-2xl bg-[#E7E3E9] shadow-lg transition-transform duration-300 hover:-translate-y-1 sm:rounded-3xl"
+            className={`group relative aspect-[3/4] overflow-hidden rounded-2xl ${member.background} shadow-lg transition-transform duration-300 hover:-translate-y-1 sm:rounded-3xl`}
           >
             {member.image ? (
               <img

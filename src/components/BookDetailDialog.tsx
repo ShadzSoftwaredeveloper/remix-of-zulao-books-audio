@@ -104,7 +104,7 @@ const BookDetailDialog = ({ book, open, onOpenChange }: BookDetailDialogProps) =
                 type="button"
                 variant="outline"
                 onClick={handlePreview}
-                className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg border border-border text-foreground font-body text-sm font-medium hover:bg-muted transition-colors active:scale-[0.98]"
+                className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg border border-primary bg-primary text-primary-foreground font-body text-sm font-medium hover:opacity-90 transition-opacity active:scale-[0.98]"
               >
                 <Eye size={16} />
                 Preview PDF
