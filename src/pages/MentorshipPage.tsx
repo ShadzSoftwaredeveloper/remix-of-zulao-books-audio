@@ -30,7 +30,7 @@ const plans: readonly MembershipPlan[] = [
       "Event announcements",
     ],
     action: "Join the community",
-    href: "vhttps://chat.whatsapp.com/JMpHuFJxL3E1zuDEmOlOBo?s=cl&p=a&mlu=4&ilr=4",
+    href: "https://chat.whatsapp.com/JMpHuFJxL3E1zuDEmOlOBo?s=cl&p=a&mlu=4&ilr=4",
     icon: Send,
   },
   {
@@ -57,7 +57,7 @@ const plans: readonly MembershipPlan[] = [
       "Direct accountability",
     ],
     action: "Start mentorship",
-    href: "https://wa.me/256777667080?text=Hello%20Joseph%2C%20I%20would%20like%20to%20start%20one-on-one%20mentorship.",
+    href: "https://selar.com/49m5832935",
     icon: MessageCircle,
   },
 ] as const;
