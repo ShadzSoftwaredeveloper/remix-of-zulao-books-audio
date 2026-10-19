@@ -12,6 +12,7 @@ import {
 import founderImage from "@/assets/tumusime joseph prosper.jpeg";
 import geraldImage from "@/assets/eg.gerland ssentongo.png";
 import roseImage from "@/assets/mrs rose ssentongo.png";
+import nelsonImage from "@/assets/pr mandella nelson.png";
 
 const team = [
   {
@@ -42,6 +43,7 @@ const team = [
     name: "Pastor Nelson Mandela",
     role: "Events & Operations",
     bio: "Runs the logistics behind every conference, masterclass and mentoring season, so every gathering flows with care.",
+    image: nelsonImage,
     initials: "GA",
     background: "bg-muted-foreground",
   },
@@ -89,7 +91,7 @@ const TeamSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: index * 0.06 }}
-            className="group relative aspect-[3/4] overflow-hidden rounded-2xl bg-muted shadow-lg transition-transform duration-300 hover:-translate-y-1 sm:rounded-3xl"
+            className="group relative aspect-[3/4] overflow-hidden rounded-2xl bg-[#E7E3E9] shadow-lg transition-transform duration-300 hover:-translate-y-1 sm:rounded-3xl"
           >
             {member.image ? (
               <img
