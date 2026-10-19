@@ -9,15 +9,16 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-
-const FOUNDER_IMG = "/lovable-uploads/927c6d88-9f65-4954-82af-f1e83c834b55.jpg";
+import founderImage from "@/assets/tumusime joseph prosper.jpeg";
+import geraldImage from "@/assets/eg.gerland ssentongo.png";
+import roseImage from "@/assets/mrs rose ssentongo.png";
 
 const team = [
   {
     name: "Tumusiime Joseph Prosper",
     role: "Founder & Lead Teacher",
     bio: "Author, keynote speaker and founder of Zuula Obusobozibwo — equipping believers to discover their gifts and build generational altars.",
-    image: FOUNDER_IMG,
+    image: founderImage,
     initials: "JP",
     background: "bg-accent",
   },
@@ -25,6 +26,7 @@ const team = [
     name: "Eng. Sentongo Gerald Mukasa",
     role: "Mentor & Partnerships",
     bio: "Leads our circles and church partnerships, walking with new members from their first teaching to their first step of impact.",
+    image: geraldImage,
     initials: "SN",
     background: "bg-secondary",
   },
@@ -32,6 +34,7 @@ const team = [
     name: "Mrs Rose Sentongo",
     role: "Mentor",
     bio: "walking with new members from their first teaching to their first step of impact.",
+    image: roseImage,
     initials: "DM",
     background: "bg-primary",
   },
