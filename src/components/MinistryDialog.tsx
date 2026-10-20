@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ministryIntro, ministrySections } from "@/data/ministryData";
+import { socials } from "@/data/socials";
 
 interface MinistryDialogProps {
   open: boolean;
@@ -69,25 +70,47 @@ const MinistryDialog = ({ open, onOpenChange }: MinistryDialogProps) => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-3 border-t border-border/60 bg-cream/60 px-5 py-4 sm:flex-row sm:justify-end sm:px-8">
-            <Button
-              asChild
-              variant="outline"
-              className="rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary"
-            >
-              <Link to="/mentorship" onClick={() => onOpenChange(false)}>
-                Explore Mentorship
-              </Link>
-            </Button>
-            <Button
-              asChild
-              className="rounded-full bg-secondary text-secondary-foreground hover:opacity-90"
-            >
-              <Link to="/contact" onClick={() => onOpenChange(false)}>
-                <BookOpen size={16} />
-                Talk to Joseph
-              </Link>
-            </Button>
+          <div className="sticky bottom-0 z-10 flex flex-col gap-4 border-t border-border/60 bg-cream px-5 py-4 before:absolute before:inset-x-0 before:-top-8 before:h-8 before:bg-gradient-to-t before:from-cream before:to-transparent before:content-[''] sm:px-8">
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="font-body text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                Follow Tumusiime Joseph Prosper
+              </p>
+              <div className="flex gap-2">
+                {socials.map(({ Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-foreground/70 transition-colors hover:border-secondary hover:text-secondary"
+                  >
+                    <Icon size={15} />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
+              <Button
+                asChild
+                variant="outline"
+                className="rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary"
+              >
+                <Link to="/mentorship" onClick={() => onOpenChange(false)}>
+                  Explore Mentorship
+                </Link>
+              </Button>
+              <Button
+                asChild
+                className="rounded-full bg-secondary text-secondary-foreground hover:opacity-90"
+              >
+                <Link to="/contact" onClick={() => onOpenChange(false)}>
+                  <BookOpen size={16} />
+                  Talk to Tumusiime Joseph Prosper
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </DialogContent>
