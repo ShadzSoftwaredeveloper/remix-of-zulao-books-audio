@@ -70,7 +70,7 @@ const MinistryDialog = ({ open, onOpenChange }: MinistryDialogProps) => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 border-t border-border/60 bg-cream/60 px-5 py-4 sm:px-8">
+          <div className="sticky bottom-0 z-10 flex flex-col gap-4 border-t border-border/60 bg-cream px-5 py-4 sm:px-8">
             <div className="flex flex-wrap items-center gap-3">
               <p className="font-body text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                 Follow Tumusiime Joseph Prosper
