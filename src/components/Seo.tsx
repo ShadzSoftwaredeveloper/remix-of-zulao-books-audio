@@ -67,7 +67,7 @@ const Seo = ({
     canonical.href = canonicalUrl;
 
     const schemaId = "page-structured-data";
-    let schema = document.getElementById(schemaId);
+    let schema = document.getElementById<HTMLScriptElement>(schemaId);
     if (structuredData) {
       if (!schema) {
         schema = document.createElement("script");
