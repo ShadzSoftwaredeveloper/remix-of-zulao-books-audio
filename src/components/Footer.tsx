@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { ChevronUp, MapPin, Phone, Mail, Facebook, Instagram, Music2, Youtube, ArrowRight } from "lucide-react";
+import { ChevronUp, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
 import LogoLockup from "@/components/LogoLockup";
+import { socials } from "@/data/socials";
 
 const quickLinks = [
   { label: "About Us", href: "/about" },
@@ -18,12 +19,6 @@ const services = [
   { label: "Mentorship", href: "/contact" },
 ];
 
-const socials = [
-  { Icon: Instagram, href: "https://www.instagram.com/zuulaug", label: "Instagram" },
-  { Icon: Music2, href: "https://www.tiktok.com/@tumusiimejosephprosper", label: "TikTok" },
-  { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=100094900429500", label: "Facebook" },
-  { Icon: Youtube, href: "https://www.youtube.com/@zuulaobusobozibwo", label: "YouTube" },
-];
 
 const Footer = () => {
   const scrollToTop = () => {
