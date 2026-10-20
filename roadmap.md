@@ -24,3 +24,10 @@
 - [x] Articles hover mega menu (categories + featured posts).
 - [x] English/Luganda description toggle on book and audio listings.
 - [x] AI Luganda translator for book/audio descriptions.
+- [x] Add an "About Ministry" popup to the founder section carrying the pastor's own ministry statement.
+- [x] Stop the hidden newsletter embed from blocking taps and clicks site-wide.
+- [x] Clear the page structured-data typecheck error.
+- [ ] Verify the eBooks page hero photo overlay reads clearly on phone and desktop.
+- [ ] Center-align the Articles hover panel.
+- [ ] Replace placeholder team member names, roles, bios and photos with the real ones.
+- [ ] Have a fluent speaker check the Luganda book and audio descriptions.

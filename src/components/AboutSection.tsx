@@ -1,17 +1,20 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import MinistryDialog from "@/components/MinistryDialog";
 import podcastAsset from "@/assets/founder-podcast.png.asset.json";
 import founderImage from "@/assets/tumusime joseph prosper.jpeg";
 
 interface AboutSectionProps {
   /** Use the podcast still instead of the founder portrait (homepage). */
   variant?: "founder" | "podcast";
-  /** Show the "Book Joseph" call-to-action (home page only). */
+  /** Show the "About Ministry" and "Book Joseph" calls-to-action (home page only). */
   showBookCta?: boolean;
 }
 
 const AboutSection = ({ variant = "founder", showBookCta = false }: AboutSectionProps) => {
+  const [ministryOpen, setMinistryOpen] = useState(false);
   const imgSrc = variant === "podcast" ? podcastAsset.url : founderImage;
   return (
     <section id="about" className="py-16 sm:py-24 bg-cream overflow-hidden">
@@ -60,13 +63,25 @@ const AboutSection = ({ variant = "founder", showBookCta = false }: AboutSection
               Unlock Your Gifts, Influence, and Destiny for God's Kingdom
             </blockquote>
             {showBookCta && (
-              <Button asChild variant="outline" className="mt-8 rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary">
-                <Link to="/contact">Book Tumusiime Joseph Prosper</Link>
-              </Button>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <Button
+                  onClick={() => setMinistryOpen(true)}
+                  className="rounded-full bg-primary text-primary-foreground hover:opacity-90">
+                  About Ministry
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary">
+                  <Link to="/contact">Book Tumusiime Joseph Prosper</Link>
+                </Button>
+              </div>
             )}
           </motion.div>
         </div>
       </div>
+
+      <MinistryDialog open={ministryOpen} onOpenChange={setMinistryOpen} />
     </section>);
 
 };
