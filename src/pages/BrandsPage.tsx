@@ -1,81 +1,65 @@
-import { useState } from "react";
 import {
-  Facebook,
+  BookOpen,
   Globe,
-  Instagram,
-  Mail,
-  Music2,
-  Youtube,
+  Headphones,
+  Newspaper,
+  Users,
 } from "lucide-react";
-import booksImage from "@/assets/images/books zuula brands.jpg";
-import shirtImage from "@/assets/images/t-shirt zuula brands.jpg";
-import sweaterImage from "@/assets/images/zuula brands-sweater.jpg";
+import { Link } from "react-router-dom";
 import Seo from "@/components/Seo";
+import { socials } from "@/data/socials";
 
-const products = [
-  { src: shirtImage, alt: "Zuula branded hoodie" },
-  { src: sweaterImage, alt: "Zuula branded sweater" },
-  { src: booksImage, alt: "Zuula books collection" },
-];
-
-const socialLinks = [
-  { label: "Website", href: "/", icon: Globe },
-  { label: "TikTok", href: "https://www.tiktok.com/@tumusiimejosephprosper", icon: Music2 },
-  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=100094900429500", icon: Facebook },
-  { label: "YouTube", href: "https://www.youtube.com/@zuulaobusobozibwo", icon: Youtube },
-  { label: "Instagram", href: "https://www.instagram.com/zuulaug", icon: Instagram },
-  { label: "Email", href: "mailto:info@zuulaobusobozibwo.com", icon: Mail },
+const platforms = [
+  { label: "Ebooks", href: "/ebooks", description: "Books and resources", icon: BookOpen },
+  { label: "Audio", href: "/audio", description: "Listen to teachings", icon: Headphones },
+  { label: "Articles", href: "/articles", description: "Read insights and stories", icon: Newspaper },
+  { label: "Mentorship", href: "/mentorship", description: "Grow with our community", icon: Users },
 ];
 
 const BrandsPage = () => {
-  const [activeProduct, setActiveProduct] = useState(0);
-
   return (
     <main className="brands-page">
       <Seo
-        title="Zuula Obusobozibwo | Links"
-        description="Connect with Zuula Obusobozibwo and explore books and branded apparel."
+        title="Our Platforms | Zuula Obusobozibwo"
+        description="Explore Zuula Obusobozibwo ebooks, audio teachings, articles, mentorship, and social channels."
       />
-      <section className="brands-card" aria-label="Zuula Obusobozibwo links">
+      <section className="brands-card" aria-label="Zuula Obusobozibwo platforms">
         <header className="brands-heading">
-          <h1>Zuula Obusobozibwo</h1>
-          <p>Unlock Your Gifts, Influence, and Destiny for God’s Kingdom</p>
+          <Globe aria-hidden="true" className="brands-mark" size={32} />
+          <h1>Our Platforms</h1>
+          <p>Explore teachings, resources, and community from Zuula Obusobozibwo.</p>
         </header>
 
         <nav className="brands-links" aria-label="Social links">
-          {socialLinks.map(({ label, href, icon: Icon }) => (
-            <a
-              key={label}
-              className="brands-link"
-              href={href}
-              target={href.startsWith("http") ? "_blank" : undefined}
-              rel={href.startsWith("http") ? "noreferrer" : undefined}
-            >
-              <Icon aria-hidden="true" size={21} strokeWidth={2.5} />
-              <span>{label}</span>
-            </a>
+          {platforms.map(({ label, href, description, icon: Icon }) => (
+            <Link key={label} className="brands-link" to={href}>
+              <Icon aria-hidden="true" size={21} strokeWidth={2.2} />
+              <span>
+                <strong>{label}</strong>
+                <small>{description}</small>
+              </span>
+            </Link>
           ))}
         </nav>
 
-        <div className="brands-product">
-          <img
-            src={products[activeProduct].src}
-            alt={products[activeProduct].alt}
-          />
-        </div>
-
-        <div className="brands-pagination" aria-label="Choose featured image">
-          {products.map((product, index) => (
-            <button
-              key={product.alt}
-              type="button"
-              className={index === activeProduct ? "is-active" : ""}
-              aria-label={`Show ${product.alt}`}
-              aria-pressed={index === activeProduct}
-              onClick={() => setActiveProduct(index)}
-            />
-          ))}
-        </div>
+        <section className="brands-socials" aria-labelledby="brands-socials-title">
+          <h2 id="brands-socials-title">Follow along</h2>
+          <div className="brands-social-links">
+            {socials.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                className="brands-social-link"
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                title={label}
+              >
+                <Icon aria-hidden="true" size={21} />
+              </a>
+            ))}
+          </div>
+        </section>
       </section>
     </main>
   );
