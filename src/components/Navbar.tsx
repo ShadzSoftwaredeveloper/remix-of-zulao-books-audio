@@ -20,6 +20,7 @@ const categoryNotes: Record<string, string> = {
 
 const navLinks = [
   { label: "About", href: "/about" },
+  { label: "Our Platforms", href: "/brands" },
   { label: "Mentorship", href: "/mentorship" },
   // { label: "Events", href: "/contact" },
   { label: "Ebooks", href: "/ebooks" },
