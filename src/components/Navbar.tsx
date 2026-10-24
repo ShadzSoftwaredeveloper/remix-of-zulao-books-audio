@@ -20,12 +20,12 @@ const categoryNotes: Record<string, string> = {
 
 const navLinks = [
   { label: "About", href: "/about" },
-  // { label: "Our Platforms", href: "/platforms" },
   { label: "Mentorship", href: "/mentorship" },
   // { label: "Events", href: "/contact" },
   { label: "Ebooks", href: "/ebooks" },
   { label: "Audio", href: "/audio" },
   { label: "articles", href: "/articles" },
+  { label: "Our Platforms", href: "/platforms" },
   { label: "Contact", href: "/contact" },
 ];
 
