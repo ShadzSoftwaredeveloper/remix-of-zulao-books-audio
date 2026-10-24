@@ -46,10 +46,47 @@
         ]
       }
     </script>
+    <style>
+      .boot-screen {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #fff;
+        color: #491d47;
+        font-family: Georgia, serif;
+      }
+      .boot-loader {
+        display: grid;
+        justify-items: center;
+        gap: 14px;
+        font-size: 16px;
+      }
+      .boot-loader-mark {
+        width: 42px;
+        height: 42px;
+        border: 3px solid #f4c9df;
+        border-top-color: #c50072;
+        border-radius: 50%;
+        animation: boot-spin 800ms linear infinite;
+      }
+      @keyframes boot-spin {
+        to { transform: rotate(360deg); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .boot-loader-mark { animation: none; }
+      }
+    </style>
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="boot-screen">
+        <div class="boot-loader" role="status" aria-live="polite">
+          <span class="boot-loader-mark" aria-hidden="true"></span>
+          <span>Loading Zuula Obusobozibwo</span>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
